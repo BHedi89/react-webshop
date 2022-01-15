@@ -15,7 +15,8 @@ const Navbar = () => {
                     <ul>
                         <li className={isActive ? classes.visible : null}><a href="#">Face</a></li>
                         <li className={isActive ? classes.visible : null}><a href="#">Lips</a></li>
-                        <li className={`${classes.logo} ${classes.logotrigger}`} onClick={logoTrigger}><a href="#">WM</a></li>
+                        <li className={`${classes.logo} ${classes.logotrigger}`} 
+                            onClick={logoTrigger}><a href="#">WM</a></li>
                         <li className={isActive ? classes.visible : null}><a href="#">Eyes</a></li>
                         <li className={isActive ? classes.visible : null}><a href="#">Nails</a></li>
                     </ul>
