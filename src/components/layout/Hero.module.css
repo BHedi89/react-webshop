@@ -1,11 +1,11 @@
 .hero {
     position: relative;
     width: 100vw;
-    height: 50vh;
+    height: 70vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #0C0B0B;
+    background-color: #0c0b0b8c;
 }
 
 .hero::before {

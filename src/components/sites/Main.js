@@ -1,10 +1,11 @@
 import Header from "../layout/Hero";
+import Navbar from "../layout/Navbar";
 
 const Main = () => {
     return (
         <>
+            <Navbar/>
             <Header 
-                url="../images/lipstick/header-image.jpg"
                 title="Wonderful Makeups"
             />
         </>
