@@ -1,0 +1,39 @@
+.hero {
+    position: relative;
+    width: 100vw;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0C0B0B;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("../images/lipstick/photo-1603775020644-eb8decd79994.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    filter: brightness(80%);
+}
+
+.herocontent {
+    position: relative;
+    color: black;
+    text-align: center;
+}
+
+.herotitle {
+    font-size: 80px;
+    margin-bottom: 0;
+    background-color: rgba(255, 255, 255, 0.493);
+    padding: 50px;
+}
+
+ 
+ 
