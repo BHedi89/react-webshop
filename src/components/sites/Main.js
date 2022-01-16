@@ -1,12 +1,13 @@
-import Header from "../layout/Hero";
+import Hero from "../layout/Hero";
 import Navbar from "../layout/Navbar";
 
 const Main = () => {
     return (
         <>
             <Navbar/>
-            <Header 
+            <Hero 
                 title="Wonderful Makeups"
+                // img={heroImageList[0].src}
             />
         </>
     )

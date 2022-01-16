@@ -1,9 +1,10 @@
 import classes from "./Hero.module.css";
+import heroImage from "../images/lipstick/photo-1603775020644-eb8decd79994.jpg";
 
-const Header = props => {
+const Hero = props => {
     return (
         <> 
-            <section className={classes.hero}>
+            <section className={classes.hero} style={{backgroundImage: `url(${heroImage})`}}>
                 <div className={classes.herocontent}>
                     <h1 className={classes.herotitle}>{props.title}</h1>
                 </div>
@@ -12,4 +13,4 @@ const Header = props => {
     )
 }
 
-export default Header;
+export default Hero;
