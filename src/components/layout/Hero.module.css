@@ -1,28 +1,144 @@
-.hero {
-    position: relative;
-    width: 100vw;
-    height: 80vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-    filter: brightness(80%);
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .hero {
+        position: relative;
+        width: 100vw;
+        height: 80vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        filter: brightness(80%);
+    }
+    
+    .herocontent {
+        position: relative;
+        color: black;
+        text-align: center;
+    }
+    
+    .herotitle {
+        font-size: 60px;
+        margin-bottom: 0;
+        background-color: rgba(255, 255, 255, 0.493);
+        padding: 50px;
+    }
 }
 
-.herocontent {
-    position: relative;
-    color: black;
-    text-align: center;
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .hero {
+        position: relative;
+        width: 100vw;
+        height: 80vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        filter: brightness(80%);
+    }
+    
+    .herocontent {
+        position: relative;
+        color: black;
+        text-align: center;
+    }
+    
+    .herotitle {
+        font-size: 80px;
+        margin-bottom: 0;
+        background-color: rgba(255, 255, 255, 0.493);
+        padding: 50px;
+    }
 }
 
-.herotitle {
-    font-size: 80px;
-    margin-bottom: 0;
-    background-color: rgba(255, 255, 255, 0.493);
-    padding: 50px;
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .hero {
+        position: relative;
+        width: 100vw;
+        height: 80vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        filter: brightness(80%);
+    }
+    
+    .herocontent {
+        position: relative;
+        color: black;
+        text-align: center;
+    }
+    
+    .herotitle {
+        font-size: 80px;
+        margin-bottom: 0;
+        background-color: rgba(255, 255, 255, 0.493);
+        padding: 50px;
+    }
 }
 
- 
- 
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .hero {
+        position: relative;
+        width: 100vw;
+        height: 80vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        filter: brightness(80%);
+    }
+    
+    .herocontent {
+        position: relative;
+        color: black;
+        text-align: center;
+    }
+    
+    .herotitle {
+        font-size: 80px;
+        margin-bottom: 0;
+        background-color: rgba(255, 255, 255, 0.493);
+        padding: 50px;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    .hero {
+        position: relative;
+        width: 100vw;
+        height: 80vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        filter: brightness(80%);
+    }
+    
+    .herocontent {
+        position: relative;
+        color: black;
+        text-align: center;
+    }
+    
+    .herotitle {
+        font-size: 80px;
+        margin-bottom: 0;
+        background-color: rgba(255, 255, 255, 0.493);
+        padding: 50px;
+    }
+}
