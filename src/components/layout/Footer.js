@@ -15,21 +15,21 @@ const Footer = () => {
                     <ul className={classes.list}>
                         <li> 
                             <FontAwesomeIcon icon={faEnvelope}/>
-                            wonderful-makeup@gmail.com
+                            <span>wonderful-makeup@gmail.com</span>
                         </li>
                         <li>
                             <FontAwesomeIcon icon={faPhoneAlt}/>
-                            123456789
+                            <span>123456789</span>
                         </li>
                         <li>
-                            <FontAwesomeIcon icon={faFacebook}/>
-                            <FontAwesomeIcon icon={faInstagram}/>
-                            <FontAwesomeIcon icon={faTwitter}/>
+                            <span className={classes.face}><FontAwesomeIcon icon={faFacebook}/></span>
+                            <span><FontAwesomeIcon icon={faInstagram}/></span>
+                            <span><FontAwesomeIcon icon={faTwitter}/></span>
                         </li>
                     </ul>
                 </div>
                 <div className={`${classes.logo}`}>
-                    <div><a href="#">WM<br/><span>Wonderful Makeups</span></a></div>
+                    <a href="#" className={classes.logoName}>WM<br/><span>Wonderful Makeups</span></a>
                 </div>
                 <div>
                     <ul className={classes.list}>

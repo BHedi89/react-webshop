@@ -18,6 +18,25 @@
         color: white;
         padding: 0;
     }
+
+    .list span {
+        font-size: 16px;
+        margin-left: 5px;
+    }
+
+    .list .face {
+        margin-left: 0;
+    }
+
+    .logo {
+        text-align: center;
+        font-size: 20px;
+    }
+
+    .logoName{
+        color: white;
+        text-decoration: none;
+    }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
@@ -39,6 +58,25 @@
         list-style: none;
         color: white;
         padding: 0;
+    }
+
+    .list span {
+        font-size: 16px;
+        margin-left: 5px;
+    }
+
+    .list .face {
+        margin-left: 0;
+    }
+
+    .logo {
+        text-align: center;
+        font-size: 20px;
+    }
+
+    .logoName{
+        color: white;
+        text-decoration: none;
     }
 }
 
@@ -62,6 +100,25 @@
         color: white;
         padding: 0;
     }
+
+    .list span {
+        font-size: 16px;
+        margin-left: 5px;
+    }
+
+    .list .face {
+        margin-left: 0;
+    }
+
+    .logo {
+        text-align: center;
+        font-size: 25px;
+    }
+
+    .logoName{
+        color: white;
+        text-decoration: none;
+    }
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
@@ -84,6 +141,25 @@
         color: white;
         padding: 0;
     }
+
+    .list span {
+        font-size: 16px;
+        margin-left: 5px;
+    }
+
+    .list .face {
+        margin-left: 0;
+    }
+
+    .logo {
+        text-align: center;
+        font-size: 25px;
+    }
+
+    .logoName{
+        color: white;
+        text-decoration: none;
+    }
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
@@ -105,5 +181,24 @@
         list-style: none;
         color: white;
         padding: 0;
+    }
+
+    .list span {
+        font-size: 16px;
+        margin-left: 5px;
+    }
+
+    .list .face {
+        margin-left: 0;
+    }
+
+    .logo {
+        text-align: center;
+        font-size: 25px;
+    }
+
+    .logoName{
+        color: white;
+        text-decoration: none;
     }
 }
