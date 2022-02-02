@@ -1,5 +1,6 @@
 import Hero from "../layout/Hero";
 import Navbar from "../layout/Navbar";
+import heroImage from "../images/lipstick/photo-1603775020644-eb8decd79994.jpg";
 
 const Main = () => {
     return (
@@ -7,7 +8,7 @@ const Main = () => {
             <Navbar/>
             <Hero 
                 title="Wonderful Makeups"
-                // img={heroImageList[0].src}
+                heroImage={heroImage}
             />
         </>
     )
