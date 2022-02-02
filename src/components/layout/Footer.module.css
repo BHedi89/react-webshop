@@ -1,0 +1,109 @@
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .footer {
+        margin-top: auto;
+        height: 250px;
+        background-color: black;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .contact {
+        color: white;
+    }
+    
+    .list {
+        list-style: none;
+        color: white;
+        padding: 0;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .footer {
+        margin-top: auto;
+        height: 120px;
+        background-color: black;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    
+    .contact {
+        color: white;
+    }
+    
+    .list {
+        list-style: none;
+        color: white;
+        padding: 0;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .footer {
+        margin-top: auto;
+        height: 120px;
+        background-color: black;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    
+    .contact {
+        color: white;
+    }
+    
+    .list {
+        list-style: none;
+        color: white;
+        padding: 0;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .footer {
+        margin-top: auto;
+        height: 120px;
+        background-color: black;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    
+    .contact {
+        color: white;
+    }
+    
+    .list {
+        list-style: none;
+        color: white;
+        padding: 0;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    .footer {
+        margin-top: auto;
+        height: 120px;
+        background-color: black;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    
+    .contact {
+        color: white;
+    }
+    
+    .list {
+        list-style: none;
+        color: white;
+        padding: 0;
+    }
+}
