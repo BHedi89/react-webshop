@@ -2,16 +2,11 @@ import classes from "./Card.module.css";
 import { useState } from "react";
 
 const Card = (props) =>  {
-    const [changeImage, setChangeImage] = useState(false);
+    const [changeImage, setChangeImage] = useState(props.cardImage);
 
-    function changeImageHandler(x) {
-        // setChangeImage(prevImg => !prevImg)
-        let fullImg = document.querySelector(".full-img");
-        let miniImg = document.querySelectorAll(".mini-img");
-        let targetImg = miniImg[x - 1];
-        let imgAttr = targetImg.getAttribute("src");
-
-        fullImg.setAttribute("src", imgAttr);
+    const changeImageHandler = (e) => {
+        let source = e.target.getAttribute("src")
+        setChangeImage(source);
     }
 
     return (
@@ -20,7 +15,7 @@ const Card = (props) =>  {
                 <div className={classes.cardcontent}>
                     <div className={classes.contentleft}>
                         <img className={classes.fullimg} 
-                            src={props.cardImage} />
+                            src={changeImage} />
                     </div>
                     <div className={classes.contentright}>
                         <h2>Outdoor Experience</h2>
@@ -28,13 +23,13 @@ const Card = (props) =>  {
                         <div className={classes.miniimgs}>
                             <img className={classes.miniimg} 
                                 src={props.minImage1} 
-                                onClick={() => changeImageHandler} />
+                                onClick={changeImageHandler} />
                             <img className={classes.miniimg} 
                                 src={props.minImage2} 
-                                onClick={() => changeImageHandler} />
+                                onClick={changeImageHandler} />
                             <img className={classes.miniimg} 
                                 src={props.minImage3} 
-                                onClick={() => changeImageHandler} />
+                                onClick={changeImageHandler} />
                         </div>
                     </div>
                 </div>
