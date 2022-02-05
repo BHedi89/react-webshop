@@ -49,6 +49,7 @@ const Main = () => {
                         minImage3={img6}
                     />
                 </div>
+                <ShapeDivider></ShapeDivider>
             </div>
             <Footer></Footer>
         </>
