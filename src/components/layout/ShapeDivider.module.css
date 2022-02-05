@@ -1,0 +1,105 @@
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .customshapedividertop1644064767 {
+        top: 0;
+        left: 0;
+        width: 100%;
+        overflow: hidden;
+        line-height: 0;
+    }
+    
+    .customshapedividertop1644064767 svg {
+        position: relative;
+        display: block;
+        width: calc(100% + 1.3px);
+        height: 78px;
+    }
+    
+    .customshapedividertop1644064767 .shapefill {
+        fill: #570C0C;
+    }
+}
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .customshapedividertop1644064767 {
+        top: 0;
+        left: 0;
+        width: 100%;
+        overflow: hidden;
+        line-height: 0;
+    }
+    
+    .customshapedividertop1644064767 svg {
+        position: relative;
+        display: block;
+        width: calc(100% + 1.3px);
+        height: 78px;
+    }
+    
+    .customshapedividertop1644064767 .shapefill {
+        fill: #570C0C;
+    }
+}
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .customshapedividertop1644064767 {
+        top: 0;
+        left: 0;
+        width: 100%;
+        overflow: hidden;
+        line-height: 0;
+    }
+    
+    .customshapedividertop1644064767 svg {
+        position: relative;
+        display: block;
+        width: calc(100% + 1.3px);
+        height: 78px;
+    }
+    
+    .customshapedividertop1644064767 .shapefill {
+        fill: #570C0C;
+    }
+}
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .customshapedividertop1644064767 {
+        top: 0;
+        left: 0;
+        width: 100%;
+        overflow: hidden;
+        line-height: 0;
+    }
+    
+    .customshapedividertop1644064767 svg {
+        position: relative;
+        display: block;
+        width: calc(100% + 1.3px);
+        height: 78px;
+    }
+    
+    .customshapedividertop1644064767 .shapefill {
+        fill: #570C0C;
+    }
+}
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    .customshapedividertop1644064767 {
+        top: 0;
+        left: 0;
+        width: 100%;
+        overflow: hidden;
+        line-height: 0;
+    }
+    
+    .customshapedividertop1644064767 svg {
+        position: relative;
+        display: block;
+        width: calc(100% + 1.3px);
+        height: 78px;
+    }
+    
+    .customshapedividertop1644064767 .shapefill {
+        fill: #570C0C;
+    }
+}

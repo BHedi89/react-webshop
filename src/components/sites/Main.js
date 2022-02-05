@@ -1,7 +1,8 @@
 import Hero from "../layout/Hero";
 import Navbar from "../layout/Navbar";
 import Footer from "../layout/Footer";
-import ImageCarousel from "../layout/ImageCarousel";
+import Card from "../layout/Card";
+import ShapeDivider from "../layout/ShapeDivider";
 import heroImage from "../images/lipstick/photo-1603775020644-eb8decd79994.jpg";
 import classes from "./Main.module.css";
 
@@ -15,10 +16,13 @@ const Main = () => {
             />
             
             <div className={classes.content}>
-                <div className={classes.carouselTitle}>
+                <div className={classes.cardsectionTitle}>
                     <h1>Wonderful Colors</h1>
                 </div>
-                <ImageCarousel></ImageCarousel>
+               <ShapeDivider></ShapeDivider>
+                <div className={classes.cardscontainer}>
+                    <Card></Card>
+                </div>
             </div>
             <Footer></Footer>
         </>
