@@ -112,4 +112,10 @@
           4px 4px 0px #b6b6b6, 
           7px 7px 0px rgba(0, 0, 0, 0.2);
     }
+
+    .cardscontainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }

@@ -1,0 +1,451 @@
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    *, *::before, *::after {
+        box-sizing: inherit;
+    }
+
+    main {
+        display: flex;
+        justify-content: center;
+        height: 100vh;
+        margin-top: 10px;
+    }
+
+    h2 {
+        margin-top: 50px;
+        font-size: 3em;
+        font-weight: 700;
+        line-height: 1;
+    }
+
+    p {
+        margin-top: 50px;
+        font-size: 1em;
+        color: black;
+    }
+
+    .maincard {
+        width: 700px;
+        height: 470px;
+        margin: 20px;
+        border-radius: 10px;
+        font-weight: 300;
+        font-style: normal;
+        font-size: 1em;
+        line-height: 1.5;
+        color: black;
+        background-color: rgb(171,134,134);
+        box-shadow: 0px 10px 20px -10px rgba(0, 0, 0, 0.75);
+    }
+
+    .maincard .cardcontent {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        padding: 20px;
+    }
+
+    .maincard .contentleft {
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    .maincard .contentleft img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .maincard .contentright {
+        width: 50%;
+        height: 50%;
+        padding-left: 10px;
+    }
+
+    .maincard .miniimgs {
+        display: flex;
+        bottom: 0;
+        height: 105px;
+    }
+    
+    .maincard .miniimgs img {
+        width: 105px;
+        height: 105px;
+        border-radius: 10px;
+        object-fit: cover;
+        object-position: center;
+        cursor: pointer;
+        transition: 300ms;
+    }
+    
+    .maincard .miniimgs img:hover {
+        opacity: .75;
+    }
+    
+    .maincard .miniimgs img:nth-child(2) {
+        margin: 0 10px;
+    }
+}
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    *, *::before, *::after {
+        box-sizing: inherit;
+    }
+
+    main {
+        display: flex;
+        justify-content: center;
+        height: 100vh;
+        margin-top: 10px;
+    }
+
+    h2 {
+        margin-top: 50px;
+        font-size: 3em;
+        font-weight: 700;
+        line-height: 1;
+    }
+
+    p {
+        margin-top: 50px;
+        font-size: 1em;
+        color: black;
+    }
+
+    .maincard {
+        width: 700px;
+        height: 470px;
+        margin: 20px;
+        border-radius: 10px;
+        font-weight: 300;
+        font-style: normal;
+        font-size: 1em;
+        line-height: 1.5;
+        color: black;
+        background-color: rgb(171,134,134);
+        box-shadow: 0px 10px 20px -10px rgba(0, 0, 0, 0.75);
+    }
+
+    .maincard .cardcontent {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        padding: 20px;
+    }
+
+    .maincard .contentleft {
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    .maincard .contentleft img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .maincard .contentright {
+        width: 50%;
+        height: 50%;
+        padding-left: 15px;
+    }
+
+    .maincard .miniimgs {
+        display: flex;
+        bottom: 0;
+        height: 105px;
+    }
+    
+    .maincard .miniimgs img {
+        width: 105px;
+        height: 105px;
+        border-radius: 10px;
+        object-fit: cover;
+        object-position: center;
+        cursor: pointer;
+        transition: 300ms;
+    }
+    
+    .maincard .miniimgs img:hover {
+        opacity: .75;
+    }
+    
+    .maincard .miniimgs img:nth-child(2) {
+        margin: 0 10px;
+    }
+}
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    *, *::before, *::after {
+        box-sizing: inherit;
+    }
+
+    main {
+        display: flex;
+        justify-content: center;
+        height: 100vh;
+        margin-top: 10px;
+    }
+
+    h2 {
+        margin-top: 30px;
+        font-size: 3em;
+        font-weight: 700;
+        line-height: 1;
+    }
+
+    p {
+        margin-top: 20px;
+        font-size: 1em;
+        color: black;
+    }
+
+    .maincard {
+        width: 700px;
+        height: 470px;
+        margin: 20px;
+        border-radius: 10px;
+        font-weight: 300;
+        font-style: normal;
+        font-size: 1em;
+        line-height: 1.5;
+        color: black;
+        background-color: rgb(171,134,134);
+        box-shadow: 0px 10px 20px -10px rgba(0, 0, 0, 0.75);
+    }
+
+    .maincard .cardcontent {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        padding: 50px;
+    }
+
+    .maincard .contentleft {
+        width: 300px;
+        height: 100%;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    .maincard .contentleft img {
+        width: inherit;
+        height: inherit;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .maincard .contentright {
+        width: calc(100% - 300px);
+        height: 100%;
+        padding-left: 35px;
+    }
+
+    .maincard .miniimgs {
+        display: flex;
+        bottom: 0;
+        height: 105px;
+    }
+    
+    .maincard .miniimgs img {
+        width: 105px;
+        height: 105px;
+        border-radius: 10px;
+        object-fit: cover;
+        object-position: center;
+        cursor: pointer;
+        transition: 300ms;
+    }
+    
+    .maincard .miniimgs img:hover {
+        opacity: .75;
+    }
+    
+    .maincard .miniimgs img:nth-child(2) {
+        margin: 0 10px;
+    }
+}
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    *, *::before, *::after {
+        box-sizing: inherit;
+    }
+
+    main {
+        display: flex;
+        justify-content: center;
+        height: 100vh;
+        margin-top: 10px;
+    }
+
+    h2 {
+        margin-top: 70px;
+        font-size: 3em;
+        font-weight: 700;
+        line-height: 1;
+    }
+
+    p {
+        margin-top: 20px;
+        font-size: 1em;
+        color: black;
+    }
+
+    .maincard {
+        width: 770px;
+        height: 470px;
+        margin: 20px;
+        border-radius: 10px;
+        font-weight: 300;
+        font-style: normal;
+        font-size: 1em;
+        line-height: 1.5;
+        color: black;
+        background-color: rgb(171,134,134);
+        box-shadow: 0px 10px 20px -10px rgba(0, 0, 0, 0.75);
+    }
+
+    .maincard .cardcontent {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        padding: 50px;
+    }
+
+    .maincard .contentleft {
+        width: 300px;
+        height: 100%;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    .maincard .contentleft img {
+        width: inherit;
+        height: inherit;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .maincard .contentright {
+        width: calc(100% - 300px);
+        height: 100%;
+        padding-left: 35px;
+    }
+
+    .maincard .miniimgs {
+        display: flex;
+        bottom: 0;
+        height: 105px;
+    }
+    
+    .maincard .miniimgs img {
+        width: 105px;
+        height: 105px;
+        border-radius: 10px;
+        object-fit: cover;
+        object-position: center;
+        cursor: pointer;
+        transition: 300ms;
+    }
+    
+    .maincard .miniimgs img:hover {
+        opacity: .75;
+    }
+    
+    .maincard .miniimgs img:nth-child(2) {
+        margin: 0 10px;
+    }
+}
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {  
+    *, *::before, *::after {
+        box-sizing: inherit;
+    }
+
+    main {
+        display: flex;
+        height: 100vh;
+        min-height: 640px;
+        margin-top: 70px;
+    }
+
+    h2 {
+        margin-top: 70px;
+        font-size: 3em;
+        font-weight: 700;
+        line-height: 1;
+    }
+
+    p {
+        margin-top: 20px;
+        font-size: 1em;
+        color: black;
+    }
+
+    .maincard {
+        width: 770px;
+        height: 470px;
+        margin: 20px;
+        border-radius: 10px;
+        font-weight: 300;
+        font-style: normal;
+        font-size: 1em;
+        line-height: 1.5;
+        color: black;
+        background-color: rgb(171,134,134);
+        box-shadow: 0px 10px 20px -10px rgba(0, 0, 0, 0.75);
+    }
+
+    .maincard .cardcontent {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        padding: 50px;
+    }
+
+    .maincard .contentleft {
+        width: 300px;
+        height: 100%;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    .maincard .contentleft img {
+        width: inherit;
+        height: inherit;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .maincard .contentright {
+        width: calc(100% - 300px);
+        height: 100%;
+        padding-left: 35px;
+    }
+
+    .maincard .miniimgs {
+        display: flex;
+        bottom: 0;
+        height: 105px;
+    }
+    
+    .maincard .miniimgs img {
+        width: 105px;
+        height: 105px;
+        border-radius: 10px;
+        object-fit: cover;
+        object-position: center;
+        cursor: pointer;
+        transition: 300ms;
+    }
+    
+    .maincard .miniimgs img:hover {
+        opacity: .75;
+    }
+    
+    .maincard .miniimgs img:nth-child(2) {
+        margin: 0 10px;
+    }
+}
