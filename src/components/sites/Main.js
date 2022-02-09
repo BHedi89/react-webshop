@@ -3,6 +3,7 @@ import Hero from "../layout/Hero";
 import Navbar from "../layout/Navbar";
 import Footer from "../layout/Footer";
 import Card from "../layout/Card";
+import Productcard from "../layout/Productcard";
 import ShapeDivider from "../layout/ShapeDivider";
 import heroImage from "../images/lipstick/photo-1603775020644-eb8decd79994.jpg";
 import img1 from "../images/eyes/pexels-photo-2463027.jpeg";
@@ -11,16 +12,11 @@ import img3 from "../images/eyes/pexels-photo-10593040.jpg";
 import img4 from "../images/eyes/pexels-photo-1249632.jpg";
 import img5 from "../images/lipstick/pexels-photo-3568544.jpeg";
 import img6 from "../images/face/pexels-photo-2787341.jpeg";
-
-const imageList = [
-    { id: "1", src: img1 }, 
-    { id: "2", src: img2 },
-    { id: "3", src: img3 }, 
-    { id: "4", src: img4 },
-    { id: "5", src: img5 },
-    { id: "6", src: img6 }
-]
-
+import productImg1 from "../images/mix/rúzs/deborah.jpg";
+import productImg2 from "../images/mix/alapozó/KAQIYA-Face-Powder.png";
+import productImg3 from "../images/mix/körömlakk/Douglas_Collection-Nagels-Stay.jpg";
+import productImg4 from "../images/mix/szemhéjfesték/5101qjYR2EL._SL1000_.jpg";
+ 
 const Main = () => {
     return (
         <>
@@ -31,7 +27,7 @@ const Main = () => {
             />
             
             <div className={classes.content}>
-                <div className={classes.cardsectionTitle}>
+                <div className={classes.sectionTitle}>
                     <h1>Wonderful Colors</h1>
                 </div>
                <ShapeDivider></ShapeDivider>
@@ -49,7 +45,28 @@ const Main = () => {
                         minImage3={img6}
                     />
                 </div>
+                <div className={classes.sectionTitle}>
+                    <h1>Best Sellers</h1>
+                </div>
                 <ShapeDivider></ShapeDivider>
+                <div className={classes.products}>
+                    <Productcard
+                        productName="Red Lipstick"
+                        productImage={productImg1}
+                    />
+                    <Productcard
+                        productName="Face Powder"
+                        productImage={productImg2}
+                    />
+                    <Productcard
+                        productName="Red Nailpolish"
+                        productImage={productImg3}
+                    />
+                    <Productcard
+                        productName="Eyes Shadow"
+                        productImage={productImg4}
+                    />
+                </div>
             </div>
             <Footer></Footer>
         </>
