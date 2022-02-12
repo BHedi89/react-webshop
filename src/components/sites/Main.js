@@ -5,6 +5,7 @@ import Footer from "../layout/Footer";
 import Card from "../layout/Card";
 import Productcard from "../layout/Productcard";
 import ShapeDivider from "../layout/ShapeDivider";
+import Articlecard from "../layout/Articlecard";
 import heroImage from "../images/lipstick/photo-1603775020644-eb8decd79994.jpg";
 import img1 from "../images/eyes/pexels-photo-2463027.jpeg";
 import img2 from "../images/eyes/pexels-photo-3912572.jpeg";
@@ -16,6 +17,7 @@ import productImg1 from "../images/mix/rúzs/deborah.jpg";
 import productImg2 from "../images/mix/alapozó/KAQIYA-Face-Powder.png";
 import productImg3 from "../images/mix/körömlakk/Douglas_Collection-Nagels-Stay.jpg";
 import productImg4 from "../images/mix/szemhéjfesték/5101qjYR2EL._SL1000_.jpg";
+import articleImage from "../images/longImages/photo-1613565015448-fe6c5dc9ec40.jpg";
  
 const Main = () => {
     return (
@@ -67,8 +69,17 @@ const Main = () => {
                         productImage={productImg4}
                     />
                 </div>
+                <ShapeDivider></ShapeDivider>
+                <div className={classes.about}>
+                    <Articlecard 
+                        articleImage={articleImage}
+                    />
+                </div>
+                <ShapeDivider></ShapeDivider>
             </div>
-            <Footer></Footer>
+            <div className={classes.footer}>
+                <Footer></Footer>
+            </div>
         </>
     )
 }

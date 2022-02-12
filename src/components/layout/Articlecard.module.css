@@ -1,0 +1,205 @@
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .container {
+        margin: 70px 0 70px 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    .imageContainer {
+        width: 500px;
+    }
+
+    .imageContainer img {
+        height: 50%;
+        width: 150%;
+        margin-top: 35px;
+    }
+
+    .articletext {
+        background-color: rgba(44, 7, 7, 0.555);
+        width: 500px;
+        height: 300px;
+        text-align: justify;
+        padding: 50px;
+    }
+
+    .articletext h1 {
+        color: white;
+        font-size: 20px;
+    }
+
+    .articletext p {
+        font-size: 15px;
+    }
+
+    .articletext h2 {
+        color: white;
+        text-decoration: underline;
+        font-size: 15px;
+    }
+}
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .container {
+        margin: 70px 0 70px 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    .imageContainer {
+        width: 500px;
+    }
+
+    .imageContainer img {
+        height: 55%;
+        width: 150%;
+        margin-top: 35px;
+    }
+
+    .articletext {
+        background-color: rgba(44, 7, 7, 0.555);
+        width: 500px;
+        height: 400px;
+        text-align: justify;
+        padding: 70px;
+    }
+
+    .articletext h1 {
+        color: white;
+        font-size: 30px;
+    }
+
+    .articletext p {
+        font-size: 20px;
+    }
+
+    .articletext h2 {
+        color: white;
+        text-decoration: underline;
+        font-size: 20px;
+    }
+}
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .container {
+        margin: 70px 0 70px 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    .imageContainer {
+        width: 600px;
+    }
+
+    .imageContainer img {
+        height: 55%;
+        width: 150%;
+        margin-top: 35px;
+    }
+
+    .articletext {
+        background-color: rgba(44, 7, 7, 0.555);
+        width: 500px;
+        height: 500px;
+        text-align: justify;
+        padding: 70px;
+    }
+
+    .articletext h1 {
+        color: white;
+        font-size: 40px;
+    }
+
+    .articletext p {
+        font-size: 25px;
+    }
+
+    .articletext h2 {
+        color: white;
+        text-decoration: underline;
+        font-size: 20px;
+    }
+}
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .container {
+        margin: 70px 0 70px 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    .imageContainer {
+        width: 800px;
+    }
+
+    .imageContainer img {
+        height: 75%;
+        width: 150%;
+        margin-top: 35px;
+    }
+
+    .articletext {
+        background-color: rgba(44, 7, 7, 0.555);
+        width: 500px;
+        height: 500px;
+        text-align: justify;
+        padding: 70px;
+    }
+
+    .articletext h1 {
+        color: white;
+        font-size: 50px;
+    }
+
+    .articletext p {
+        font-size: 25px;
+    }
+
+    .articletext h2 {
+        color: white;
+        text-decoration: underline;
+        font-size: 30px;
+    }
+}
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    .container {
+        margin: 70px 0 70px 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    .imageContainer {
+        width: 900px;
+    }
+
+    .imageContainer img {
+        height: 75%;
+        width: 150%;
+        margin-top: 35px;
+    }
+
+    .articletext {
+        background-color: rgba(44, 7, 7, 0.555);
+        width: 500px;
+        height: 500px;
+        text-align: justify;
+        padding: 70px;
+    }
+
+    .articletext h1 {
+        color: white;
+        font-size: 50px;
+    }
+
+    .articletext p {
+        font-size: 25px;
+    }
+
+    .articletext h2 {
+        color: white;
+        text-decoration: underline;
+        font-size: 30px;
+    }
+}
