@@ -1,14 +1,29 @@
+import React from "react";
 import classes from "./Navbar.module.css";
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingBasket } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
+import { UserDataContext } from "../login/UserDataContext";
+import { getAuth, signOut } from "firebase/auth";
 
 const Navbar = () => {
   const [isActive, setActive] = useState(false);
+  let userContext = React.useContext(UserDataContext);
 
   const logoTrigger = () => {
     setActive(!isActive);
   };
+
+  const logout = () => {
+    let auth = getAuth();
+    signOut(auth).then(() => {
+        userContext.setUser(null)
+        alert("Sikeres kijelentkezés")
+    }).catch((error) => {
+      alert("nem sikerült kijelentkezni!")
+    });
+}
 
   return (
     <>
@@ -18,19 +33,19 @@ const Navbar = () => {
             <li
               className={`${isActive ? classes.visible : null} ${classes.one}`}
             >
-              <a href="#">Face</a>
+              <Link to="#">Face</Link>
             </li>
             <li
               className={`${isActive ? classes.visible : null} ${classes.two}`}
             >
-              <a href="#">Lips</a>
+              <Link to="#">Lips</Link>
             </li>
             <li
               className={`${isActive ? classes.visible : null} ${
                 classes.three
               }`}
             >
-              <a href="#">Eyes</a>
+              <Link to="#">Eyes</Link>
             </li>
             <li
               className={`${classes.logo} ${classes.four}`}
@@ -45,12 +60,17 @@ const Navbar = () => {
             <li
               className={`${isActive ? classes.visible : null} ${classes.five}`}
             >
-              <a href="#">Nails</a>
+              <Link to="#">Nails</Link>
             </li>
             <li
               className={`${isActive ? classes.visible : null} ${classes.six}`}
             >
-              <a href="#">Login</a>
+              {userContext?.user?.type === "user" 
+                ? 
+                <Link to="/" onClick={logout}>Logout</Link>
+                :
+                <Link to="/login">Login</Link>
+              }
             </li>
             <li
               className={`${isActive ? classes.visible : null} ${
