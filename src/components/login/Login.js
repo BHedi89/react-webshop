@@ -19,7 +19,8 @@ const Login = () => {
     let navigate = useNavigate();
     let userContext = React.useContext(UserDataContext);
 
-    function signIn() {
+    function signIn(e) {
+        e.preventDefault();
         let auth = getAuth();
         signInWithEmailAndPassword(auth, email, password)
         .then(({user}) => {

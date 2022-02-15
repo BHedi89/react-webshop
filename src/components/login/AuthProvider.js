@@ -17,7 +17,6 @@ const AuthProvider = ({children}) => {
                     .then(data => {
                         setUser({...data, uid: loggedinUser.uid});
                         setPending(false);
-                        console.log("user is logged in right now");
                     })
             } else {
                 setPending(false);
