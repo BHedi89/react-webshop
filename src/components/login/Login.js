@@ -3,8 +3,12 @@ import classes from "./Login.module.css";
 import { initializeApp } from "firebase/app";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { firebaseConfig } from "../firebase/firebaseConfig";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { UserDataContext } from "./UserDataContext";
+import Hero from "../layout/Hero";
+import heroImage from "../images/hero/RedGroup-Mobile-1600x500-1.jpg";
+import ShapeDivider from "../layout/ShapeDivider";
+import Footer from "../layout/Footer";
 
 initializeApp(firebaseConfig);
 const FIREBASE_DOMAIN = "https://wonderful-makeups-5590a-default-rtdb.europe-west1.firebasedatabase.app";
@@ -34,10 +38,40 @@ const Login = () => {
 
     return (
         <>
-            <h1>Login</h1>
-            <p>email: <input type="text" value={email} onChange={e => setEmail(e.target.value)} /></p>
-            <p>jelszó: <input type="password" value={password} onChange={e => setPassword(e.target.value)} /></p>
-            <p><button onClick={signIn}>Belépés</button></p>
+            <Hero
+                heroImage={heroImage}
+                title="Wonderful Makeups"
+            />
+            <ShapeDivider/>
+            <div className={classes.container}>
+                <h1>Welcome Back</h1>
+                <h2>Login Here</h2>
+                <form className={classes.form}>
+                    <input 
+                        type="text" 
+                        placeholder="&#xf007; Email"
+                        value={email} 
+                        onChange={e => setEmail(e.target.value)} 
+                    />
+                    <input 
+                        type="password" 
+                        placeholder="&#xf023; Password"
+                        value={password} 
+                        onChange={e => setPassword(e.target.value)} 
+                    />
+                    <button onClick={signIn}>Login</button>
+                </form>
+                <button className={classes.backBtn}><Link to="/">Back to main</Link></button>
+                <div className={classes.links}>
+                    <Link to="#">Forgot Password</Link>
+                    <Link to="/registration">Create Account</Link>
+                </div>
+            </div>
+            <ShapeDivider/>
+            <div className={classes.footer}>
+              <Footer/>  
+            </div>
+            
         </>  
     )
 }

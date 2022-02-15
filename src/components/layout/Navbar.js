@@ -1,6 +1,5 @@
 import React from "react";
 import classes from "./Navbar.module.css";
-import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingBasket } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
@@ -8,7 +7,7 @@ import { UserDataContext } from "../login/UserDataContext";
 import { getAuth, signOut } from "firebase/auth";
 
 const Navbar = () => {
-  const [isActive, setActive] = useState(false);
+  const [isActive, setActive] = React.useState(false);
   let userContext = React.useContext(UserDataContext);
 
   const logoTrigger = () => {
@@ -41,9 +40,7 @@ const Navbar = () => {
               <Link to="#">Lips</Link>
             </li>
             <li
-              className={`${isActive ? classes.visible : null} ${
-                classes.three
-              }`}
+              className={`${isActive ? classes.visible : null} ${classes.three}`}
             >
               <Link to="#">Eyes</Link>
             </li>
@@ -73,9 +70,7 @@ const Navbar = () => {
               }
             </li>
             <li
-              className={`${isActive ? classes.visible : null} ${
-                classes.seven
-              }`}
+              className={`${isActive ? classes.visible : null} ${classes.seven}`}
             >
               <a href="#">
                 <FontAwesomeIcon icon={faShoppingBasket} className={classes.icon} />

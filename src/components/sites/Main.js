@@ -6,7 +6,7 @@ import Card from "../layout/Card";
 import Productcard from "../layout/Productcard";
 import ShapeDivider from "../layout/ShapeDivider";
 import Articlecard from "../layout/Articlecard";
-import heroImage from "../images/lipstick/photo-1603775020644-eb8decd79994.jpg";
+import heroImage from "../images/hero/photo-1603775020644-eb8decd79994.jpg";
 import img1 from "../images/eyes/pexels-photo-2463027.jpeg";
 import img2 from "../images/eyes/pexels-photo-3912572.jpeg";
 import img3 from "../images/eyes/pexels-photo-10593040.jpg";

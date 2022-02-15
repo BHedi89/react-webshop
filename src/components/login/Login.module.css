@@ -1,3 +1,414 @@
-h1 {
-    color: white;
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: white;
+    }
+
+    .container h1 {
+        font-size: 50px;
+        margin: 20px 0 20px 0;
+    }
+
+    .container h2 {
+        font-size: 40px;
+        margin: 0 0 20px 0;
+    }
+
+    .form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .form input {
+        margin-bottom: 20px;
+        width: 300px;
+        height: 50px;
+        border-radius: 25px;
+        padding: 10px;
+        font-family: Helvetica, 'FontAwesome', sans-serif;    
+    }
+
+    .form button {
+        width: 300px;
+        height: 50px;
+        border-radius: 25px;
+        border-color: #2C0707;
+        background-color: #2C0707;
+        color: white;
+    }
+
+    .form button:hover {
+        background-color: #E57373;
+    }
+
+    .links {
+        display: flex;
+        justify-content: space-between;
+        width: 270px;
+        padding: 20px 0 20px 0;
+    }
+
+    .links a {
+        text-decoration: none;
+        color: white;
+        text-transform: uppercase;
+    }
+
+    .backBtn {
+        width: 300px;
+        height: 50px;
+        border-radius: 25px;
+        border-color: #E57373;
+        background-color: #E57373;
+        color: white;
+        margin-top: 20px;
+    }
+
+    .backBtn:hover {
+        background-color: #8F4848;
+        border-color: #8F4848;
+    }
+
+    .backBtn a {
+        text-decoration: none;
+        color: black;
+    }
+}
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        margin-bottom: 30px;
+    }
+
+    .container h1 {
+        font-size: 55px;
+        margin: 20px 0 20px 0;
+    }
+
+    .container h2 {
+        margin: 0 0 20px 0;
+    }
+
+    .form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .form input {
+        margin-bottom: 20px;
+        width: 320px;
+        height: 50px;
+        border-radius: 25px;
+        padding: 10px;
+        font-family: Helvetica, 'FontAwesome', sans-serif;    
+    }
+
+    .form button {
+        width: 320px;
+        height: 50px;
+        border-radius: 25px;
+        border-color: #2C0707;
+        background-color: #2C0707;
+        color: white;
+    }
+
+    .form button:hover {
+        background-color: #E57373;
+    }
+
+    .links {
+        display: flex;
+        justify-content: space-between;
+        width: 290px;
+        padding: 20px 0 20px 0;
+    }
+
+    .links a {
+        text-decoration: none;
+        color: white;
+        text-transform: uppercase;
+    }
+
+    .backBtn {
+        width: 320px;
+        height: 50px;
+        border-radius: 25px;
+        border-color: #E57373;
+        background-color: #E57373;
+        color: white;
+        margin-top: 20px;
+    }
+
+    .backBtn:hover {
+        background-color: #8F4848;
+        border-color: #8F4848;
+    }
+
+    .backBtn a {
+        text-decoration: none;
+        color: black;
+    }
+}
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        margin-bottom: 30px;
+    }
+
+    .container h1 {
+        font-size: 55px;
+        margin: 20px 0 20px 0;
+    }
+
+    .container h2 {
+        margin: 0 0 20px 0;
+    }
+
+    .form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .form input {
+        margin-bottom: 20px;
+        width: 320px;
+        height: 50px;
+        border-radius: 25px;
+        padding: 10px;
+        font-family: Helvetica, 'FontAwesome', sans-serif;    
+    }
+
+    .form button {
+        width: 320px;
+        height: 50px;
+        border-radius: 25px;
+        border-color: #2C0707;
+        background-color: #2C0707;
+        color: white;
+    }
+
+    .form button:hover {
+        background-color: #E57373;
+    }
+
+    .links {
+        display: flex;
+        justify-content: space-between;
+        width: 290px;
+        padding: 20px 0 20px 0;
+    }
+
+    .links a {
+        text-decoration: none;
+        color: white;
+        text-transform: uppercase;
+    }
+
+    .backBtn {
+        width: 320px;
+        height: 50px;
+        border-radius: 25px;
+        border-color: #E57373;
+        background-color: #E57373;
+        color: white;
+        margin-top: 20px;
+    }
+
+    .backBtn:hover {
+        background-color: #8F4848;
+        border-color: #8F4848;
+    }
+
+    .backBtn a {
+        text-decoration: none;
+        color: black;
+    }
+}
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        margin-bottom: 30px;
+    }
+
+    .container h1 {
+        font-size: 55px;
+        margin: 20px 0 20px 0;
+    }
+
+    .container h2 {
+        margin: 0 0 20px 0;
+    }
+
+    .form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .form input {
+        margin-bottom: 20px;
+        width: 320px;
+        height: 50px;
+        border-radius: 25px;
+        padding: 10px;
+        font-family: Helvetica, 'FontAwesome', sans-serif;    
+    }
+
+    .form button {
+        width: 320px;
+        height: 50px;
+        border-radius: 25px;
+        border-color: #2C0707;
+        background-color: #2C0707;
+        color: white;
+    }
+
+    .form button:hover {
+        background-color: #E57373;
+    }
+
+    .links {
+        display: flex;
+        justify-content: space-between;
+        width: 290px;
+        padding: 20px 0 20px 0;
+    }
+
+    .links a {
+        text-decoration: none;
+        color: white;
+        text-transform: uppercase;
+    }
+
+    .backBtn {
+        width: 320px;
+        height: 50px;
+        border-radius: 25px;
+        border-color: #E57373;
+        background-color: #E57373;
+        color: white;
+        margin-top: 20px;
+    }
+
+    .backBtn:hover {
+        background-color: #8F4848;
+        border-color: #8F4848;
+    }
+
+    .backBtn a {
+        text-decoration: none;
+        color: black;
+    }
+}
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        margin-bottom: 30px;
+    }
+
+    .container h1 {
+        font-size: 55px;
+        margin: 20px 0 20px 0;
+    }
+
+    .container h2 {
+        margin: 0 0 20px 0;
+    }
+
+    .form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .form input {
+        margin-bottom: 20px;
+        width: 320px;
+        height: 50px;
+        border-radius: 25px;
+        padding: 10px;
+        font-family: Helvetica, 'FontAwesome', sans-serif;    
+    }
+
+    .form button {
+        width: 320px;
+        height: 50px;
+        border-radius: 25px;
+        border-color: #2C0707;
+        background-color: #2C0707;
+        color: white;
+    }
+
+    .form button:hover {
+        background-color: #E57373;
+    }
+
+    .links {
+        display: flex;
+        justify-content: space-between;
+        width: 290px;
+        padding: 20px 0 20px 0;
+    }
+
+    .links a {
+        text-decoration: none;
+        color: white;
+        text-transform: uppercase;
+    }
+
+    .backBtn {
+        width: 320px;
+        height: 50px;
+        border-radius: 25px;
+        border-color: #E57373;
+        background-color: #E57373;
+        color: white;
+        margin-top: 20px;
+    }
+
+    .backBtn:hover {
+        background-color: #8F4848;
+        border-color: #8F4848;
+    }
+
+    .backBtn a {
+        text-decoration: none;
+        color: black;
+    }
+
+    .footer {
+        margin-top: 30px;
+    }
 }
