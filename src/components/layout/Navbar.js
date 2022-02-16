@@ -3,8 +3,8 @@ import classes from "./Navbar.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingBasket } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
+import Dropdownbutton from "./Dropdownbutton";
 import { UserDataContext } from "../login/UserDataContext";
-import { getAuth, signOut } from "firebase/auth";
 
 const Navbar = () => {
   const [isActive, setActive] = React.useState(false);
@@ -13,16 +13,6 @@ const Navbar = () => {
   const logoTrigger = () => {
     setActive(!isActive);
   };
-
-  const logout = () => {
-    let auth = getAuth();
-    signOut(auth).then(() => {
-        userContext.setUser(null)
-        alert("Sikeres kijelentkezés")
-    }).catch((error) => {
-      alert("nem sikerült kijelentkezni!")
-    });
-}
 
   return (
     <>
@@ -64,7 +54,7 @@ const Navbar = () => {
             >
               {userContext?.user?.type === "user" 
                 ? 
-                <Link to="/" onClick={logout}>Logout</Link>
+                <Dropdownbutton/>
                 :
                 <Link to="/login">Login</Link>
               }
