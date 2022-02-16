@@ -1,7 +1,7 @@
 import React from "react";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { UserDataContext } from "../login/UserDataContext";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import classes from "./Registration.module.css";
 import ShapeDivider from "../layout/ShapeDivider";
 import Hero from "../layout/Hero";
@@ -112,6 +112,7 @@ const Registration = () => {
                     />
                     <button type="submit">Submit</button>
                 </form>
+                <button className={classes.backBtn}><Link to="/">Back to main</Link></button>
             </div>
             <ShapeDivider />
             <div className={classes.footer}>
