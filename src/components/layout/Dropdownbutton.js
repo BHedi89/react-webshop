@@ -12,9 +12,9 @@ const Dropdownbutton = () => {
         let auth = getAuth();
         signOut(auth).then(() => {
             userContext.setUser(null)
-            alert("Sikeres kijelentkezés")
+            alert("Sikeres kijelentkezés");
         }).catch((error) => {
-          alert("nem sikerült kijelentkezni!")
+          alert("nem sikerült kijelentkezni!");
         });
     }
 
@@ -28,7 +28,7 @@ const Dropdownbutton = () => {
                     <div className={classes.droplist}>
                         <Link to="/account">Account</Link>
                         <Link to="#">Orders</Link>
-                        <Link to="#" onClick={logout}>Sign out</Link>
+                        <Link to="/" onClick={logout}>Sign out</Link>
                     </div>
                 </div>
             }
