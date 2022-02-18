@@ -41,6 +41,8 @@
         border-color: #2C0707;
         background-color: #2C0707;
         color: white;
+        font-family: 'Yanone Kaffeesatz', sans-serif;
+        font-size: 18px;
     }
 
     .form button:hover {
@@ -68,6 +70,8 @@
         background-color: #E57373;
         color: white;
         margin-top: 20px;
+        font-family: 'Yanone Kaffeesatz', sans-serif;
+        font-size: 18px;
     }
 
     .backBtn:hover {
@@ -123,6 +127,8 @@
         border-color: #2C0707;
         background-color: #2C0707;
         color: white;
+        font-family: 'Yanone Kaffeesatz', sans-serif;
+        font-size: 18px;
     }
 
     .form button:hover {
@@ -150,6 +156,8 @@
         background-color: #E57373;
         color: white;
         margin-top: 20px;
+        font-family: 'Yanone Kaffeesatz', sans-serif;
+        font-size: 18px;
     }
 
     .backBtn:hover {
@@ -204,7 +212,8 @@
         border-radius: 25px;
         border-color: #2C0707;
         background-color: #2C0707;
-        color: white;
+        color: white;font-family: 'Yanone Kaffeesatz', sans-serif;
+        font-size: 18px;
     }
 
     .form button:hover {
@@ -232,6 +241,8 @@
         background-color: #E57373;
         color: white;
         margin-top: 20px;
+        font-family: 'Yanone Kaffeesatz', sans-serif;
+        font-size: 18px;
     }
 
     .backBtn:hover {
@@ -287,6 +298,8 @@
         border-color: #2C0707;
         background-color: #2C0707;
         color: white;
+        font-family: 'Yanone Kaffeesatz', sans-serif;
+        font-size: 20px;
     }
 
     .form button:hover {
@@ -314,6 +327,8 @@
         background-color: #E57373;
         color: white;
         margin-top: 20px;
+        font-family: 'Yanone Kaffeesatz', sans-serif;
+        font-size: 20px;
     }
 
     .backBtn:hover {
@@ -369,6 +384,8 @@
         border-color: #2C0707;
         background-color: #2C0707;
         color: white;
+        font-family: 'Yanone Kaffeesatz', sans-serif;
+        font-size: 20px;
     }
 
     .form button:hover {
@@ -396,6 +413,8 @@
         background-color: #E57373;
         color: white;
         margin-top: 20px;
+        font-family: 'Yanone Kaffeesatz', sans-serif;
+        font-size: 20px;
     }
 
     .backBtn:hover {

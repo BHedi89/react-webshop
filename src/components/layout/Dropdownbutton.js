@@ -26,7 +26,7 @@ const Dropdownbutton = () => {
             {open && 
                 <div className={classes.dropdown}>
                     <div className={classes.droplist}>
-                        <Link to="#">Account</Link>
+                        <Link to="/account">Account</Link>
                         <Link to="#">Orders</Link>
                         <Link to="#" onClick={logout}>Sign out</Link>
                     </div>

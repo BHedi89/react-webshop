@@ -38,11 +38,11 @@ const Navbar = () => {
               className={`${classes.logo} ${classes.four}`}
               onClick={logoTrigger}
             >
-              <a href="#">
+              <Link to="/">
                 WM
                 <br />
                 <span>Wonderful Makeups</span>
-              </a>
+              </Link>
             </li>
             <li
               className={`${isActive ? classes.visible : null} ${classes.five}`}
