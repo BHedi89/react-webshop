@@ -6,6 +6,7 @@ import Footer from "../layout/Footer";
 import heroImage from "../images/hero/set-cosmetic.jpg";
 import ShapeDivider from "../layout/ShapeDivider";
 import { UserDataContext } from "../login/UserDataContext";
+import Alert from "../layout/Alert";
 import { 
     getAuth, 
     updateEmail, 
@@ -26,6 +27,8 @@ const Account = () => {
     const [password, setPassword] = React.useState("");
     const [newPassword, setNewPassword] = React.useState("");
     const [newPasswordAgain, setNewPasswordAgain] = React.useState("");
+    const [open, setOpen] = React.useState(false);
+    const [alertMsg, setAlertMsg] = React.useState("");
 
     function changeDeliveryData(e) {
         e.preventDefault();
@@ -41,7 +44,10 @@ const Account = () => {
             })
         })
         .then(resp => resp.json())
-        .then(() => alert("Delivery datas changes successfully"))
+        .then(() => {
+            setAlertMsg("Delivery datas changed successfully!");
+            setOpen(!open);
+        });
     }
 
     function changePersonalData(e) {
@@ -52,7 +58,6 @@ const Account = () => {
             auth.currentUser.email,
             password
         )
-        console.log(auth.currentUser);
 
         reauthenticateWithCredential(user, credential)
             .then(() => {
@@ -105,6 +110,10 @@ const Account = () => {
         
     }
 
+    const handleClose = () => {
+        setOpen(!open);
+    }
+
     return (
         <>
             <Navbar />
@@ -114,6 +123,12 @@ const Account = () => {
             />
             <ShapeDivider />
             <div className={classes.container}>
+                {open && <Alert
+                    content={<>
+                        <p>{alertMsg}</p>
+                    </>}
+                    handleClose={handleClose}
+                />}
                 <h1>Profile Account</h1>
                 {userContext?.user?.type === "user"
                     ?

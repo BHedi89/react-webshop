@@ -1,0 +1,226 @@
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .popupbox {
+        position: fixed;
+        background: #00000081;
+        width: 70%;
+        height: 40vh;
+        top: 200px;
+        left: 80px;
+    }
+
+    .popupbox p { 
+        color: black;
+    }
+       
+    .box {
+        position: relative;
+        width: 80%;
+        margin: 0 auto;
+        height: 200px;
+        max-height: 70vh;
+        margin-top: 50px;
+        background: #fff;
+        border-radius: 4px;
+        padding: 50px;
+        border: 1px solid #999;
+        overflow: hidden;
+        text-align: center;
+        font-size: 25px;
+    }
+
+    .closebtn {
+        width: 160px;
+        height: 30px;
+        border-radius: 25px;
+        background-color: #2C0707;
+        border-color: #2C0707;
+        color: white;
+    }
+
+    .closebtn:hover {
+        background-color: #E57373;
+        border-color: #E57373;
+    }
+}
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .popupbox {
+        position: fixed;
+        background: #00000081;
+        width: 80%;
+        height: 40vh;
+        top: 200px;
+        left: 50px;
+    }
+
+    .popupbox p { 
+        color: black;
+    }
+       
+    .box {
+        position: relative;
+        width: 80%;
+        margin: 0 auto;
+        height: 200px;
+        max-height: 70vh;
+        margin-top: 50px;
+        background: #fff;
+        border-radius: 4px;
+        padding: 30px;
+        border: 1px solid #999;
+        overflow: hidden;
+        text-align: center;
+        font-size: 25px;
+    }
+
+    .closebtn {
+        width: 290px;
+        height: 30px;
+        border-radius: 25px;
+        background-color: #2C0707;
+        border-color: #2C0707;
+        color: white;
+    }
+
+    .closebtn:hover {
+        background-color: #E57373;
+        border-color: #E57373;
+    }
+}
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .popupbox {
+        position: fixed;
+        background: #00000081;
+        width: 80%;
+        height: 40vh;
+        top: 200px;
+        left: 70px;
+    }
+
+    .popupbox p { 
+        color: black;
+    }
+       
+    .box {
+        position: relative;
+        width: 80%;
+        margin: 0 auto;
+        height: 200px;
+        max-height: 70vh;
+        margin-top: 50px;
+        background: #fff;
+        border-radius: 4px;
+        padding: 50px;
+        border: 1px solid #999;
+        overflow: hidden;
+        text-align: center;
+        font-size: 30px;
+    }
+
+    .closebtn {
+        width: 340px;
+        height: 30px;
+        border-radius: 25px;
+        background-color: #2C0707;
+        border-color: #2C0707;
+        color: white;
+    }
+
+    .closebtn:hover {
+        background-color: #E57373;
+        border-color: #E57373;
+    }
+}
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .popupbox {
+        position: fixed;
+        background: #00000081;
+        width: 70%;
+        height: 40vh;
+        top: 200px;
+        left: 140px;
+    }
+
+    .popupbox p { 
+        color: black;
+    }
+       
+    .box {
+        position: relative;
+        width: 80%;
+        margin: 0 auto;
+        height: 200px;
+        max-height: 70vh;
+        margin-top: 50px;
+        background: #fff;
+        border-radius: 4px;
+        padding: 50px;
+        border: 1px solid #999;
+        overflow: hidden;
+        text-align: center;
+        font-size: 30px;
+    }
+
+    .closebtn {
+        width: 340px;
+        height: 30px;
+        border-radius: 25px;
+        background-color: #2C0707;
+        border-color: #2C0707;
+        color: white;
+    }
+
+    .closebtn:hover {
+        background-color: #E57373;
+        border-color: #E57373;
+    }
+}
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    .popupbox {
+        position: fixed;
+        background: #00000081;
+        width: 50%;
+        height: 40vh;
+        top: 200px;
+        left: 460px;
+    }
+
+    .popupbox p { 
+        color: black;
+    }
+       
+    .box {
+        position: relative;
+        width: 80%;
+        margin: 0 auto;
+        height: 200px;
+        max-height: 70vh;
+        margin-top: 80px;
+        background: #fff;
+        border-radius: 4px;
+        padding: 50px;
+        border: 1px solid #999;
+        overflow: hidden;
+        text-align: center;
+        font-size: 30px;
+    }
+
+    .closebtn {
+        width: 340px;
+        height: 30px;
+        border-radius: 25px;
+        background-color: #2C0707;
+        border-color: #2C0707;
+        color: white;
+    }
+
+    .closebtn:hover {
+        background-color: #E57373;
+        border-color: #E57373;
+    }
+}
+
