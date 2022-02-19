@@ -48,13 +48,13 @@ const Registration = () => {
                             phonenumber: phonenumber
                         });
                     navigate("/", {replace: true});
-                    alert("Sikeres regisztráció");
+                    alert("Successfull registration");
                 })
             })
             .catch((error) => {
-                if (error.code == "auth/email-already-in-use") alert("Ezzel az email címmel már van egy regisztrált felhasználónk!");
-                if (error.code == "auth/weak-password") alert("Gyenge jelszó! Legalább 6 karakter legyen!");
-                if (error.code == "auth/invalid-email") alert("Hibás email cím!");
+                if (error.code == "auth/email-already-in-use") alert("Emil elready in use!");
+                if (error.code == "auth/weak-password") alert("Weak password! 6 character at least!");
+                if (error.code == "auth/invalid-email") alert("Invalid email!");
             })
     }
 
