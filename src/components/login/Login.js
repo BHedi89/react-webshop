@@ -9,6 +9,7 @@ import Hero from "../layout/Hero";
 import heroImage from "../images/hero/RedGroup-Mobile-1600x500-1.jpg";
 import ShapeDivider from "../layout/ShapeDivider";
 import Footer from "../layout/Footer";
+import Alert from "../layout/Alert";
 
 initializeApp(firebaseConfig);
 const FIREBASE_DOMAIN = "https://wonderful-makeups-5590a-default-rtdb.europe-west1.firebasedatabase.app";
@@ -18,6 +19,8 @@ const Login = () => {
     let [password, setPassword] = React.useState("");
     let navigate = useNavigate();
     let userContext = React.useContext(UserDataContext);
+    const [open, setOpen] = React.useState(false);
+    const [alertMsg, setAlertMsg] = React.useState("");
 
     function signIn(e) {
         e.preventDefault();
@@ -32,9 +35,19 @@ const Login = () => {
                 })
         }) 
         .catch(error => {
-            if(error.code == "auth/user-not-found") alert("User not found");
-            if(error.code == "auth/wrong-password") alert("Wrong password");
+            if(error.code == "auth/user-not-found") {
+                setAlertMsg("User not found");
+                setOpen(!open);
+            };
+            if(error.code == "auth/wrong-password") {
+                setAlertMsg("Wrong password");
+                setOpen(!open);
+            };
         })
+    }
+
+    const handleClose = () => {
+        setOpen(!open);
     }
 
     return (
@@ -45,6 +58,12 @@ const Login = () => {
             />
             <ShapeDivider/>
             <div className={classes.container}>
+                {open && <Alert
+                    content={<>
+                        <p>{alertMsg}</p>
+                    </>}
+                    handleClose={handleClose}
+                />}
                 <h1>Welcome Back</h1>
                 <h2>Login Here</h2>
                 <form className={classes.form}>

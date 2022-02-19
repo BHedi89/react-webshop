@@ -7,6 +7,7 @@ import ShapeDivider from "../layout/ShapeDivider";
 import Hero from "../layout/Hero";
 import Footer from "../layout/Footer";
 import heroImage from "../images/hero/photo-1558554745-e862ef8538bd.jpg";
+import Alert from "../layout/Alert";
 
 const FIREBASE_DOMAIN = "https://wonderful-makeups-5590a-default-rtdb.europe-west1.firebasedatabase.app";
 
@@ -19,6 +20,8 @@ const Registration = () => {
     const [phonenumber, setPhonenumber] = React.useState("");
     const userContext = React.useContext(UserDataContext);
     const navigate = useNavigate();
+    const [open, setOpen] = React.useState(false);
+    const [alertMsg, setAlertMsg] = React.useState("");
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -48,14 +51,28 @@ const Registration = () => {
                             phonenumber: phonenumber
                         });
                     navigate("/", {replace: true});
-                    alert("Successfull registration");
+                    setAlertMsg("Successfull registration");
+                    setOpen(!open);
                 })
             })
             .catch((error) => {
-                if (error.code == "auth/email-already-in-use") alert("Emil elready in use!");
-                if (error.code == "auth/weak-password") alert("Weak password! 6 character at least!");
-                if (error.code == "auth/invalid-email") alert("Invalid email!");
+                if (error.code == "auth/email-already-in-use") {
+                    setAlertMsg("Emil elready in use!");
+                    setOpen(!open);
+                };
+                if (error.code == "auth/weak-password") {
+                    setAlertMsg("Weak password! 6 character at least!");
+                    setOpen(!open);
+                };
+                if (error.code == "auth/invalid-email") {
+                    setAlertMsg("Invalid email!");
+                    setOpen(!open);
+                };
             })
+    }
+
+    const handleClose = () => {
+        setOpen(!open);
     }
 
     return (
@@ -66,6 +83,12 @@ const Registration = () => {
             />
             <ShapeDivider />
             <div className={classes.container}>
+                {open && <Alert
+                    content={<>
+                        <p>{alertMsg}</p>
+                    </>}
+                    handleClose={handleClose}
+                />}
                 <h1>Registration</h1>
                 <form onSubmit={handleSubmit} className={classes.form}>
                     <input 
