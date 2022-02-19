@@ -57,11 +57,11 @@ const Account = () => {
         const credential = EmailAuthProvider.credential(
             auth.currentUser.email,
             password
-        )
+        );
 
         reauthenticateWithCredential(user, credential)
             .then(() => {
-                updateEmail(auth.currentUser, email)
+                updateEmail(auth.currentUser, )
                     .then(() => {
                         fetch(`${FIREBASE_DOMAIN}/users/${userContext.user.uid}.json`, {
                             method: "PUT",
@@ -76,14 +76,14 @@ const Account = () => {
                         })
                         .then(resp => resp.json())
                         .then(() => {
-                            alert("Name or email chaged successfully");
+                            setAlertMsg("Name or email chaged successfully!");
+                            setOpen(!open);
                             setPassword("");
                         });
-                    }).catch(error => {
-                        console.log(error);
-                    })
+                    });
             }).catch((error) => {
-                console.log(error);
+                setAlertMsg("Missing password!");
+                setOpen(!open);
         });
     }
 
@@ -95,19 +95,24 @@ const Account = () => {
         if(newPassword === newPasswordAgain) {
             updatePassword(user, newPassword)
                 .then(() => {
-                    alert("Password changes successfully");
+                    setAlertMsg("Password changes successfully!");
+                    setOpen(!open);
                     setNewPassword("");
                     setNewPasswordAgain("");
-                })
-                .catch((error) => {
-                    console.log(error);
+                }).catch((error) => {
+                    if(newPassword.length < 6){
+                        setAlertMsg("Password should be at least 6 characters!");
+                        setOpen(!open);
+                        setNewPassword("");
+                        setNewPasswordAgain("");
+                    }
                 });
         } else {
-            alert("Not match");
+            setAlertMsg("Not match! Try again!");
+            setOpen(!open);
             setNewPassword("");
             setNewPasswordAgain("");
-        }
-        
+        };
     }
 
     const handleClose = () => {
