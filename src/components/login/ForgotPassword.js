@@ -6,11 +6,13 @@ import Hero from "../layout/Hero";
 import ShapeDivider from "../layout/ShapeDivider";
 import Footer from "../layout/Footer";
 import heroImage from "../images/hero/photo-1597143720029-61ddd2e4733c.jpg"; 
+import { useNavigate } from "react-router-dom";
 
 const Forgotpassword = () => {
     const [email, setEmail] = React.useState("");
     const [open, setOpen] = React.useState(false);
     const [alertMsg, setAlertMsg] = React.useState("");
+    let navigate = useNavigate();
 
     function resetPassword(e) {
         e.preventDefault();
@@ -18,7 +20,7 @@ const Forgotpassword = () => {
         sendPasswordResetEmail(auth, email)
             .then(() => {
                 setAlertMsg("Check your email to reset your password!");
-                setOpen(!open);
+                setOpen(!open)
             })
             .catch((error) => {
                 if(email === "") {
@@ -34,6 +36,7 @@ const Forgotpassword = () => {
 
     const handleClose = () => {
         setOpen(!open);
+        navigate("/login", {replace: true});
     }
 
     return (

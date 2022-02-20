@@ -50,7 +50,6 @@ const Registration = () => {
                             zipcode: zipcode,
                             phonenumber: phonenumber
                         });
-                    navigate("/", {replace: true});
                     setAlertMsg("Successfull registration");
                     setOpen(!open);
                 })
@@ -73,6 +72,7 @@ const Registration = () => {
 
     const handleClose = () => {
         setOpen(!open);
+        navigate("/", {replace: true});
     }
 
     return (
