@@ -22,17 +22,17 @@ const Navbar = () => {
             <li
               className={`${isActive ? classes.visible : null} ${classes.one}`}
             >
-              <Link to="#">Face</Link>
+              <Link to="/face">Face</Link>
             </li>
             <li
               className={`${isActive ? classes.visible : null} ${classes.two}`}
             >
-              <Link to="#">Lips</Link>
+              <Link to="/lips">Lips</Link>
             </li>
             <li
               className={`${isActive ? classes.visible : null} ${classes.three}`}
             >
-              <Link to="#">Eyes</Link>
+              <Link to="eyes">Eyes</Link>
             </li>
             <li
               className={`${classes.logo} ${classes.four}`}
@@ -47,7 +47,7 @@ const Navbar = () => {
             <li
               className={`${isActive ? classes.visible : null} ${classes.five}`}
             >
-              <Link to="#">Nails</Link>
+              <Link to="/nails">Nails</Link>
             </li>
             <li
               className={`${isActive ? classes.visible : null} ${classes.six}`}

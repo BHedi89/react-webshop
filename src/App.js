@@ -6,6 +6,10 @@ import Registration from "./components/registration/Registration";
 import AuthProvider from './components/login/AuthProvider';
 import Account from "./components/sites/Account";
 import ForgotPassword from "./components/login/ForgotPassword";
+import Face from "./components/sites/Face";
+import Lips from "./components/sites/Lips";
+import Eyes from "./components/sites/Eyes";
+import Nails from "./components/sites/Nails";
 
 function App() {
   return (
@@ -18,6 +22,10 @@ function App() {
             <Route path="/registration" element={<Registration/>} />
             <Route path="/account" element={<Account/>} />
             <Route path="/forgotpassword" element={<ForgotPassword />} />
+            <Route path="/face" element={<Face />} />
+            <Route path="/lips" element={<Lips />} />
+            <Route path="/eyes" element={<Eyes />} />
+            <Route path="/nails" element={<Nails />} />
           </Routes>
         </BrowserRouter>
       </AuthProvider>
