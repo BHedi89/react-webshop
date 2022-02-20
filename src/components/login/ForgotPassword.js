@@ -2,15 +2,18 @@ import React from "react";
 import classes from "./ForgotPassword.module.css";
 import { getAuth, sendPasswordResetEmail } from "firebase/auth";
 import Alert from "../layout/Alert";
-import { UserDataContext } from "./UserDataContext";
+import Hero from "../layout/Hero";
+import ShapeDivider from "../layout/ShapeDivider";
+import Footer from "../layout/Footer";
+import heroImage from "../images/hero/photo-1597143720029-61ddd2e4733c.jpg"; 
 
 const Forgotpassword = () => {
     const [email, setEmail] = React.useState("");
     const [open, setOpen] = React.useState(false);
     const [alertMsg, setAlertMsg] = React.useState("");
-    let userContext = React.useContext(UserDataContext);
 
-    function resetPassword() {
+    function resetPassword(e) {
+        e.preventDefault();
         const auth = getAuth();
         sendPasswordResetEmail(auth, email)
             .then(() => {
@@ -35,20 +38,35 @@ const Forgotpassword = () => {
 
     return (
         <>
-            {open && <Alert
-                    content={<>
-                        <p>{alertMsg}</p>
-                    </>}
-                    handleClose={handleClose}
-            />}
-            <h1>Forgot password</h1>
-            <label>Add your email</label>
-            <input 
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
+            <Hero 
+                title="Wonderful Makeups"
+                heroImage={heroImage}
             />
-            <button onClick={resetPassword}>Send</button>
+            <ShapeDivider />
+            <div className={classes.container}>
+                {open && <Alert
+                        content={<>
+                            <p>{alertMsg}</p>
+                        </>}
+                        handleClose={handleClose}
+                />}
+                <h1>Forgot password</h1>
+                <form className={classes.form}>
+                    <div>
+                        <label>Add your email:</label>
+                        <input 
+                            type="email"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                        />
+                    </div>
+                    <button className={classes.sendbtn} onClick={resetPassword}>Send</button>
+                </form>
+            </div>
+            <ShapeDivider />
+            <div className={classes.footer}> 
+                <Footer />
+            </div>
         </>
     )
 }
