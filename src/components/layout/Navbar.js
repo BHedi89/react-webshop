@@ -38,7 +38,7 @@ const Navbar = () => {
               className={`${classes.logo} ${classes.four}`}
               onClick={logoTrigger}
             >
-              <Link to="/">
+              <Link to="#">
                 WM
                 <br />
                 <span>Wonderful Makeups</span>

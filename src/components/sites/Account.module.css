@@ -70,6 +70,27 @@
         height: 510px;
     }
 
+    .backbtn {
+        width: 280px;
+        height: 30px;
+        border-radius: 25px;
+        background-color: #E57373;
+        border-color: #E57373;
+        margin-bottom: 20px;
+    }
+
+    .backbtn:hover {
+        background-color: #8F4848;
+        border-color: #8F4848;
+    }
+
+    .backbtn a {
+        text-decoration: none;
+        font-family: 'Yanone Kaffeesatz', sans-serif;
+        font-size: 20px;
+        color: black;
+    }
+
     .footer {
         margin-top: 30px;
     }
@@ -144,6 +165,27 @@
 
     .bigdatabox {
         height: 510px;
+    }
+
+    .backbtn {
+        width: 300px;
+        height: 30px;
+        border-radius: 25px;
+        background-color: #E57373;
+        border-color: #E57373;
+        margin-bottom: 20px;
+    }
+
+    .backbtn:hover {
+        background-color: #8F4848;
+        border-color: #8F4848;
+    }
+
+    .backbtn a {
+        text-decoration: none;
+        font-family: 'Yanone Kaffeesatz', sans-serif;
+        font-size: 20px;
+        color: black;
     }
 
     .footer {
@@ -222,6 +264,27 @@
         height: 510px;
     }
 
+    .backbtn {
+        width: 300px;
+        height: 30px;
+        border-radius: 25px;
+        background-color: #E57373;
+        border-color: #E57373;
+        margin-bottom: 20px;
+    }
+
+    .backbtn:hover {
+        background-color: #8F4848;
+        border-color: #8F4848;
+    }
+
+    .backbtn a {
+        text-decoration: none;
+        font-family: 'Yanone Kaffeesatz', sans-serif;
+        font-size: 20px;
+        color: black;
+    }
+
     .footer {
         margin-top: 30px;
     }
@@ -298,6 +361,27 @@
         height: 510px;
     }
 
+    .backbtn {
+        width: 300px;
+        height: 30px;
+        border-radius: 25px;
+        background-color: #E57373;
+        border-color: #E57373;
+        margin-bottom: 20px;
+    }
+
+    .backbtn:hover {
+        background-color: #8F4848;
+        border-color: #8F4848;
+    }
+
+    .backbtn a {
+        text-decoration: none;
+        font-family: 'Yanone Kaffeesatz', sans-serif;
+        font-size: 20px;
+        color: black;
+    }
+
     .footer {
         margin-top: 30px;
     }
@@ -372,6 +456,27 @@
 
     .bigdatabox {
         height: 410px;
+    }
+
+    .backbtn {
+        width: 300px;
+        height: 30px;
+        border-radius: 25px;
+        background-color: #E57373;
+        border-color: #E57373;
+        margin-bottom: 20px;
+    }
+
+    .backbtn:hover {
+        background-color: #8F4848;
+        border-color: #8F4848;
+    }
+
+    .backbtn a {
+        text-decoration: none;
+        font-family: 'Yanone Kaffeesatz', sans-serif;
+        font-size: 20px;
+        color: black;
     }
 
     .footer {

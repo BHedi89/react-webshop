@@ -14,6 +14,7 @@ import {
     EmailAuthProvider,
     updatePassword } 
 from "firebase/auth";
+import { Link } from "react-router-dom";
 
 const FIREBASE_DOMAIN = "https://wonderful-makeups-5590a-default-rtdb.europe-west1.firebasedatabase.app";
 
@@ -135,6 +136,7 @@ const Account = () => {
                     handleClose={handleClose}
                 />}
                 <h1>Profile Account</h1>
+                <button className={classes.backbtn}><Link to="/">Back to main</Link></button>
                 {userContext?.user?.type === "user"
                     ?
                     <div className={classes.forms}>
