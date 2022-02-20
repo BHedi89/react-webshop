@@ -83,7 +83,7 @@ const Login = () => {
                 </form>
                 <button className={classes.backBtn}><Link to="/">Back to main</Link></button>
                 <div className={classes.links}>
-                    <Link to="#">Forgot Password</Link>
+                    <Link to="/forgotpassword">Forgot Password</Link>
                     <Link to="/registration">Create Account</Link>
                 </div>
             </div>

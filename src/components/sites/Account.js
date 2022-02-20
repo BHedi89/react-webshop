@@ -62,7 +62,7 @@ const Account = () => {
 
         reauthenticateWithCredential(user, credential)
             .then(() => {
-                updateEmail(auth.currentUser, )
+                updateEmail(auth.currentUser, email)
                     .then(() => {
                         fetch(`${FIREBASE_DOMAIN}/users/${userContext.user.uid}.json`, {
                             method: "PUT",
