@@ -234,6 +234,7 @@
     .logo{
         display: block;
         font-size: 20px; 
+        pointer-events: none;
     }
 
     .one {
@@ -324,6 +325,7 @@
         display: block;
         order: -1;
         font-size: 25px; 
+        pointer-events: none;
     }
 
     .one {
