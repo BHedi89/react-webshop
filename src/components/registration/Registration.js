@@ -6,7 +6,7 @@ import classes from "./Registration.module.css";
 import ShapeDivider from "../layout/ShapeDivider";
 import Hero from "../layout/Hero";
 import Footer from "../layout/Footer";
-import heroImage from "../images/hero/photo-1558554745-e862ef8538bd.jpg";
+import heroImage from "../images/hero/photo-1597143720029-61ddd2e4733c.jpg";
 import Alert from "../layout/Alert";
 
 const FIREBASE_DOMAIN = "https://wonderful-makeups-5590a-default-rtdb.europe-west1.firebasedatabase.app";

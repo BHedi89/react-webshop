@@ -56,6 +56,11 @@
     .icon {
         font-size: 15px;
     }
+
+    .menuicon {
+        display: block;
+        margin-top: 10px;
+    }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
@@ -116,6 +121,11 @@
     .icon {
         font-size: 15px;
     }
+
+    .menuicon {
+        display: block;
+        margin-top: 10px;
+    }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
@@ -174,6 +184,11 @@
 
     .icon {
         font-size: 18px;
+    }
+
+    .menuicon {
+        display: block;
+        margin-top: 10px;
     }
 }
 
@@ -258,6 +273,10 @@
 
     .icon {
         font-size: 18px;
+    }
+
+    .menuicon {
+        display: none;
     }
 }
 
@@ -344,5 +363,9 @@
 
     .icon {
         font-size: 18px;
+    }
+
+    .menuicon {
+        display: none;
     }
 }

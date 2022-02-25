@@ -5,7 +5,7 @@ import Alert from "../layout/Alert";
 import Hero from "../layout/Hero";
 import ShapeDivider from "../layout/ShapeDivider";
 import Footer from "../layout/Footer";
-import heroImage from "../images/hero/photo-1597143720029-61ddd2e4733c.jpg"; 
+import heroImage from "../images/hero/about-banner.jpg"; 
 import { useNavigate } from "react-router-dom";
 
 const Forgotpassword = () => {

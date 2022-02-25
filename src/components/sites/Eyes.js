@@ -1,5 +1,7 @@
 import classe from "./Eyes.module.css";
 
+// name, price, about, ingredients, image, reviews, category, best-seller
+
 const Eyes = () => {
     return (
         <>
