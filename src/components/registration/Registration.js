@@ -8,6 +8,7 @@ import Hero from "../layout/Hero";
 import Footer from "../layout/Footer";
 import heroImage from "../images/hero/photo-1597143720029-61ddd2e4733c.jpg";
 import Alert from "../layout/Alert";
+import Navbar from "../layout/Navbar";
 
 const FIREBASE_DOMAIN = "https://wonderful-makeups-5590a-default-rtdb.europe-west1.firebasedatabase.app";
 
@@ -77,6 +78,7 @@ const Registration = () => {
 
     return (
         <>
+            <Navbar />
             <Hero 
                 heroImage={heroImage}
                 title="Wonderful Makeups"

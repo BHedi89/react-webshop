@@ -10,6 +10,7 @@ import heroImage from "../images/hero/RedGroup-Mobile-1600x500-1.jpg";
 import ShapeDivider from "../layout/ShapeDivider";
 import Footer from "../layout/Footer";
 import Alert from "../layout/Alert";
+import Navbar from "../layout/Navbar";
 
 initializeApp(firebaseConfig);
 const FIREBASE_DOMAIN = "https://wonderful-makeups-5590a-default-rtdb.europe-west1.firebasedatabase.app";
@@ -52,6 +53,7 @@ const Login = () => {
 
     return (
         <>
+            <Navbar />
             <Hero
                 heroImage={heroImage}
                 title="Wonderful Makeups"

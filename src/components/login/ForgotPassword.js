@@ -6,7 +6,8 @@ import Hero from "../layout/Hero";
 import ShapeDivider from "../layout/ShapeDivider";
 import Footer from "../layout/Footer";
 import heroImage from "../images/hero/about-banner.jpg"; 
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
+import Navbar from "../layout/Navbar";
 
 const Forgotpassword = () => {
     const [email, setEmail] = React.useState("");
@@ -41,6 +42,7 @@ const Forgotpassword = () => {
 
     return (
         <>
+            <Navbar />
             <Hero 
                 title="Wonderful Makeups"
                 heroImage={heroImage}
@@ -63,7 +65,10 @@ const Forgotpassword = () => {
                             onChange={(e) => setEmail(e.target.value)}
                         />
                     </div>
-                    <button className={classes.sendbtn} onClick={resetPassword}>Send</button>
+                    <div className={classes.btns}>
+                        <button className={classes.sendbtn} onClick={resetPassword}>Send</button>
+                        <button className={classes.backbtn}><Link to="/">Back to main</Link></button>
+                    </div>
                 </form>
             </div>
             <ShapeDivider />
