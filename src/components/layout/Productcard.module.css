@@ -13,11 +13,18 @@
     }
       
     .container {
-        padding: 2px 16px;
+        padding: 10px 16px;
+    }
+
+    .container a {
+        color: white;
+        text-decoration: none;
+        font-size: 20px;
+        padding: 10px;
     }
 
     .card img {
-        width: 100%;
+        width: 90%;
     }
 
     .card h1 {
@@ -40,11 +47,18 @@
     }
       
     .container {
-        padding: 2px 16px;
+        padding: 10px 16px;
+    }
+
+    .container a {
+        color: white;
+        text-decoration: none;
+        font-size: 20px;
+        padding: 10px;
     }
 
     .card img {
-        width: 100%;
+        width: 90%;
     }
 
     .card h1 {
@@ -66,11 +80,23 @@
     }
       
     .container {
-        padding: 2px 16px;
+        padding: 10px 16px;
+    }
+
+    .container a {
+        color: white;
+        text-decoration: none;
+        font-size: 20px;
+        padding: 10px;
     }
 
     .card img {
-        width: 100%;
+        width: 90%;
+        transition: 0.5s all ease-in-out;
+    }
+
+    .card img:hover {
+        transform: scale(1.1);
     }
 
     .card h1 {
@@ -92,11 +118,23 @@
     }
       
     .container {
-        padding: 2px 16px;
+        padding: 10px 16px;
+    }
+
+    .container a {
+        color: white;
+        text-decoration: none;
+        font-size: 20px;
+        padding: 10px;
     }
 
     .card img {
-        width: 100%;
+        width: 90%;
+        transition: 0.5s all ease-in-out;
+    }
+
+    .card img:hover {
+        transform: scale(1.1);
     }
 
     .card h1 {
@@ -118,11 +156,23 @@
     }
       
     .container {
-        padding: 2px 16px;
+        padding: 10px 16px;
+    }
+
+    .container a {
+        color: white;
+        text-decoration: none;
+        font-size: 20px;
+        padding: 10px;
     }
 
     .card img {
-        width: 100%;
+        width: 90%;
+        transition: 0.5s all ease-in-out;
+    }
+
+    .card img:hover {
+        transform: scale(1.1);
     }
 
     .card h1 {
