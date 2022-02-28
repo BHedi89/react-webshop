@@ -35,6 +35,17 @@ const Main = () => {
                         };
                         productList.push(productObj);
                     }
+                    for(let i = 0; i < productList.length; i++) {
+                        const reviewList = [];
+                        for(const key in productList[i].review) {
+                            const reviewObj = {
+                                id: key,
+                                ...productList[i].review[key]
+                            }
+                            reviewList.push(reviewObj);
+                        }
+                        productList[i].review = reviewList;
+                    }
                     setProduct(productList);
                 }
             });
@@ -50,7 +61,6 @@ const Main = () => {
                 title="Wonderful Makeups"
                 heroImage={heroImage}
             />
-            
             <div className={classes.content}>
                 <div className={classes.sectionTitle}>
                     <h1>Wonderful Colors</h1>
@@ -75,15 +85,15 @@ const Main = () => {
                 </div>
                 <ShapeDivider></ShapeDivider>
                 <div className={classes.products}>
-                    {product.map(products => {
+                    {product.map((products) => {
                         if(products.bestseller) {
-                             return <Productcard
+                            return <Productcard
                                         key={products.id}
                                         productName={products.name}
                                         productImage={products.image}
+                                        productRate={products.review[0].rate}
                                     />
-                        }
-                           
+                        }  
                     })}
                 </div>
                 <ShapeDivider></ShapeDivider>

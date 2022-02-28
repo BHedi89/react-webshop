@@ -28,6 +28,17 @@ const Face = () => {
                             facemakeupList.push(facemakeupObj);
                         }
                     }
+                    for(let i = 0; i < facemakeupList.length; i++) {
+                        const reviewList = [];
+                        for(const key in facemakeupList[i].review) {
+                            const reviewObj = {
+                                id: key,
+                                ...facemakeupList[i].review[key]
+                            }
+                            reviewList.push(reviewObj);
+                        }
+                        facemakeupList[i].review = reviewList;
+                    }
                     setFacemakeup(facemakeupList);
                 }
             });
@@ -47,10 +58,12 @@ const Face = () => {
             <ShapeDivider />
             <div className={classes.products}>
                 {facemakeup.map(product => {
+                    console.log(product.review)
                     return <Productcard 
                                 key={product.id}
                                 productName={product.name}
                                 productImage={product.image}
+                                productRate={product.review[0].rate}
                             />
                 })}
                 

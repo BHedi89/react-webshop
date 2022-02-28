@@ -8,8 +8,10 @@ const Productcard = (props) => {
             <div className={classes.card}>
                 <img src={props.productImage} />
                 <div className={classes.container}>
-                    <h1>{props.productName}</h1> 
-                    <StarRating />
+                    <h1>{props.productName}</h1>
+                    <StarRating  
+                        ratingnum={props.productRate}
+                    />
                     <Link to="#">Details</Link>
                 </div>
             </div>

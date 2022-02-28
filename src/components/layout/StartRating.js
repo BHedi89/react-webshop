@@ -1,15 +1,15 @@
 import React from "react";
 import classes from "./StarRating.module.css";
 
-const StarRating = () => {
-    const [rating, setRating] = React.useState(0);
+const StarRating = (props) => {
+    const [rating, setRating] = React.useState(props.ratingnum);
     const [hover, setHover] = React.useState(0);
 
     return (
        <div className={classes.starrating}>
            {[...Array(5)].map((star, index) => {
-               index +=1;
-               return (
+                index += 1;
+                return (
                     <button
                         type="button"
                         key={index}
@@ -21,7 +21,7 @@ const StarRating = () => {
                         <span className={classes.star}>&#9733;</span>
                     </button>
                )
-           })}
+            })}
        </div>
     )
 }
