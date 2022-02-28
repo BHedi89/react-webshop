@@ -33,7 +33,7 @@ const Navbar = () => {
             <li
               className={`${isActive ? classes.visible : null} ${classes.three}`}
             >
-              <Link to="eyes">Eyes</Link>
+              <Link to="/eyes">Eyes</Link>
             </li>
             <li
               className={`${classes.logo} ${classes.four}`}
