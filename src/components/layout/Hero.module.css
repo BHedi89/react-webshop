@@ -26,6 +26,11 @@
         padding: 50px;
         letter-spacing: 5px;
     }
+
+    .herotitle a {
+        color: white;
+        text-decoration: none;
+    }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
@@ -55,6 +60,11 @@
         background-color: rgba(0, 0, 0, 0.411);
         padding: 50px;
         letter-spacing: 5px;
+    }
+
+    .herotitle a {
+        color: white;
+        text-decoration: none;
     }
 }
 
@@ -86,6 +96,11 @@
         padding: 50px;
         letter-spacing: 5px;
     }
+
+    .herotitle a {
+        color: white;
+        text-decoration: none;
+    }
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
@@ -116,6 +131,11 @@
         padding: 50px;
         letter-spacing: 5px;
     }
+
+    .herotitle a {
+        color: white;
+        text-decoration: none;
+    }
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
@@ -145,5 +165,10 @@
         background-color: rgba(0, 0, 0, 0.411);
         padding: 50px;
         letter-spacing: 5px;
+    }
+
+    .herotitle a {
+        color: white;
+        text-decoration: none;
     }
 }
