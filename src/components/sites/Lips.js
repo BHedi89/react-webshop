@@ -28,6 +28,17 @@ const Lips = () => {
                             lipsmakeupList.push(lipsmakeupObj);
                         }
                     }
+                    for(let i = 0; i < lipsmakeupList.length; i++) {
+                        const reviewList = [];
+                        for(const key in lipsmakeupList[i].review) {
+                            const reviewObj = {
+                                id: key,
+                                ...lipsmakeupList[i].review[key]
+                            }
+                            reviewList.push(reviewObj);
+                        }
+                        lipsmakeupList[i].review = reviewList;
+                    }
                     setLipsmakeup(lipsmakeupList);
                 }
             });
@@ -51,6 +62,7 @@ const Lips = () => {
                                 key={product.id}
                                 productName={product.name}
                                 productImage={product.image}
+                                productRate={product.review[0].rate}
                             />
                 })}
                 

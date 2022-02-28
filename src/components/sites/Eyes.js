@@ -28,6 +28,17 @@ const Eyes = () => {
                             eyemakeupList.push(eyemakeupObj);
                         }
                     }
+                    for(let i = 0; i < eyemakeupList.length; i++) {
+                        const reviewList = [];
+                        for(const key in eyemakeupList[i].review) {
+                            const reviewObj = {
+                                id: key,
+                                ...eyemakeupList[i].review[key]
+                            }
+                            reviewList.push(reviewObj);
+                        }
+                        eyemakeupList[i].review = reviewList;
+                    }
                     setEyemakeup(eyemakeupList);
                 }
             });
@@ -51,6 +62,7 @@ const Eyes = () => {
                                 key={product.id}
                                 productName={product.name}
                                 productImage={product.image}
+                                productRate={product.review[0].rate}
                             />
                 })}
                 

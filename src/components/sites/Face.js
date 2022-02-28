@@ -58,7 +58,6 @@ const Face = () => {
             <ShapeDivider />
             <div className={classes.products}>
                 {facemakeup.map(product => {
-                    console.log(product.review)
                     return <Productcard 
                                 key={product.id}
                                 productName={product.name}

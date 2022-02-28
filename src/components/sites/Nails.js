@@ -28,6 +28,17 @@ const Nails = () => {
                             nailmakeupList.push(nailmakeupObj);
                         }
                     }
+                    for(let i = 0; i < nailmakeupList.length; i++) {
+                        const reviewList = [];
+                        for(const key in nailmakeupList[i].review) {
+                            const reviewObj = {
+                                id: key,
+                                ...nailmakeupList[i].review[key]
+                            }
+                            reviewList.push(reviewObj);
+                        }
+                        nailmakeupList[i].review = reviewList;
+                    }
                     setNailmakeup(nailmakeupList);
                 }
             });
@@ -51,6 +62,7 @@ const Nails = () => {
                                 key={product.id}
                                 productName={product.name}
                                 productImage={product.image}
+                                productRate={product.review[0].rate}
                             />
                 })}
                 
