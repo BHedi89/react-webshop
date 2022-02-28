@@ -1,5 +1,6 @@
 import classes from "./Productcard.module.css";
 import { Link } from "react-router-dom";
+import StarRating from "./StartRating";
 
 const Productcard = (props) => {
     return (
@@ -8,6 +9,7 @@ const Productcard = (props) => {
                 <img src={props.productImage} />
                 <div className={classes.container}>
                     <h1>{props.productName}</h1> 
+                    <StarRating />
                     <Link to="#">Details</Link>
                 </div>
             </div>
