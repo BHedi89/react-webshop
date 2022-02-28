@@ -1,3 +1,4 @@
+import React from "react";
 import classes from "./Main.module.css";
 import Hero from "../layout/Hero";
 import Navbar from "../layout/Navbar";
@@ -13,13 +14,35 @@ import img3 from "../images/eyes/pexels-photo-10593040.jpg";
 import img4 from "../images/eyes/pexels-photo-1249632.jpg";
 import img5 from "../images/lipstick/pexels-photo-3568544.jpeg";
 import img6 from "../images/face/pexels-photo-2787341.jpeg";
-import productImg1 from "../images/mix/rúzs/deborah.jpg";
-import productImg2 from "../images/mix/alapozó/KAQIYA-Face-Powder.png";
-import productImg3 from "../images/mix/körömlakk/Douglas_Collection-Nagels-Stay.jpg";
-import productImg4 from "../images/mix/szemhéjfesték/5101qjYR2EL._SL1000_.jpg";
 import articleImage from "../images/longImages/photo-1613565015448-fe6c5dc9ec40.jpg";
+
+const FIREBASE_DOMAIN = "https://wonderful-makeups-5590a-default-rtdb.europe-west1.firebasedatabase.app"; 
  
 const Main = () => {
+    const [product, setProduct] = React.useState([]);
+
+    React.useEffect(() => {
+        let isApiSubscribed = true;
+        const productList = [];
+        fetch(`${FIREBASE_DOMAIN}/products.json`)
+            .then(resp => resp.json())
+            .then(products => {
+                if(isApiSubscribed) {
+                    for(const key in products){
+                        const productObj = {
+                            id: key,
+                            ...products[key]
+                        };
+                        productList.push(productObj);
+                    }
+                    setProduct(productList);
+                }
+            });
+            return () => {
+                isApiSubscribed = false;
+            }
+    }, [])
+
     return (
         <>
             <Navbar/>
@@ -52,22 +75,16 @@ const Main = () => {
                 </div>
                 <ShapeDivider></ShapeDivider>
                 <div className={classes.products}>
-                    <Productcard
-                        productName="Red Lipstick"
-                        productImage={productImg1}
-                    />
-                    <Productcard
-                        productName="Face Powder"
-                        productImage={productImg2}
-                    />
-                    <Productcard
-                        productName="Red Nailpolish"
-                        productImage={productImg3}
-                    />
-                    <Productcard
-                        productName="Eyes Shadow"
-                        productImage={productImg4}
-                    />
+                    {product.map(products => {
+                        if(products.bestseller) {
+                             return <Productcard
+                                        key={products.id}
+                                        productName={products.name}
+                                        productImage={products.image}
+                                    />
+                        }
+                           
+                    })}
                 </div>
                 <ShapeDivider></ShapeDivider>
                 <div className={classes.about}>
