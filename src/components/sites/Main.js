@@ -54,6 +54,18 @@ const Main = () => {
             }
     }, [])
 
+    const averageRating = () => {
+        let sum;
+        product.map(review => {
+            let sum = 0;
+            review.review.forEach(obj => sum += obj.rate);
+            // return Math.round(sum / review.review.length);
+        });
+        // console.log(sum)
+        return sum;
+        // return avgRate;
+    }
+  
     return (
         <>
             <Navbar/>
@@ -92,6 +104,13 @@ const Main = () => {
                                         productName={products.name}
                                         productImage={products.image}
                                         productRate={products.review[0].rate}
+                                        productRate={products.review.map((review, idx) => {
+                                            // console.log( [products.review[idx].rate])
+                                            let sum = 0;
+                                            products.review.forEach(obj => sum += obj.rate);
+                                            return sum
+                                            // / [products.review[idx].rate].length
+                                        })}
                                     />
                         }  
                     })}

@@ -47,7 +47,6 @@ const Eyes = () => {
             }
     }, [])
 
-
     return (
         <>
             <Navbar />
@@ -62,7 +61,11 @@ const Eyes = () => {
                                 key={product.id}
                                 productName={product.name}
                                 productImage={product.image}
-                                productRate={product.review[0].rate}
+                                productRate={product.review.map(() => {
+                                    let sum = 0;
+                                    product.review.forEach((obj) => sum += obj.rate);
+                                    return Math.round(sum / product.review.length);
+                                })}
                             />
                 })}
                 

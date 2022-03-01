@@ -10,7 +10,7 @@ const Productcard = (props) => {
                 <div className={classes.container}>
                     <h1>{props.productName}</h1>
                     <StarRating  
-                        ratingnum={props.productRate}
+                        ratingnum={props.productRate[0]}
                     />
                     <Link to="#">Details</Link>
                 </div>
