@@ -1,6 +1,6 @@
 import classes from "./Productcard.module.css";
 import { Link } from "react-router-dom";
-import StarRating from "./StartRating";
+import StarRating from "./StarRating";
 
 const Productcard = (props) => {
     return (
