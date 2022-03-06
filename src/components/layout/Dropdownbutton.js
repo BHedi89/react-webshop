@@ -14,11 +14,13 @@ const Dropdownbutton = () => {
     const logout = () => {
         let auth = getAuth();
         signOut(auth).then(() => {
-            userContext.setUser(null)
-            setAlertMsg("Sikeres kijelentkezés");
+            setAlertMsg("Sign out successfully!");
             setOpenAlert(!openAlert);
+            setTimeout(() => {
+                userContext.setUser(null);
+            }, 2000);
         }).catch((error) => {
-          setAlertMsg("nem sikerült kijelentkezni!");
+          setAlertMsg("Sign out failed!");
           setOpenAlert(!openAlert);
         });
     }
@@ -43,7 +45,7 @@ const Dropdownbutton = () => {
                     <div className={classes.droplist}>
                         <Link to="/account">Account</Link>
                         <Link to="#">Orders</Link>
-                        <Link to="#">Favourites</Link>
+                        <Link to="#">Favourite</Link>
                         <Link to="/" onClick={logout}>Sign out</Link>
                     </div>
                 </div>

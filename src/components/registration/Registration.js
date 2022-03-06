@@ -51,13 +51,13 @@ const Registration = () => {
                             zipcode: zipcode,
                             phonenumber: phonenumber
                         });
-                    setAlertMsg("Successfull registration");
+                    setAlertMsg("Successfull registration!");
                     setOpen(!open);
                 })
             })
             .catch((error) => {
                 if (error.code == "auth/email-already-in-use") {
-                    setAlertMsg("Emil elready in use!");
+                    setAlertMsg("Email elready in use!");
                     setOpen(!open);
                 };
                 if (error.code == "auth/weak-password") {
