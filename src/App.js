@@ -10,6 +10,7 @@ import Face from "./components/sites/Face";
 import Lips from "./components/sites/Lips";
 import Eyes from "./components/sites/Eyes";
 import Nails from "./components/sites/Nails";
+import DetailPage from './components/sites/DetailPage';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
             <Route path="/lips" element={<Lips />} />
             <Route path="/eyes" element={<Eyes />} />
             <Route path="/nails" element={<Nails />} />
+            <Route path="/details/:id" element={<DetailPage/>}/>
           </Routes>
         </BrowserRouter>
       </AuthProvider>

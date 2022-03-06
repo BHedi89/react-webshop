@@ -60,6 +60,7 @@ const Face = () => {
                 {facemakeup.map(product => {
                     return <Productcard 
                                 key={product.id}
+                                productId={product.id}
                                 productName={product.name}
                                 productImage={product.image}
                                 productRate={product.review.map(() => {

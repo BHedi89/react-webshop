@@ -60,6 +60,7 @@ const Eyes = () => {
                     return <Productcard 
                                 key={product.id}
                                 productName={product.name}
+                                productId={product.id}
                                 productImage={product.image}
                                 productRate={product.review.map(() => {
                                     let sum = 0;

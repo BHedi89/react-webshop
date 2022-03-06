@@ -12,7 +12,7 @@ const Productcard = (props) => {
                     <StarRating  
                         ratingnum={props.productRate[0]}
                     />
-                    <Link to="#">Details</Link>
+                    <Link to={`/details/${props.productId}`}>Details</Link>
                 </div>
             </div>
         </>

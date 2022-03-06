@@ -89,6 +89,7 @@ const Main = () => {
                         if(products.bestseller) {
                             return <Productcard
                                         key={products.id}
+                                        productId={products.id}
                                         productName={products.name}
                                         productImage={products.image}
                                         productRate={products.review.map(() => {
