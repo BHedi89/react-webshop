@@ -18,6 +18,26 @@
 
     .container {
         color: white;
+        display: flex;
+        justify-content: space-around;
+        margin: 30px;
+    }
+
+    .image {
+        text-align: center;
+        padding: 20px;
+        width: 800px;
+        border: 2px solid red;
+    }
+
+    .data {
+        padding: 20px;
+        width: 800px;
+        border: 2px solid red;
+    }
+
+    .image img {
+        width: 100%;
     }
 
     .footer {

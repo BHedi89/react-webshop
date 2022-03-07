@@ -49,13 +49,20 @@ const DetailPage = () => {
         <>
             <Navbar />
             <div className={classes.hero}></div>
+            <ShapeDivider />
             <div className={classes.container}>
                 {product.map(product => {
                     if(product.id === id) {
                         return (
-                            <div key={product.id}>
-                                <h1>{product.name}</h1>
-                            </div>
+                            <>
+                                <div className={classes.image}>
+                                    <img src={product.image}/>
+                                </div>
+                                <div className={classes.data}>
+                                    <h1>{product.name}</h1>
+                                    
+                                </div>
+                            </>
                         )
                     }
                 
