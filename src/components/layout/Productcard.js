@@ -11,6 +11,7 @@ const Productcard = (props) => {
                     <h1>{props.productName}</h1>
                     <StarRating  
                         ratingnum={props.productRate[0]}
+                        productId={props.productId}
                     />
                     <Link to={`/details/${props.productId}`}>Details</Link>
                 </div>
