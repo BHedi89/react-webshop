@@ -74,13 +74,15 @@ const StarRating = (props) => {
                 {[...Array(5)].map((star, index) => {
                         index += 1;
                         return (
-                            <button
-                                type="button"
-                                key={index}
-                                className={index <= (hover || rating) ? classes.on : classes.off}
-                            >
-                                <span className={classes.star}>&#9733;</span>
-                            </button>
+                            <Link to={`/details/${props.productId}`}> 
+                                <button
+                                    type="button"
+                                    key={index}
+                                    className={index <= (hover || rating) ? classes.on : classes.off}
+                                >
+                                    <span className={classes.star}>&#9733;</span>
+                                </button>
+                            </Link>
                     )
                     })}
             </div>
