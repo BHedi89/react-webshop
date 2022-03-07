@@ -1,11 +1,301 @@
 /* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {}
+@media only screen and (max-width: 600px) {
+    .hero {
+        width: 100%;
+        height: 200px;
+        background-image: url("../images/hero/wp2382683.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    .container {
+        color: white;
+        margin: 30px;
+    }
+
+    .image {
+        padding: 20px;
+    }
+
+    .image img {
+        width: 100%;
+    }
+
+    .data {
+        padding: 20px;
+    }
+
+    .data h1 {
+        font-size: 40px;
+        margin: 0;
+    } 
+    
+    .data h3 {
+        font-size: 22px;
+    }
+
+    .reviewlink a {
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+        margin: 12px 0 0 0;
+    }
+
+    .price, .ingredients {
+        font-size: 15px;
+    }
+
+    .price p, .ingredients p {
+        margin-top: 0;
+    }
+
+    .about {
+        text-align: justify;
+        font-size: 15px;
+    }
+
+    .buybtn {
+        width: 120px;
+        height: 50px;
+        text-transform: uppercase;
+        font-size: 16px;
+        color: white;
+        background-color: #2C0707;
+        border: 3px solid #8F4848;
+    }
+
+    .buybtn:hover {
+        background-color: #8F4848;
+        border: 3px solid #2C0707;
+    }
+}
 /* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {}
+@media only screen and (min-width: 600px) {
+    .hero {
+        width: 100%;
+        height: 200px;
+        background-image: url("../images/hero/wp2382683.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    .container {
+        color: white;
+        margin: 30px;
+    }
+
+    .image {
+        padding: 20px;
+    }
+
+    .image img {
+        width: 100%;
+    }
+
+    .data {
+        padding: 20px;
+    }
+
+    .data h1 {
+        font-size: 60px;
+        margin: 0;
+    } 
+    
+    .data h3 {
+        font-size: 22px;
+    }
+    
+    .reviewlink {
+        display: flex;
+    }
+
+    .reviewlink a {
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+        margin: 12px 0 0 10px;
+    }
+
+    .price, .ingredients {
+        font-size: 15px;
+    }
+
+    .price p, .ingredients p {
+        margin-top: 0;
+    }
+
+    .about {
+        text-align: justify;
+        font-size: 15px;
+    }
+
+    .buybtn {
+        width: 120px;
+        height: 50px;
+        text-transform: uppercase;
+        font-size: 16px;
+        color: white;
+        background-color: #2C0707;
+        border: 3px solid #8F4848;
+    }
+
+    .buybtn:hover {
+        background-color: #8F4848;
+        border: 3px solid #2C0707;
+    }
+}
 /* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {}
+@media only screen and (min-width: 768px) {
+    .hero {
+        width: 100%;
+        height: 200px;
+        background-image: url("../images/hero/wp2382683.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    .container {
+        color: white;
+        display: flex;
+        justify-content: space-around;
+        margin: 30px;
+    }
+
+    .image {
+        text-align: center;
+        padding: 20px;
+        width: 800px;
+    }
+
+    .image img {
+        width: 100%;
+    }
+
+    .data {
+        padding: 20px;
+        width: 800px;
+    }
+
+    .data h1 {
+        font-size: 60px;
+        margin: 0;
+    } 
+    
+    .data h3 {
+        font-size: 22px;
+    }
+    
+    .reviewlink {
+        display: flex;
+    }
+
+    .reviewlink a {
+        color: white;
+        text-decoration: none;
+        font-size: 15px;
+        margin: 12px 0 0 10px;
+    }
+
+    .price, .ingredients {
+        font-size: 15px;
+    }
+
+    .about {
+        text-align: justify;
+        font-size: 15px;
+    }
+
+    .buybtn {
+        width: 120px;
+        height: 50px;
+        text-transform: uppercase;
+        font-size: 16px;
+        color: white;
+        background-color: #2C0707;
+        border: 3px solid #8F4848;
+    }
+
+    .buybtn:hover {
+        background-color: #8F4848;
+        border: 3px solid #2C0707;
+    }
+}
 /* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {}
+@media only screen and (min-width: 992px) {
+    .hero {
+        width: 100%;
+        height: 200px;
+        background-image: url("../images/hero/wp2382683.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    .container {
+        color: white;
+        display: flex;
+        justify-content: space-around;
+        margin: 30px;
+    }
+
+    .image {
+        text-align: center;
+        padding: 20px;
+        width: 800px;
+    }
+
+    .image img {
+        width: 100%;
+    }
+
+    .data {
+        padding: 20px;
+        width: 800px;
+    }
+
+    .data h1 {
+        font-size: 80px;
+        margin: 0;
+    } 
+    
+    .data h3 {
+        font-size: 22px;
+    }
+    
+    .reviewlink {
+        display: flex;
+    }
+
+    .reviewlink a {
+        color: white;
+        text-decoration: none;
+        font-size: 20px;
+        margin: 12px 0 0 10px;
+    }
+
+    .price, .ingredients {
+        font-size: 20px;
+    }
+
+    .about {
+        text-align: justify;
+        font-size: 20px;
+    }
+
+    .buybtn {
+        width: 120px;
+        height: 50px;
+        text-transform: uppercase;
+        font-size: 18px;
+        color: white;
+        background-color: #2C0707;
+        border: 3px solid #8F4848;
+    }
+
+    .buybtn:hover {
+        background-color: #8F4848;
+        border: 3px solid #2C0707;
+    }
+}
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
     .hero {
@@ -27,17 +317,59 @@
         text-align: center;
         padding: 20px;
         width: 800px;
-        border: 2px solid red;
+    }
+
+    .image img {
+        width: 100%;
     }
 
     .data {
         padding: 20px;
         width: 800px;
-        border: 2px solid red;
     }
 
-    .image img {
-        width: 100%;
+    .data h1 {
+        font-size: 80px;
+        margin: 0;
+    } 
+    
+    .data h3 {
+        font-size: 22px;
+    }
+    
+    .reviewlink {
+        display: flex;
+    }
+
+    .reviewlink a {
+        color: white;
+        text-decoration: none;
+        font-size: 20px;
+        margin: 12px 0 0 10px;
+    }
+
+    .price, .ingredients {
+        font-size: 20px;
+    }
+
+    .about {
+        text-align: justify;
+        font-size: 20px;
+    }
+
+    .buybtn {
+        width: 120px;
+        height: 50px;
+        text-transform: uppercase;
+        font-size: 18px;
+        color: white;
+        background-color: #2C0707;
+        border: 3px solid #8F4848;
+    }
+
+    .buybtn:hover {
+        background-color: #8F4848;
+        border: 3px solid #2C0707;
     }
 
     .footer {
