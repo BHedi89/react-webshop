@@ -55,7 +55,7 @@ const StarRating = (props) => {
                                 type="button"
                                 key={index}
                                 className={index <= (hover || rating) ? classes.on : classes.off}
-                                onClick={() => setRating(index)}
+                                onClick={() => {setRating(index); console.log(index)}}
                                 onMouseEnter={() => setHover(index)}
                                 onMouseLeave={() => setHover(rating)}
                             >

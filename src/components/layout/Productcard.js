@@ -13,7 +13,8 @@ const Productcard = (props) => {
                         ratingnum={props.productRate[0]}
                         productId={props.productId}
                     />
-                    <Link to={`/details/${props.productId}`}>Details</Link>
+                    <Link 
+                        to={`/details/${props.productRate[0]}/${props.productId}`}>Details</Link>
                 </div>
             </div>
         </>
