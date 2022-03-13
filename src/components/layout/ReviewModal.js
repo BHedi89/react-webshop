@@ -9,6 +9,7 @@ const  ReviewModal = (props) => {
     let userContext = React.useContext(UserDataContext);
     const [checked, setChecked] = React.useState(true);
     const [rate, setRate] = React.useState(0);
+    const [nickname, setNickname] = React.useState("");
     const [title, setTitle] = React.useState("");
     const [age, setAge] = React.useState("");
     const [review, setReview] = React.useState("");
@@ -19,7 +20,7 @@ const  ReviewModal = (props) => {
             method: "POST",
             body: JSON.stringify({
                 rate: 2,
-                name: userContext.user.name,
+                name: nickname,
                 title: title,
                 age: age,
                 text: review,
@@ -51,8 +52,11 @@ const  ReviewModal = (props) => {
                                     />
                                 </li>
                                 <li>
-                                    <label>Name*:</label>
-                                    <input type="text" defaultValue={userContext.user.name}/>
+                                    <label>Nickname*:</label>
+                                    <input 
+                                        type="text" 
+                                        onChange={(e) => setNickname(e.target.value)}
+                                    />
                                 </li>
                                 <li>
                                     <label>Title*:</label>
