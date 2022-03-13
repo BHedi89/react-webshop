@@ -58,10 +58,11 @@
         width: 120px;
         height: 50px;
         text-transform: uppercase;
-        font-size: 16px;
+        font-size: 20px;
         color: white;
         background-color: #2C0707;
         border: 3px solid #8F4848;
+        font-family: 'Yanone Kaffeesatz', sans-serif;
     }
 
     .buybtn:hover {
@@ -133,10 +134,11 @@
         width: 120px;
         height: 50px;
         text-transform: uppercase;
-        font-size: 16px;
+        font-size: 20px;
         color: white;
         background-color: #2C0707;
         border: 3px solid #8F4848;
+        font-family: 'Yanone Kaffeesatz', sans-serif;
     }
 
     .buybtn:hover {
@@ -209,10 +211,11 @@
         width: 120px;
         height: 50px;
         text-transform: uppercase;
-        font-size: 16px;
+        font-size: 20px;
         color: white;
         background-color: #2C0707;
         border: 3px solid #8F4848;
+        font-family: 'Yanone Kaffeesatz', sans-serif;
     }
 
     .buybtn:hover {
@@ -285,10 +288,11 @@
         width: 120px;
         height: 50px;
         text-transform: uppercase;
-        font-size: 18px;
+        font-size: 22px;
         color: white;
         background-color: #2C0707;
         border: 3px solid #8F4848;
+        font-family: 'Yanone Kaffeesatz', sans-serif;
     }
 
     .buybtn:hover {
@@ -361,15 +365,25 @@
         width: 120px;
         height: 50px;
         text-transform: uppercase;
-        font-size: 18px;
+        font-size: 22px;
         color: white;
         background-color: #2C0707;
         border: 3px solid #8F4848;
+        font-family: 'Yanone Kaffeesatz', sans-serif;
     }
 
     .buybtn:hover {
         background-color: #8F4848;
         border: 3px solid #2C0707;
+    }
+
+    .reviewcontainer {
+        color: white;
+    }
+
+    .reviewtitle {
+        font-size: 50px;
+        margin-left: 100px;
     }
 
     .footer {

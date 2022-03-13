@@ -86,7 +86,10 @@ const DetailPage = () => {
                                 </div>
                                 <ShapeDivider />
                                 <div className={classes.reviewcontainer}>
-                                    
+                                    <h1 className={classes.reviewtitle}>Ratings and Reviews</h1>
+                                    <div>
+                                        
+                                    </div>
                                 </div>
                             </div>
                         )

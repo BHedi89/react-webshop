@@ -9,6 +9,7 @@ const  ReviewModal = (props) => {
     let userContext = React.useContext(UserDataContext);
     const [checked, setChecked] = React.useState(true);
     const [rate, setRate] = React.useState(0);
+    const [title, setTitle] = React.useState("");
     const [review, setReview] = React.useState("");
     const [recommend, setRecommend] = React.useState("yes");
 
@@ -18,6 +19,7 @@ const  ReviewModal = (props) => {
             body: JSON.stringify({
                 rate: 2,
                 name: userContext.user.name,
+                title: title,
                 text: review,
                 recommend: recommend
             })
@@ -43,13 +45,19 @@ const  ReviewModal = (props) => {
                                 <li>
                                     <label>Rating*:</label>
                                     <StarRating 
-                                        
                                         productId={props.productId}
                                     />
                                 </li>
                                 <li>
                                     <label>Name*:</label>
                                     <input type="text" defaultValue={userContext.user.name}/>
+                                </li>
+                                <li>
+                                    <label>Title*:</label>
+                                    <input 
+                                        type="text" 
+                                        onChange={(e) => setTitle(e.target.value)}
+                                    />
                                 </li>
                                 <li>
                                     <label htmlFor="review">Review*:</label>
@@ -63,31 +71,34 @@ const  ReviewModal = (props) => {
                                     <p>Recommend*:</p>
                                     <ul className={classes.flexinner}>
                                         <li>
-                                            <label htmlFor="yes" >Yes:</label>
-                                            <input 
-                                                type="radio" 
-                                                id="yes"
-                                                value="yes"
-                                                checked={checked}
-                                                onChange={(e) => {
-                                                    setChecked(true);
-                                                    setRecommend(e.target.value);
-                                                }}
-                                            />
+                                            <label htmlFor="yes">
+                                                Yes:
+                                                <input 
+                                                    type="radio" 
+                                                    id="yes"
+                                                    value="yes"
+                                                    checked={checked}
+                                                    onChange={(e) => {
+                                                        setChecked(true);
+                                                        setRecommend(e.target.value);
+                                                    }}
+                                                />
+                                            </label>
                                         </li>
                                         <li>
-                                            <label htmlFor="no">No:</label>
-                                            <input 
-                                                type="radio" 
-                                                id="no" 
-                                                value="no"
-                                                checked={!checked}
-                                                onChange={(e) => {
-                                                    setChecked(false);
-                                                    setRecommend(e.target.value);
-                                                }}
-                                            />
-                                        </li>
+                                            <label htmlFor="no">
+                                                No:
+                                                <input 
+                                                    type="radio" 
+                                                    id="no" 
+                                                    value="no"
+                                                    checked={!checked}
+                                                    onChange={(e) => {
+                                                        setChecked(false);
+                                                        setRecommend(e.target.value);
+                                                    }}
+                                                />
+                                            </label>                                        </li>
                                     </ul>
                                 </li>
                             </ul>

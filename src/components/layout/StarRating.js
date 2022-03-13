@@ -5,7 +5,7 @@ import { UserDataContext } from "../login/UserDataContext";
 const FIREBASE_DOMAIN = "https://wonderful-makeups-5590a-default-rtdb.europe-west1.firebasedatabase.app"; 
 
 const StarRating = (props) => {
-    const [rating, setRating] = React.useState(props.ratingnum);
+    const [rating, setRating] = React.useState([props.ratingnum]);
     const [hover, setHover] = React.useState(0);
     const [product, setProduct] = React.useState([]);
     let userContext = React.useContext(UserDataContext);
@@ -55,7 +55,7 @@ const StarRating = (props) => {
                                 type="button"
                                 key={index}
                                 className={index <= (hover || rating) ? classes.on : classes.off}
-                                onClick={() => {setRating(index); console.log(index)}}
+                                onClick={() => {setRating([index])}}
                                 onMouseEnter={() => setHover(index)}
                                 onMouseLeave={() => setHover(rating)}
                             >
