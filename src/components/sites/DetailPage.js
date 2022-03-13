@@ -70,7 +70,11 @@ const DetailPage = () => {
                                                 ratingnum={rate}
                                                 productId={product.id}
                                             />
-                                            <a href="#" onClick={() => setOpen(true)}>Write a review</a>
+                                            <button 
+                                                className={classes.reviewbtn}
+                                                onClick={() => setOpen(true)}>
+                                                    Write a review
+                                            </button>
                                             {open &&  <ReviewModal 
                                                         setOpen={setOpen}
                                                         productId={product.id}
@@ -85,11 +89,21 @@ const DetailPage = () => {
                                     </div>
                                 </div>
                                 <ShapeDivider />
-                                <div className={classes.reviewcontainer}>
-                                    <h1 className={classes.reviewtitle}>Ratings and Reviews</h1>
-                                    <div>
-                                        
-                                    </div>
+                                <div className={classes.reviewscontainer}>
+                                    <h1 className={classes.reviewstitle}>Ratings and Reviews</h1>
+                                    {product.review.map(review => {
+                                        return (
+                                            <div className={classes.reviewcontainer}>
+                                                <StarRating 
+                                                    ratingnum={review.rate}
+                                                />
+                                                <p>{review.name}</p>
+                                                <p>{review.title}</p>
+                                                <p>{review.text}</p>
+                                                <p>{review.recommend}</p>
+                                            </div>
+                                        )
+                                    })}
                                 </div>
                             </div>
                         )

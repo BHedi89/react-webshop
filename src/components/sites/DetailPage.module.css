@@ -34,11 +34,13 @@
         font-size: 22px;
     }
 
-    .reviewlink a {
+    .reviewbtn {
+        font-size: 15px;
+        margin-bottom: 8px;
+        background-color: black;
+        border: none;
         color: white;
-        text-decoration: none;
-        font-size: 18px;
-        margin: 12px 0 0 0;
+        cursor: pointer;
     }
 
     .price, .ingredients {
@@ -110,11 +112,13 @@
         display: flex;
     }
 
-    .reviewlink a {
+    .reviewbtn {
+        font-size: 16px;
+        margin-bottom: 4px;
+        background-color: black;
+        border: none;
         color: white;
-        text-decoration: none;
-        font-size: 18px;
-        margin: 12px 0 0 10px;
+        cursor: pointer;
     }
 
     .price, .ingredients {
@@ -191,11 +195,13 @@
         display: flex;
     }
 
-    .reviewlink a {
+    .reviewbtn {
+        font-size: 16px;
+        margin-bottom: 8px;
+        background-color: black;
+        border: none;
         color: white;
-        text-decoration: none;
-        font-size: 15px;
-        margin: 12px 0 0 10px;
+        cursor: pointer;
     }
 
     .price, .ingredients {
@@ -268,11 +274,13 @@
         display: flex;
     }
 
-    .reviewlink a {
+    .reviewbtn {
+        font-size: 18px;
+        margin-bottom: 10px;
+        background-color: black;
+        border: none;
         color: white;
-        text-decoration: none;
-        font-size: 20px;
-        margin: 12px 0 0 10px;
+        cursor: pointer;
     }
 
     .price, .ingredients {
@@ -345,11 +353,13 @@
         display: flex;
     }
 
-    .reviewlink a {
+    .reviewbtn {
+        font-size: 18px;
+        margin-bottom: 10px;
+        background-color: black;
+        border: none;
         color: white;
-        text-decoration: none;
-        font-size: 20px;
-        margin: 12px 0 0 10px;
+        cursor: pointer;
     }
 
     .price, .ingredients {
@@ -377,12 +387,19 @@
         border: 3px solid #2C0707;
     }
 
-    .reviewcontainer {
+    .reviewscontainer {
         color: white;
     }
 
-    .reviewtitle {
+    .reviewstitle {
         font-size: 50px;
+        margin-left: 100px;
+    }
+
+    .reviewcontainer {
+        background-color: white;
+        color: black;
+        width: 800px;
         margin-left: 100px;
     }
 
