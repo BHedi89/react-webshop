@@ -10,6 +10,7 @@ const  ReviewModal = (props) => {
     const [checked, setChecked] = React.useState(true);
     const [rate, setRate] = React.useState(0);
     const [title, setTitle] = React.useState("");
+    const [age, setAge] = React.useState("");
     const [review, setReview] = React.useState("");
     const [recommend, setRecommend] = React.useState("yes");
 
@@ -20,6 +21,7 @@ const  ReviewModal = (props) => {
                 rate: 2,
                 name: userContext.user.name,
                 title: title,
+                age: age,
                 text: review,
                 recommend: recommend
             })
@@ -60,9 +62,25 @@ const  ReviewModal = (props) => {
                                     />
                                 </li>
                                 <li>
+                                    <label>Age*:</label>
+                                    <select 
+                                        className={classes.select}
+                                        onChange={(e) => setAge(e.target.value)}
+                                    >
+                                        <option>Select</option>
+                                        <option value="17 or under">17 or under</option>
+                                        <option value="18 to 24">18 to 24</option>
+                                        <option value="25 to 34">24 to 34</option>
+                                        <option value="35 to 44">35 to 44</option>
+                                        <option value="45 to 54">45 to 54</option>
+                                        <option value="55 to 64">55 to 64</option>
+                                        <option value="65 or over">65 or over</option>
+                                    </select>
+                                </li>
+                                <li>
                                     <label htmlFor="review">Review*:</label>
                                     <textarea 
-                                        rows="6" 
+                                        rows="3" 
                                         id="review"
                                         onChange={(e) => setReview(e.target.value)}
                                     />

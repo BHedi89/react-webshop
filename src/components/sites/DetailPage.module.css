@@ -71,6 +71,50 @@
         background-color: #8F4848;
         border: 3px solid #2C0707;
     }
+
+    .reviewscontainer {
+        color: white;
+        margin-bottom: 40px;
+    }
+
+    .reviewstitle {
+        font-size: 30px;
+        margin-left: 15px;
+    }
+
+    .reviewcontainer {
+        background-color: white;
+        color: black;
+        width: 310px;
+        margin-left: 15px;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 5px;
+    }
+
+    .personaldata {
+        flex-basis: 30%;
+    }
+
+    .reviewdata {
+        flex-basis: 70%;
+    }
+
+    .icon {
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+
+    .yes {
+        color: green;
+        font-size: 14px;
+    }
+
+    .no {
+        color: red;
+        font-size: 12px;
+    }
 }
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
@@ -148,6 +192,49 @@
     .buybtn:hover {
         background-color: #8F4848;
         border: 3px solid #2C0707;
+    }
+
+    .reviewscontainer {
+        color: white;
+        margin-bottom: 40px;
+    }
+
+    .reviewstitle {
+        font-size: 50px;
+        margin-left: 30px;
+    }
+
+    .reviewcontainer {
+        background-color: white;
+        color: black;
+        width: 550px;
+        margin-left: 30px;
+        padding: 10px;
+        display: flex;
+        margin-bottom: 5px;
+    }
+
+    .personaldata {
+        flex-basis: 30%;
+    }
+
+    .reviewdata {
+        flex-basis: 70%;
+    }
+
+    .icon {
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+
+    .yes {
+        color: green;
+        font-size: 14px;
+    }
+
+    .no {
+        color: red;
+        font-size: 12px;
     }
 }
 /* Medium devices (landscape tablets, 768px and up) */
@@ -228,6 +315,49 @@
         background-color: #8F4848;
         border: 3px solid #2C0707;
     }
+
+    .reviewscontainer {
+        color: white;
+        margin-bottom: 40px;
+    }
+
+    .reviewstitle {
+        font-size: 50px;
+        margin-left: 50px;
+    }
+
+    .reviewcontainer {
+        background-color: white;
+        color: black;
+        width: 680px;
+        margin-left: 50px;
+        padding: 10px;
+        display: flex;
+        margin-bottom: 5px;
+    }
+
+    .personaldata {
+        flex-basis: 30%;
+    }
+
+    .reviewdata {
+        flex-basis: 70%;
+    }
+
+    .icon {
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+
+    .yes {
+        color: green;
+        font-size: 14px;
+    }
+
+    .no {
+        color: red;
+        font-size: 12px;
+    }
 }
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
@@ -306,6 +436,49 @@
     .buybtn:hover {
         background-color: #8F4848;
         border: 3px solid #2C0707;
+    }
+
+    .reviewscontainer {
+        color: white;
+        margin-bottom: 40px;
+    }
+
+    .reviewstitle {
+        font-size: 50px;
+        margin-left: 100px;
+    }
+
+    .reviewcontainer {
+        background-color: white;
+        color: black;
+        width: 800px;
+        margin-left: 100px;
+        padding: 10px;
+        display: flex;
+        margin-bottom: 5px;
+    }
+
+    .personaldata {
+        flex-basis: 30%;
+    }
+
+    .reviewdata {
+        flex-basis: 70%;
+    }
+
+    .icon {
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+
+    .yes {
+        color: green;
+        font-size: 14px;
+    }
+
+    .no {
+        color: red;
+        font-size: 12px;
     }
 }
 /* Extra large devices (large laptops and desktops, 1200px and up) */
@@ -389,6 +562,7 @@
 
     .reviewscontainer {
         color: white;
+        margin-bottom: 40px;
     }
 
     .reviewstitle {
@@ -399,8 +573,34 @@
     .reviewcontainer {
         background-color: white;
         color: black;
-        width: 800px;
+        width: 1700px;
         margin-left: 100px;
+        padding: 10px;
+        display: flex;
+        margin-bottom: 5px;
+    }
+
+    .personaldata {
+        flex-basis: 30%;
+    }
+
+    .reviewdata {
+        flex-basis: 70%;
+    }
+
+    .icon {
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+
+    .yes {
+        color: green;
+        font-size: 14px;
+    }
+
+    .no {
+        color: red;
+        font-size: 12px;
     }
 
     .footer {

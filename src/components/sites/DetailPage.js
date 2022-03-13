@@ -6,6 +6,9 @@ import Footer from "../layout/Footer";
 import ShapeDivider from "../layout/ShapeDivider";
 import StarRating from "../layout/StarRating";
 import ReviewModal from "../layout/ReviewModal";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCheck } from "@fortawesome/free-solid-svg-icons";
+import { ImCross } from "react-icons/im";
 
 const FIREBASE_DOMAIN = "https://wonderful-makeups-5590a-default-rtdb.europe-west1.firebasedatabase.app"; 
 
@@ -94,13 +97,35 @@ const DetailPage = () => {
                                     {product.review.map(review => {
                                         return (
                                             <div className={classes.reviewcontainer}>
-                                                <StarRating 
-                                                    ratingnum={review.rate}
-                                                />
-                                                <p>{review.name}</p>
-                                                <p>{review.title}</p>
-                                                <p>{review.text}</p>
-                                                <p>{review.recommend}</p>
+                                                <div className={classes.personaldata}>
+                                                    <h3>{review.name}</h3>
+                                                    <p>Age: {review.age}</p>
+                                                </div>
+                                                <div className={classes.reviewdata}>
+                                                    <StarRating 
+                                                        ratingnum={review.rate}
+                                                    />
+                                                    <h2>{review.title}</h2>
+                                                    <p>{review.text}</p>
+                                                    {review.recommend === "yes"
+                                                        ?
+                                                        <p>
+                                                            Recommended this product: 
+                                                            <FontAwesomeIcon 
+                                                                icon={faCheck} 
+                                                                className={`${classes.icon} ${classes.yes}`}
+                                                            />
+                                                            {review.recommend}
+                                                        </p>
+                                                        :
+                                                        <p>
+                                                            Recommended this product: 
+                                                            <ImCross className={`${classes.icon} ${classes.no}`}/>
+                                                            {review.recommend}
+                                                        </p>
+                                                    }
+                                                    
+                                                </div>
                                             </div>
                                         )
                                     })}

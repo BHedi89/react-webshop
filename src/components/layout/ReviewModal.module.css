@@ -30,7 +30,7 @@
     }
       
     .modalHeader {
-        height: 50px;
+        height: 48px;
         background: white;
         overflow: hidden;
         border-top-left-radius: 16px;
@@ -119,6 +119,10 @@
     .flexinner li {
         width: 100px;
     }
+
+    .select {
+        height: 30px;
+    }
       
     .modalActions {
         position: absolute;
@@ -193,7 +197,7 @@
       
     .modal {
         width: 570px;
-        height: 640px;
+        height: 650px;
         background: white;
         color: white;
         z-index: 10;
@@ -202,7 +206,7 @@
     }
       
     .modalHeader {
-        height: 100px;
+        height: 70px;
         background: white;
         overflow: hidden;
         border-top-left-radius: 16px;
@@ -214,13 +218,13 @@
         padding: 10px;
         color: black;
         font-weight: 500;
-        font-size: 80px;
+        font-size: 60px;
         text-align: center;
     }
       
     .modalContent {
         padding: 10px;
-        font-size: 22px;
+        font-size: 18px;
         color: black;
     }
 
@@ -256,7 +260,7 @@
     .flexouter li,
     .flexinner {
         display: flex;
-        flex-wrap: wrap;
+        flex-wrap: wrap; 
         align-items: center;
     }
       
@@ -294,6 +298,10 @@
     .flexouter li input:not([type='checkbox']),
     .flexouter li textarea {
         padding: 15px;
+    }
+
+    .select {
+        height: 30px;
     }
       
     .flexinner li {
@@ -480,6 +488,10 @@
         width: 100px;
     }
       
+    .select {
+        height: 30px;
+    }
+
     .modalActions {
         position: absolute;
         bottom: 2px;
@@ -657,6 +669,10 @@
       
     .flexinner li {
         width: 100px;
+    }
+
+    .select {
+        height: 30px;
     }
       
     .modalActions {
@@ -836,6 +852,10 @@
       
     .flexinner li {
         width: 100px;
+    }
+
+    .select {
+        height: 30px;
     }
       
     .modalActions {

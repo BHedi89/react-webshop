@@ -10,7 +10,7 @@
         margin-top: 10px;
     }
 
-    h2 {
+    .cardtitle {
         margin-top: 20px;
         font-size: 1.5em;
         font-weight: 700;
@@ -100,7 +100,7 @@
         margin-top: 10px;
     }
 
-    h2 {
+    .cardtitle {
         margin-top: 50px;
         font-size: 3em;
         font-weight: 700;
@@ -188,7 +188,7 @@
         margin-top: 10px;
     }
 
-    h2 {
+    .cardtitle {
         margin-top: 30px;
         font-size: 3em;
         font-weight: 700;
@@ -278,7 +278,7 @@
         margin-top: 10px;
     }
 
-    h2 {
+    .cardtitle {
         margin-top: 70px;
         font-size: 3em;
         font-weight: 700;
@@ -368,7 +368,7 @@
         margin-top: 10px;
     }
 
-    h2 {
+    .cardtitle {
         margin-top: 70px;
         font-size: 3em;
         font-weight: 700;

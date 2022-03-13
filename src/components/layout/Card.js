@@ -18,7 +18,7 @@ const Card = (props) =>  {
                             src={changeImage} />
                     </div>
                     <div className={classes.contentright}>
-                        <h2>Outdoor Experience</h2>
+                        <h2 className={classes.cardtitle}>Outdoor Experience</h2>
                         <p>It’s windy. The cool breeze of the lake. It gives, a sense of beauty, in motion. All is flowing, rushing and tide-And I sit in wonder, dreaming beside.</p>
                         <div className={classes.miniimgs}>
                             <img className={classes.miniimg} 
