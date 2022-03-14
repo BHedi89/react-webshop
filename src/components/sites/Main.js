@@ -15,43 +15,18 @@ import img4 from "../images/eyes/pexels-photo-1249632.jpg";
 import img5 from "../images/lipstick/pexels-photo-3568544.jpeg";
 import img6 from "../images/face/pexels-photo-2787341.jpeg";
 import articleImage from "../images/longImages/photo-1613565015448-fe6c5dc9ec40.jpg";
-
-const FIREBASE_DOMAIN = "https://wonderful-makeups-5590a-default-rtdb.europe-west1.firebasedatabase.app"; 
+import { ProductDataContext } from "../context/ProductDataContext";
  
 const Main = () => {
     const [product, setProduct] = React.useState([]);
+    let productContext = React.useContext(ProductDataContext);
 
     React.useEffect(() => {
-        let isApiSubscribed = true;
         const productList = [];
-        fetch(`${FIREBASE_DOMAIN}/products.json`)
-            .then(resp => resp.json())
-            .then(products => {
-                if(isApiSubscribed) {
-                    for(const key in products){
-                        const productObj = {
-                            id: key,
-                            ...products[key]
-                        };
-                        productList.push(productObj);
-                    }
-                    for(let i = 0; i < productList.length; i++) {
-                        const reviewList = [];
-                        for(const key in productList[i].review) {
-                            const reviewObj = {
-                                id: key,
-                                ...productList[i].review[key]
-                            }
-                            reviewList.push(reviewObj);
-                        }
-                        productList[i].review = reviewList;
-                    }
-                    setProduct(productList);
-                }
-            });
-            return () => {
-                isApiSubscribed = false;
-            }
+        for(const key in productContext.product) {
+            productList.push(productContext.product[key]);
+        }
+        setProduct(productList);
     }, [])
 
     return (

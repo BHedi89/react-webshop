@@ -6,45 +6,20 @@ import heroImage from "../images/hero/TTS-Web-Blog-Hair.jpg";
 import ShapeDivider from "../layout/ShapeDivider";
 import Footer from "../layout/Footer";
 import Productcard from "../layout/Productcard";
-
-const FIREBASE_DOMAIN = "https://wonderful-makeups-5590a-default-rtdb.europe-west1.firebasedatabase.app"; 
+import { ProductDataContext } from "../context/ProductDataContext";
 
 const Face = () => {
     const [facemakeup, setFacemakeup] = React.useState([]);
+    let productContext = React.useContext(ProductDataContext);
 
     React.useEffect(() => {
-        let isApiSubscribed = true;
         const facemakeupList = [];
-        fetch(`${FIREBASE_DOMAIN}/products.json`)
-            .then(resp => resp.json())
-            .then(products => {
-                if(isApiSubscribed) {
-                    for(const key in products){
-                        if(products[key].category == "face") {
-                            const facemakeupObj = {
-                                id: key,
-                                ...products[key]
-                            };
-                            facemakeupList.push(facemakeupObj);
-                        }
-                    }
-                    for(let i = 0; i < facemakeupList.length; i++) {
-                        const reviewList = [];
-                        for(const key in facemakeupList[i].review) {
-                            const reviewObj = {
-                                id: key,
-                                ...facemakeupList[i].review[key]
-                            }
-                            reviewList.push(reviewObj);
-                        }
-                        facemakeupList[i].review = reviewList;
-                    }
-                    setFacemakeup(facemakeupList);
-                }
-            });
-            return () => {
-                isApiSubscribed = false;
+        for(const key in productContext.product) {
+            if(productContext.product[key].category === "face") {
+                facemakeupList.push(productContext.product[key]);
             }
+        }
+        setFacemakeup(facemakeupList);
     }, [])
 
 

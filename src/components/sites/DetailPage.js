@@ -9,46 +9,22 @@ import ReviewModal from "../layout/ReviewModal";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
 import { ImCross } from "react-icons/im";
-
-const FIREBASE_DOMAIN = "https://wonderful-makeups-5590a-default-rtdb.europe-west1.firebasedatabase.app"; 
+import { ProductDataContext } from "../context/ProductDataContext";
 
 const DetailPage = () => {
     let {id} = useParams();
     let {rate} = useParams();
     const [product, setProduct] = React.useState([]);
     const [open, setOpen] = React.useState(false);
+    let productContext = React.useContext(ProductDataContext);
 
     React.useEffect(() => {
-        let isApiSubscribed = true;
         const productList = [];
-        fetch(`${FIREBASE_DOMAIN}/products.json`)
-            .then(resp => resp.json())
-            .then(products => {
-                if(isApiSubscribed) {
-                    for(const key in products){
-                        const productObj = {
-                            id: key,
-                            ...products[key]
-                        };
-                        productList.push(productObj);
-                    }
-                    for(let i = 0; i < productList.length; i++) {
-                        const reviewList = [];
-                        for(const key in productList[i].review) {
-                            const reviewObj = {
-                                id: key,
-                                ...productList[i].review[key]
-                            }
-                            reviewList.push(reviewObj);
-                        }
-                        productList[i].review = reviewList;
-                    }
-                    setProduct(productList);
-                }
-            });
-            return () => {
-                isApiSubscribed = false;
-            }
+        for(const key in productContext.product) {
+            productList.push(productContext.product[key]);
+        }
+        setProduct(productList);
+        
     }, [])
      
     return (

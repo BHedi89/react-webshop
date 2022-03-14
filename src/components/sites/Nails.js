@@ -6,45 +6,20 @@ import heroImage from "../images/hero/NAILS-LACQUER.jpg";
 import ShapeDivider from "../layout/ShapeDivider";
 import Footer from "../layout/Footer";
 import Productcard from "../layout/Productcard";
-
-const FIREBASE_DOMAIN = "https://wonderful-makeups-5590a-default-rtdb.europe-west1.firebasedatabase.app"; 
+import { ProductDataContext } from "../context/ProductDataContext";
 
 const Nails = () => {
     const [nailmakeup, setNailmakeup] = React.useState([]);
+    let productContext = React.useContext(ProductDataContext);
 
     React.useEffect(() => {
-        let isApiSubscribed = true;
-        const nailmakeupList = [];
-        fetch(`${FIREBASE_DOMAIN}/products.json`)
-            .then(resp => resp.json())
-            .then(products => {
-                if(isApiSubscribed) {
-                    for(const key in products){
-                        if(products[key].category == "nail") {
-                            const nailmakeupObj = {
-                                id: key,
-                                ...products[key]
-                            };
-                            nailmakeupList.push(nailmakeupObj);
-                        }
-                    }
-                    for(let i = 0; i < nailmakeupList.length; i++) {
-                        const reviewList = [];
-                        for(const key in nailmakeupList[i].review) {
-                            const reviewObj = {
-                                id: key,
-                                ...nailmakeupList[i].review[key]
-                            }
-                            reviewList.push(reviewObj);
-                        }
-                        nailmakeupList[i].review = reviewList;
-                    }
-                    setNailmakeup(nailmakeupList);
-                }
-            });
-            return () => {
-                isApiSubscribed = false;
+        let nailmakeupList = [];
+        for(const key in productContext.product) {
+            if(productContext.product[key].category === "nail") {
+                nailmakeupList.push(productContext.product[key]);
             }
+        }
+        setNailmakeup(nailmakeupList);
     }, [])
 
 

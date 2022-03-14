@@ -6,45 +6,20 @@ import heroImage from "../images/hero/1620999293250botox-for-hyperhidrosis.jpg";
 import ShapeDivider from "../layout/ShapeDivider";
 import Footer from "../layout/Footer";
 import Productcard from "../layout/Productcard";
-
-const FIREBASE_DOMAIN = "https://wonderful-makeups-5590a-default-rtdb.europe-west1.firebasedatabase.app"; 
+import { ProductDataContext } from "../context/ProductDataContext";
 
 const Eyes = () => {
     const [eyemakeup, setEyemakeup] = React.useState([]);
+    let productContext = React.useContext(ProductDataContext);
 
     React.useEffect(() => {
-        let isApiSubscribed = true;
         const eyemakeupList = [];
-        fetch(`${FIREBASE_DOMAIN}/products.json`)
-            .then(resp => resp.json())
-            .then(products => {
-                if(isApiSubscribed) {
-                    for(const key in products){
-                        if(products[key].category == "eye") {
-                            const eyemakeupObj = {
-                                id: key,
-                                ...products[key]
-                            };
-                            eyemakeupList.push(eyemakeupObj);
-                        }
-                    }
-                    for(let i = 0; i < eyemakeupList.length; i++) {
-                        const reviewList = [];
-                        for(const key in eyemakeupList[i].review) {
-                            const reviewObj = {
-                                id: key,
-                                ...eyemakeupList[i].review[key]
-                            }
-                            reviewList.push(reviewObj);
-                        }
-                        eyemakeupList[i].review = reviewList;
-                    }
-                    setEyemakeup(eyemakeupList);
-                }
-            });
-            return () => {
-                isApiSubscribed = false;
+        for(const key in productContext.product) {
+            if(productContext.product[key].category === "eye") {
+                eyemakeupList.push(productContext.product[key]);
             }
+        }
+        setEyemakeup(eyemakeupList);
     }, [])
 
     return (
