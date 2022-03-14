@@ -71,7 +71,7 @@
     .card {
         box-shadow: 0 4px 8px 0 rgba(87, 12, 12, 0.75);
         transition: 0.3s;
-        width: 20%;
+        width: 30%;
         text-align: center;
     }
       
@@ -147,7 +147,7 @@
     .card {
         box-shadow: 0 4px 8px 0 rgba(87, 12, 12, 0.75);
         transition: 0.3s;
-        width: 20%;
+        width: 30%;
         text-align: center;
     }
       

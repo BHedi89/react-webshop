@@ -1,14 +1,23 @@
+import React from "react";
 import classes from "./Productcard.module.css";
 import { Link } from "react-router-dom";
 import StarRating from "./StarRating";
+import FavouriteHeart from "./FavouriteHeart";
 
 const Productcard = (props) => {
     return (
         <>
             <div className={classes.card}>
-                <img src={props.productImage} />
+                <div className={classes.favdiv}>
+                    <img src={props.productImage} />
+                    <FavouriteHeart />
+                </div>
                 <div className={classes.container}>
-                    <h1>{props.productName}</h1>
+                    <h1>
+                        {props.productName} 
+                        
+                    </h1>
+                    
                     <StarRating  
                         ratingnum={props.productRate[0]}
                         productId={props.productId}
