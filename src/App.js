@@ -11,25 +11,28 @@ import Lips from "./components/sites/Lips";
 import Eyes from "./components/sites/Eyes";
 import Nails from "./components/sites/Nails";
 import DetailPage from './components/sites/DetailPage';
+import ProductDataProvider from './components/context/ProductDataProvider';
 
 function App() {
   return (
     <>
       <AuthProvider>
-        <BrowserRouter>
-          <Routes>
-            <Route path="/*" element={<Main />} />
-            <Route path="/login" element={<Login/>} />
-            <Route path="/registration" element={<Registration/>} />
-            <Route path="/account" element={<Account/>} />
-            <Route path="/forgotpassword" element={<ForgotPassword />} />
-            <Route path="/face" element={<Face />} />
-            <Route path="/lips" element={<Lips />} />
-            <Route path="/eyes" element={<Eyes />} />
-            <Route path="/nails" element={<Nails />} />
-            <Route path="/details/:rate/:id" element={<DetailPage/>}/>
-          </Routes>
-        </BrowserRouter>
+        <ProductDataProvider>
+          <BrowserRouter>
+            <Routes>
+              <Route path="/*" element={<Main />} />
+              <Route path="/login" element={<Login/>} />
+              <Route path="/registration" element={<Registration/>} />
+              <Route path="/account" element={<Account/>} />
+              <Route path="/forgotpassword" element={<ForgotPassword />} />
+              <Route path="/face" element={<Face />} />
+              <Route path="/lips" element={<Lips />} />
+              <Route path="/eyes" element={<Eyes />} />
+              <Route path="/nails" element={<Nails />} />
+              <Route path="/details/:rate/:id" element={<DetailPage/>}/>
+            </Routes>
+          </BrowserRouter>
+        </ProductDataProvider>
       </AuthProvider>
     </>
   );
