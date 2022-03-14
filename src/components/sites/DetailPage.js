@@ -72,6 +72,7 @@ const DetailPage = () => {
                                                 key={product.id}
                                                 ratingnum={rate}
                                                 productId={product.id}
+                                                setOpen={open}
                                             />
                                             <button 
                                                 className={classes.reviewbtn}

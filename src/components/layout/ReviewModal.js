@@ -1,12 +1,10 @@
 import React from "react";
 import classes from "./ReviewModal.module.css";
-import { UserDataContext } from "../login/UserDataContext";
-import StarRating from "./StarRating";
+import { StarRating } from "./StarRating";
 
 const FIREBASE_DOMAIN = "https://wonderful-makeups-5590a-default-rtdb.europe-west1.firebasedatabase.app"; 
 
 const  ReviewModal = (props) => {
-    let userContext = React.useContext(UserDataContext);
     const [checked, setChecked] = React.useState(true);
     const [rate, setRate] = React.useState(0);
     const [nickname, setNickname] = React.useState("");
@@ -19,7 +17,7 @@ const  ReviewModal = (props) => {
         fetch(`${FIREBASE_DOMAIN}/products/${props.productId}/review.json`, {
             method: "POST",
             body: JSON.stringify({
-                rate: 2,
+                rate: rate,
                 name: nickname,
                 title: title,
                 age: age,
@@ -74,7 +72,7 @@ const  ReviewModal = (props) => {
                                         <option>Select</option>
                                         <option value="17 or under">17 or under</option>
                                         <option value="18 to 24">18 to 24</option>
-                                        <option value="25 to 34">24 to 34</option>
+                                        <option value="25 to 34">25 to 34</option>
                                         <option value="35 to 44">35 to 44</option>
                                         <option value="45 to 54">45 to 54</option>
                                         <option value="55 to 64">55 to 64</option>
@@ -120,7 +118,8 @@ const  ReviewModal = (props) => {
                                                         setRecommend(e.target.value);
                                                     }}
                                                 />
-                                            </label>                                        </li>
+                                            </label>
+                                        </li>
                                     </ul>
                                 </li>
                             </ul>
