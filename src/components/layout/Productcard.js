@@ -10,14 +10,14 @@ const Productcard = (props) => {
             <div className={classes.card}>
                 <div className={classes.favdiv}>
                     <img src={props.productImage} />
-                    <FavouriteHeart />
+                    <FavouriteHeart 
+                        productId={props.productId}
+                    />
                 </div>
                 <div className={classes.container}>
                     <h1>
                         {props.productName} 
-                        
                     </h1>
-                    
                     <StarRating  
                         ratingnum={props.productRate[0]}
                         productId={props.productId}

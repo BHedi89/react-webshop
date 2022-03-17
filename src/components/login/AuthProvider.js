@@ -15,7 +15,15 @@ const AuthProvider = ({children}) => {
                 fetch(`${FIREBASE_DOMAIN}/users/${loggedinUser.uid}.json`)
                     .then(resp => resp.json())
                     .then(data => {
-                        setUser({...data, uid: loggedinUser.uid});
+                        let favouriteList = [];
+                        for(const key in data.favourite){
+                            const favouriteObj = {
+                                id: key,
+                                ...data.favourite[key]
+                            }
+                            favouriteList.push(favouriteObj);
+                        }
+                        setUser({...data, favourite: favouriteList,  uid: loggedinUser.uid});
                         setPending(false);
                     })
             } else {
