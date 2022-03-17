@@ -14,7 +14,6 @@ const FavouriteHeart = (props) => {
     const [alertMsg, setAlertMsg] = React.useState("");
     let productContext = React.useContext(ProductDataContext);
     let userContext = React.useContext(UserDataContext);
-    console.log(userContext)
 
     const addFavourite = () => {
         productContext.product.map(product => {
@@ -25,6 +24,7 @@ const FavouriteHeart = (props) => {
                         id: product.id,
                         name: product.name,
                         image: product.image,
+                        review: product.review,
                         isFavourite: true
                     })
                 })

@@ -45,7 +45,7 @@ const Dropdownbutton = () => {
                     <div className={classes.droplist}>
                         <Link to="/account">Account</Link>
                         <Link to="#">Orders</Link>
-                        <Link to="#">Favourite</Link>
+                        <Link to="/favourite">Favourite</Link>
                         <Link to="/" onClick={logout}>Sign out</Link>
                     </div>
                 </div>

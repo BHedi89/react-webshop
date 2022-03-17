@@ -12,6 +12,7 @@ import Eyes from "./components/sites/Eyes";
 import Nails from "./components/sites/Nails";
 import DetailPage from './components/sites/DetailPage';
 import ProductDataProvider from './components/context/ProductDataProvider';
+import FavouritePage from './components/sites/FavouritePage';
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
               <Route path="/eyes" element={<Eyes />} />
               <Route path="/nails" element={<Nails />} />
               <Route path="/details/:rate/:id" element={<DetailPage/>}/>
+              <Route path="/favourite" element={<FavouritePage />} />
             </Routes>
           </BrowserRouter>
         </ProductDataProvider>
