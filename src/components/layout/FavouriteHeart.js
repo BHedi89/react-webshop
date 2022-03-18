@@ -22,9 +22,9 @@ const FavouriteHeart = (props) => {
                     method: "POST",
                     body: JSON.stringify({
                         id: product.id,
-                        name: product.name,
-                        image: product.image,
-                        review: product.review,
+                        // name: product.name,
+                        // image: product.image,
+                        // rate: props.productRate,
                         isFavourite: true
                     })
                 })
