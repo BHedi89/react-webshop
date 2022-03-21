@@ -61,6 +61,18 @@
         display: block;
         margin-top: 10px;
     }
+
+    .cartitems {
+        position: absolute;
+        background-color: #E57373;
+        color: black;
+        text-align: center;
+        font-size: 1rem;
+        border-radius: 50%;
+        width: 18px;
+        height: 18px;
+        padding: 2px 2px 2px 6px;
+    }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
@@ -126,6 +138,18 @@
         display: block;
         margin-top: 10px;
     }
+
+    .cartitems {
+        position: absolute;
+        background-color: #E57373;
+        color: black;
+        text-align: center;
+        font-size: 1rem;
+        border-radius: 50%;
+        width: 18px;
+        height: 18px;
+        padding: 2px 2px 2px 6px;
+    }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
@@ -189,6 +213,18 @@
     .menuicon {
         display: block;
         margin-top: 10px;
+    }
+
+    .cartitems {
+        position: absolute;
+        background-color: #E57373;
+        color: black;
+        text-align: center;
+        font-size: 1rem;
+        border-radius: 50%;
+        width: 18px;
+        height: 18px;
+        padding: 2px 2px 2px 6px;
     }
 }
 
@@ -279,6 +315,18 @@
     .menuicon {
         display: none;
     }
+
+    .cartitems {
+        position: absolute;
+        background-color: #E57373;
+        color: black;
+        text-align: center;
+        font-size: 1rem;
+        border-radius: 50%;
+        width: 18px;
+        height: 18px;
+        padding: 2px 2px 2px 6px;
+    }
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
@@ -364,10 +412,22 @@
     }
 
     .icon {
-        font-size: 18px;
+        font-size: 20px;
     }
 
     .menuicon {
         display: none;
+    }
+
+    .cartitems {
+        position: absolute;
+        background-color: #E57373;
+        color: black;
+        text-align: center;
+        font-size: 1rem;
+        border-radius: 50%;
+        width: 18px;
+        height: 18px;
+        padding: 2px 2px 2px 6px;
     }
 }

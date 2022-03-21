@@ -69,6 +69,7 @@ const Navbar = () => {
             >
               <a href="#">
                 <FontAwesomeIcon icon={faShoppingBasket} className={classes.icon} />
+                <span className={classes.cartitems}>0</span>
               </a>
             </li>
           </ul>
