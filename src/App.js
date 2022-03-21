@@ -13,6 +13,7 @@ import Nails from "./components/sites/Nails";
 import DetailPage from './components/sites/DetailPage';
 import ProductDataProvider from './components/context/ProductDataProvider';
 import FavouritePage from './components/sites/FavouritePage';
+import Orders from './components/sites/Orders';
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
               <Route path="/nails" element={<Nails />} />
               <Route path="/details/:rate/:id" element={<DetailPage/>}/>
               <Route path="/favourite" element={<FavouritePage />} />
+              <Route path='/orders' element={<Orders />} />
             </Routes>
           </BrowserRouter>
         </ProductDataProvider>

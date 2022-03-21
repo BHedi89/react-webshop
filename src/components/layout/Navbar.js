@@ -67,7 +67,7 @@ const Navbar = () => {
             <li
               className={`${isActive ? classes.visible : null} ${classes.seven}`}
             >
-              <a href="#">
+              <a href="/orders">
                 <FontAwesomeIcon icon={faShoppingBasket} className={classes.icon} />
                 <span className={classes.cartitems}>{userContext.user.orders.length}</span>
               </a>
