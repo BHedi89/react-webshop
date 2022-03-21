@@ -23,7 +23,7 @@
         margin-bottom: 80px;
     }
 
-    .sum {
+    .sumtable {
         display: flex;
     }
 
@@ -49,12 +49,27 @@
         height: 100px;
     }
 
-    .sumprice {
+    .sumproducts {
         flex: 30%;
         width: 200px;
         height: auto;
         margin: 30px;
         background-color: #E57373;
+        padding: 10px;
+    }
+
+    .sumproducts .list {
+        font-size: 25px;
+        border-bottom: 1px solid black;
+    }
+
+    .sumproducts .list td, .sumproducts .totalsum td {
+        width: 200px;
+        padding: 5px;
+    }
+
+    .sumproducts .totalsum {
+        font-size: 25px;
     }
 
     .footer {

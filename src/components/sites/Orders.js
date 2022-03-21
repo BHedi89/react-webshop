@@ -7,7 +7,7 @@ import { UserDataContext } from "../login/UserDataContext";
 
 const Orders = () => {
     let userContext = React.useContext(UserDataContext);
-    console.log(userContext)
+    let total = 0;
 
     return (
         <>
@@ -16,26 +16,50 @@ const Orders = () => {
             <ShapeDivider />
             <div className={classes.ordercontainer}>
                 <h1 className={classes.ordertitle}>Orders</h1>
-                <div className={classes.sum}>
+                <div className={classes.sumtable}>
                     <table className={classes.table}>
-                        <tr>
-                            <th>Image</th>
-                            <th>Product name</th>
-                            <th>Price</th>
-                        </tr>
-                    {userContext.user.orders.map(item => {
-                        console.log(item)
-                        return (
+                        <tbody>
                             <tr>
-                                <td><img src={item.productImage}/></td>
-                                <td>{item.productName}</td>
-                                <td>{item.productPrice}</td>
+                                <th>Image</th>
+                                <th>Product name</th>
+                                <th>Price</th>
                             </tr>
-                        )
-                    })}
+                            {userContext.user.orders.map(item => {
+                                return (
+                                    <tr key={item.id}>
+                                        <td><img src={item.productImage}/></td>
+                                        <td>{item.productName}</td>
+                                        <td>${item.productPrice}</td>
+                                    </tr>
+                                )
+                            })}
+                        </tbody>
                     </table>
-                    <div className={classes.sumprice}>
-
+                    <div className={classes.sumproducts}>
+                        <h1>Summary</h1>
+                        <table className={classes.list}>
+                            <tbody>
+                                {userContext.user.orders.map(item => {
+                                    return (
+                                        <tr key={item.id}>
+                                            <td>{item.productName}</td>
+                                            <td>${item.productPrice}</td>
+                                        </tr>
+                                    )
+                                })}
+                            </tbody>
+                        </table>
+                        <table className={classes.totalsum}>
+                            <tbody>
+                                <tr>
+                                    <td>Total:</td>
+                                    {userContext.user.orders.map(product => {
+                                        total += product.productPrice;
+                                    })}
+                                    <td>${total}</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
