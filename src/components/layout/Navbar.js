@@ -69,7 +69,7 @@ const Navbar = () => {
             >
               <a href="#">
                 <FontAwesomeIcon icon={faShoppingBasket} className={classes.icon} />
-                <span className={classes.cartitems}>0</span>
+                <span className={classes.cartitems}>{userContext.user.orders.length}</span>
               </a>
             </li>
           </ul>

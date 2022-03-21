@@ -23,7 +23,15 @@ const AuthProvider = ({children}) => {
                             }
                             favouriteList.push(favouriteObj);
                         }
-                        setUser({...data, favourite: favouriteList,  uid: loggedinUser.uid});
+                        let orderList = [];
+                        for(const key in data.orders){
+                            const orderObj = {
+                                id: key,
+                                ...data.orders[key]
+                            }
+                            orderList.push(orderObj);
+                        }
+                        setUser({...data, favourite: favouriteList, orders: orderList,  uid: loggedinUser.uid});
                         setPending(false);
                     })
             } else {

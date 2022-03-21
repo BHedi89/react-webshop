@@ -10,13 +10,20 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
 import { ImCross } from "react-icons/im";
 import { ProductDataContext } from "../context/ProductDataContext";
+import { UserDataContext } from "../login/UserDataContext";
+import Alert from "../layout/Alert";
+
+const FIREBASE_DOMAIN = "https://wonderful-makeups-5590a-default-rtdb.europe-west1.firebasedatabase.app";
 
 const DetailPage = () => {
     let {id} = useParams();
     let {rate} = useParams();
     const [product, setProduct] = React.useState([]);
     const [open, setOpen] = React.useState(false);
+    const [openAlert, setOpenAlert] = React.useState(false);
+    const [alertMsg, setAlertMsg] = React.useState("");
     let productContext = React.useContext(ProductDataContext);
+    let userContext = React.useContext(UserDataContext);
 
     React.useEffect(() => {
         const productList = [];
@@ -25,7 +32,32 @@ const DetailPage = () => {
         }
         setProduct(productList);
         
-    }, [])
+    }, []);
+
+    const addToCart = () => {
+        for(const key in product) {
+            if(product[key].id === id) {
+                fetch(`${FIREBASE_DOMAIN}/users/${userContext.user.uid}/orders.json`, {
+                    method: "POST",
+                    body: JSON.stringify({
+                        productId: product[key].id,
+                        productName: product[key].name,
+                        productPrice: product[key].price,
+                        productImage: product[key].image
+                    })
+                })
+                .then(resp => resp.json())
+                .then(() => {
+                    setAlertMsg("Product added to your cart!");
+                    setOpenAlert(!openAlert);
+                });
+            }
+        }
+    }
+
+    const handleClose = () => {
+        setOpenAlert(!openAlert);
+    }
      
     return (
         <>
@@ -33,6 +65,12 @@ const DetailPage = () => {
             <div className={classes.hero}></div>
             <ShapeDivider />
             <>
+                {openAlert && <Alert
+                        content={<>
+                            <p>{alertMsg}</p>
+                        </>}
+                        handleClose={handleClose}
+                />}
                 {product.map(product => {
                     if(product.id === id) {
                         return (
@@ -65,7 +103,12 @@ const DetailPage = () => {
                                         <p className={classes.about}>{product.about}</p>
                                         <h3 className={classes.ingredientstitle}>Ingredients:</h3>
                                         <p className={classes.ingredients}>{product.ingredients}</p>
-                                        <button className={classes.buybtn}>Buy now</button>
+                                        <button 
+                                            className={classes.buybtn}
+                                            onClick={addToCart}
+                                        >
+                                            Buy now
+                                        </button>
                                     </div>
                                 </div>
                                 <ShapeDivider />

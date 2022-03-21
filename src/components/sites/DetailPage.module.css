@@ -431,6 +431,7 @@
         background-color: #2C0707;
         border: 3px solid #8F4848;
         font-family: 'Yanone Kaffeesatz', sans-serif;
+        cursor: pointer;
     }
 
     .buybtn:hover {
@@ -553,6 +554,7 @@
         background-color: #2C0707;
         border: 3px solid #8F4848;
         font-family: 'Yanone Kaffeesatz', sans-serif;
+        cursor: pointer;
     }
 
     .buybtn:hover {
