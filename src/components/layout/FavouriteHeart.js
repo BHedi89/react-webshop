@@ -12,29 +12,41 @@ const FavouriteHeart = (props) => {
     const [favourite, setFavourite] = React.useState(false);
     const [open, setOpen] = React.useState(false);
     const [alertMsg, setAlertMsg] = React.useState("");
+    const [id, setId] = React.useState("");
     let productContext = React.useContext(ProductDataContext);
     let userContext = React.useContext(UserDataContext);
 
     const addFavourite = () => {
-        productContext.product.map(product => {
-            if(product.id === props.productId) {
-                fetch(`${FIREBASE_DOMAIN}/users/${userContext.user.uid}/favourite.json`, {
-                    method: "POST",
-                    body: JSON.stringify({
-                        id: product.id,
-                        // name: product.name,
-                        // image: product.image,
-                        // rate: props.productRate,
-                        isFavourite: true
-                    })
-                })
-                .then(resp => resp.json())
-                .then(() => {
-                    setAlertMsg("Product added to your favourites!");
-                    setOpen(!open);
-                });
-            }
-        })
+        setFavourite(!favourite); 
+            productContext.product.map(product => {
+                if(product.id === props.productId) {
+                    // ????
+                    if(favourite === !true) {
+                        fetch(`${FIREBASE_DOMAIN}/users/${userContext.user.uid}/favourite.json`, {
+                            method: "POST",
+                            body: JSON.stringify({
+                                productId: product.id,
+                                isFavourite: true
+                            })
+                        })
+                        .then(resp => resp.json())
+                        .then(() => {
+                            setAlertMsg("Product added to your favourites!");
+                            setOpen(!open);
+                        });
+                    } else {
+                        for(const key in userContext.user.favourite){
+                            setId(userContext.user.favourite[key].id)
+                            fetch(`${FIREBASE_DOMAIN}/users/${userContext.user.uid}/favourite/${id}.json`, {
+                                method: "DELETE"
+                            }).then(resp => resp.json());
+                        }
+                        
+                    }
+                }
+            })
+        
+        
     }
 
     const handleClose = () => {
@@ -49,11 +61,12 @@ const FavouriteHeart = (props) => {
                     </>}
                     handleClose={handleClose}
             />}
+            
             <FontAwesomeIcon 
                 icon={faHeart} 
                 className={favourite ? classes.red : classes.blank}
-                onClick={() => {setFavourite(!favourite); addFavourite() }}
-            />
+                onClick={addFavourite}
+            />  
         </>
     )
 }

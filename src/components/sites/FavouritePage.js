@@ -20,11 +20,12 @@ const FavouritePage = () => {
                 <h1 className={classes.favouritetitle}>Favourites</h1>
                 <div className={classes.favourites}>
                     {userContext.user.favourite.map(fav => {
+                        console.log(fav)
                         return (
                             <>
                                 {productContext.product.map(prod => {
                                     return (
-                                        fav.id === prod.id
+                                        fav.productId === prod.id
                                         ?
                                         <Productcard
                                             key={prod.id}
