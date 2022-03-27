@@ -61,7 +61,7 @@ const Orders = () => {
                                 </tr>
                             </tbody>
                         </table>
-                        <button className={classes.deliverybtn}><Link to="#">Go to delivery datas</Link></button>
+                        <button className={classes.deliverybtn}><Link to="/delivery">Go to delivery datas</Link></button>
                     </div>
                 </div>
             </div>

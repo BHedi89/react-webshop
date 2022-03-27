@@ -14,6 +14,7 @@ import DetailPage from './components/sites/DetailPage';
 import ProductDataProvider from './components/context/ProductDataProvider';
 import FavouritePage from './components/sites/FavouritePage';
 import Orders from './components/sites/Orders';
+import DeliveryData from './components/sites/DeliveryData';
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
               <Route path="/details/:rate/:id" element={<DetailPage/>}/>
               <Route path="/favourite" element={<FavouritePage />} />
               <Route path='/orders' element={<Orders />} />
+              <Route path='/delivery' element={<DeliveryData />} />
             </Routes>
           </BrowserRouter>
         </ProductDataProvider>

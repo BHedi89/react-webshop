@@ -1,0 +1,370 @@
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .hero {
+        width: 100%;
+        height: 200px;
+        background-image: url("../images/hero/wp2382683.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    .delivery {
+        display: flex;
+        justify-content: center;
+    }
+
+    .deliverytitle {
+        color: white;
+        text-align: center;
+        font-size: 50px;
+    }
+
+    .form {
+        background-color: #E57373;
+        width: 340px;
+        margin-bottom: 30px;
+        padding: 20px;
+        font-size: 20px;
+    }
+
+    .form form > div {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .form label {
+        padding: 10px 0 10px 0;
+    }
+
+    .form input {
+        height: 40px;
+        border-radius: 25px;
+        padding: 10px;
+        border: white;
+    }
+
+    .form textarea {
+        border-radius: 20px;
+        padding: 10px;
+        border: white;
+    }
+
+    .form input:focus {
+        border: white;
+    }
+
+    .finishbtn {
+        margin-top: 20px;
+        font-family: 'Yanone Kaffeesatz', sans-serif;
+        font-size: 20px;
+        padding: 10px;
+        border-radius: 20px;
+        background-color: #2C0707;
+        color: white;
+        width: 100%;
+    }
+
+    .finishbtn:hover {
+        background-color: #733A3A;
+    }
+
+    .footer {
+        margin-top: 30px;
+    }
+}
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .hero {
+        width: 100%;
+        height: 200px;
+        background-image: url("../images/hero/wp2382683.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    .delivery {
+        display: flex;
+        justify-content: center;
+    }
+
+    .deliverytitle {
+        color: white;
+        text-align: center;
+        font-size: 50px;
+    }
+
+    .form {
+        background-color: #E57373;
+        width: 510px;
+        margin-bottom: 30px;
+        padding: 20px;
+        font-size: 20px;
+    }
+
+    .form form > div {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .form label {
+        padding: 10px 0 10px 0;
+    }
+
+    .form input {
+        height: 40px;
+        border-radius: 25px;
+        padding: 10px;
+        border: white;
+    }
+
+    .form textarea {
+        border-radius: 20px;
+        padding: 10px;
+        border: white;
+    }
+
+    .form input:focus {
+        border: white;
+    }
+
+    .finishbtn {
+        margin-top: 20px;
+        font-family: 'Yanone Kaffeesatz', sans-serif;
+        font-size: 20px;
+        padding: 10px;
+        border-radius: 20px;
+        background-color: #2C0707;
+        color: white;
+        width: 100%;
+    }
+
+    .finishbtn:hover {
+        background-color: #733A3A;
+    }
+
+    .footer {
+        margin-top: 30px;
+    }
+}
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .hero {
+        width: 100%;
+        height: 200px;
+        background-image: url("../images/hero/wp2382683.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    .delivery {
+        display: flex;
+        justify-content: center;
+    }
+
+    .deliverytitle {
+        color: white;
+        text-align: center;
+        font-size: 50px;
+    }
+
+    .form {
+        background-color: #E57373;
+        width: 700px;
+        margin-bottom: 30px;
+        padding: 20px;
+        font-size: 20px;
+    }
+
+    .form form > div {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .form label {
+        padding: 10px 0 10px 0;
+    }
+
+    .form input {
+        height: 40px;
+        border-radius: 25px;
+        padding: 10px;
+        border: white;
+    }
+
+    .form textarea {
+        border-radius: 20px;
+        padding: 10px;
+        border: white;
+    }
+
+    .form input:focus {
+        border: white;
+    }
+
+    .finishbtn {
+        margin-top: 20px;
+        font-family: 'Yanone Kaffeesatz', sans-serif;
+        font-size: 20px;
+        padding: 10px;
+        border-radius: 20px;
+        background-color: #2C0707;
+        color: white;
+        width: 100%;
+    }
+
+    .finishbtn:hover {
+        background-color: #733A3A;
+    }
+
+    .footer {
+        margin-top: 30px;
+    }
+}
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .hero {
+        width: 100%;
+        height: 200px;
+        background-image: url("../images/hero/wp2382683.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    .delivery {
+        display: flex;
+        justify-content: center;
+    }
+
+    .deliverytitle {
+        color: white;
+        text-align: center;
+        font-size: 50px;
+    }
+
+    .form {
+        background-color: #E57373;
+        width: 800px;
+        margin-bottom: 30px;
+        padding: 20px;
+        font-size: 20px;
+    }
+
+    .form form > div {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .form label {
+        padding: 10px 0 10px 0;
+    }
+
+    .form input {
+        height: 40px;
+        border-radius: 25px;
+        padding: 10px;
+        border: white;
+    }
+
+    .form textarea {
+        border-radius: 20px;
+        padding: 10px;
+        border: white;
+    }
+
+    .form input:focus {
+        border: white;
+    }
+
+    .finishbtn {
+        margin-top: 20px;
+        font-family: 'Yanone Kaffeesatz', sans-serif;
+        font-size: 20px;
+        padding: 10px;
+        border-radius: 20px;
+        background-color: #2C0707;
+        color: white;
+        width: 100%;
+    }
+
+    .finishbtn:hover {
+        background-color: #733A3A;
+    }
+
+    .footer {
+        margin-top: 30px;
+    }
+}
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    .hero {
+        width: 100%;
+        height: 200px;
+        background-image: url("../images/hero/wp2382683.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    .delivery {
+        display: flex;
+        justify-content: center;
+    }
+
+    .deliverytitle {
+        color: white;
+        text-align: center;
+        font-size: 50px;
+    }
+
+    .form {
+        background-color: #E57373;
+        width: 800px;
+        margin-bottom: 30px;
+        padding: 20px;
+        font-size: 20px;
+    }
+
+    .form form > div {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .form label {
+        padding: 10px 0 10px 0;
+    }
+
+    .form input {
+        height: 40px;
+        border-radius: 25px;
+        padding: 10px;
+        border: white;
+    }
+
+    .form textarea {
+        border-radius: 20px;
+        padding: 10px;
+        border: white;
+    }
+
+    .form input:focus {
+        border: white;
+    }
+
+    .finishbtn {
+        margin-top: 20px;
+        font-family: 'Yanone Kaffeesatz', sans-serif;
+        font-size: 20px;
+        padding: 10px;
+        border-radius: 20px;
+        background-color: #2C0707;
+        color: white;
+        width: 100%;
+    }
+
+    .finishbtn:hover {
+        background-color: #733A3A;
+    }
+
+    .footer {
+        margin-top: 30px;
+    }
+}
