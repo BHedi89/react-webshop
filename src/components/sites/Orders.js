@@ -4,6 +4,7 @@ import Navbar from "../layout/Navbar";
 import ShapeDivider from "../layout/ShapeDivider";
 import Footer from "../layout/Footer";
 import { UserDataContext } from "../login/UserDataContext";
+import { Link } from "react-router-dom";
 
 const Orders = () => {
     let userContext = React.useContext(UserDataContext);
@@ -60,6 +61,7 @@ const Orders = () => {
                                 </tr>
                             </tbody>
                         </table>
+                        <button className={classes.deliverybtn}><Link to="#">Go to delivery datas</Link></button>
                     </div>
                 </div>
             </div>
