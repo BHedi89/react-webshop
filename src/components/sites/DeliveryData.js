@@ -3,8 +3,11 @@ import classes from "./DeliveryData.module.css";
 import Navbar from "../layout/Navbar";
 import ShapeDivider from "../layout/ShapeDivider";
 import Footer from "../layout/Footer";
+import { UserDataContext } from "../login/UserDataContext";
 
 const DeliveryData = () => {
+    let userContext = React.useContext(UserDataContext);
+
     return (
         <>
         <Navbar />
@@ -16,23 +19,38 @@ const DeliveryData = () => {
                 <form>
                     <div>
                         <label>Name:</label>
-                        <input type="text"></input>
+                        <input 
+                            type="text" 
+                            value={userContext.user.name}
+                        />
                     </div>
                     <div>
                         <label>Address:</label>
-                        <input type="text"></input>
+                        <input 
+                            type="text"
+                            value={userContext.user.address}
+                        />
                     </div>
                     <div>
                         <label>Zipcode:</label>
-                        <input type="text"></input>
+                        <input 
+                            type="text"
+                            value={userContext.user.zipcode}
+                        />
                     </div>
                     <div>
                         <label>Phone number:</label>
-                        <input type="text"></input>
+                        <input 
+                            type="text"
+                            value={userContext.user.phonenumber}
+                        />
                     </div>
                     <div>
                         <label>Email:</label>
-                        <input type="email"></input>
+                        <input 
+                            type="email"
+                            value={userContext.user.email}
+                        />
                     </div>
                     <div>
                         <label>Note:</label>

@@ -15,6 +15,7 @@ import ProductDataProvider from './components/context/ProductDataProvider';
 import FavouritePage from './components/sites/FavouritePage';
 import Orders from './components/sites/Orders';
 import DeliveryData from './components/sites/DeliveryData';
+import Cart from './components/sites/Cart';
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
               <Route path="/favourite" element={<FavouritePage />} />
               <Route path='/orders' element={<Orders />} />
               <Route path='/delivery' element={<DeliveryData />} />
+              <Route path='/cart' element={<Cart />} />
             </Routes>
           </BrowserRouter>
         </ProductDataProvider>
