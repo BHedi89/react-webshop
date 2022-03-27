@@ -8,6 +8,12 @@
         background-repeat: no-repeat;
     }
 
+    .container {
+        color: white;
+        font-size: 25px;
+        text-align: center;
+    }
+
     .footer {
         margin-top: 30px;
     }
@@ -20,6 +26,12 @@
         background-image: url("../images/hero/wp2382683.jpg");
         background-size: cover;
         background-repeat: no-repeat;
+    }
+
+    .container {
+        color: white;
+        font-size: 25px;
+        text-align: center;
     }
 
     .footer {
@@ -36,6 +48,12 @@
         background-repeat: no-repeat;
     }
 
+    .container {
+        color: white;
+        font-size: 25px;
+        text-align: center;
+    }
+
     .footer {
         margin-top: 30px;
     }
@@ -50,6 +68,12 @@
         background-repeat: no-repeat;
     }
 
+    .container {
+        color: white;
+        font-size: 25px;
+        text-align: center;
+    }
+
     .footer {
         margin-top: 30px;
     }
@@ -62,6 +86,12 @@
         background-image: url("../images/hero/wp2382683.jpg");
         background-size: cover;
         background-repeat: no-repeat;
+    }
+
+    .container {
+        color: white;
+        font-size: 25px;
+        text-align: center;
     }
 
     .footer {

@@ -3,8 +3,6 @@ import classes from "./Orders.module.css";
 import Navbar from "../layout/Navbar";
 import ShapeDivider from "../layout/ShapeDivider";
 import Footer from "../layout/Footer";
-import { UserDataContext } from "../login/UserDataContext";
-import { Link } from "react-router-dom";
 
 const Orders = () => {
     return (
@@ -12,7 +10,9 @@ const Orders = () => {
             <Navbar />
             <div className={classes.hero}></div>
             <ShapeDivider />
-            
+            <div className={classes.container}>
+                <h1>My orders</h1>
+            </div>
             <ShapeDivider />
             <div className={classes.footer}>
                 <Footer />
