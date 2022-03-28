@@ -32,7 +32,7 @@ const Login = () => {
                 .then(resp => resp.json())
                 .then(data => {
                     userContext.setUser({...data, uid: user.uid});
-                    if(data.type == "user") {
+                    if(data.type === "user") {
                         setAlertMsg("Sign in successfully");
                         setOpen(!open);
                         setTimeout(() => {
@@ -42,11 +42,11 @@ const Login = () => {
                 })
         }) 
         .catch(error => {
-            if(error.code == "auth/user-not-found") {
+            if(error.code === "auth/user-not-found") {
                 setAlertMsg("User not found!");
                 setOpen(!open);
             };
-            if(error.code == "auth/wrong-password") {
+            if(error.code === "auth/wrong-password") {
                 setAlertMsg("Wrong password!");
                 setOpen(!open);
             };

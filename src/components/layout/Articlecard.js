@@ -5,7 +5,7 @@ const Articlecard = (props) => {
         <>
             <div className={classes.container}>
                 <div className={classes.imageContainer}>
-                    <img src={props.articleImage}/>
+                    <img src={props.articleImage} alt="article"/>
                 </div>
                 <div className={classes.articletext}>
                     <h1>Lorem Ipsum</h1>

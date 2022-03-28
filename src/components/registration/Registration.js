@@ -56,15 +56,15 @@ const Registration = () => {
                 })
             })
             .catch((error) => {
-                if (error.code == "auth/email-already-in-use") {
+                if (error.code === "auth/email-already-in-use") {
                     setAlertMsg("Email elready in use!");
                     setOpen(!open);
                 };
-                if (error.code == "auth/weak-password") {
+                if (error.code === "auth/weak-password") {
                     setAlertMsg("Weak password! 6 character at least!");
                     setOpen(!open);
                 };
-                if (error.code == "auth/invalid-email") {
+                if (error.code === "auth/invalid-email") {
                     setAlertMsg("Invalid email!");
                     setOpen(!open);
                 };
