@@ -75,6 +75,10 @@
     .reviewscontainer {
         color: white;
         margin-bottom: 40px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .reviewstitle {
@@ -575,8 +579,8 @@
     .reviewcontainer {
         background-color: white;
         color: black;
-        width: 1700px;
-        margin-left: 100px;
+        width: 90%;
+        margin-left: 80px;
         padding: 10px;
         display: flex;
         margin-bottom: 5px;

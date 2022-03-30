@@ -10,7 +10,6 @@ import { UserDataContext } from "../login/UserDataContext";
 const Navbar = () => {
   const [isActive, setActive] = React.useState(false);
   let userContext = React.useContext(UserDataContext);
-  console.log(userContext);
 
   const logoTrigger = () => {
     setActive(!isActive);
@@ -72,7 +71,7 @@ const Navbar = () => {
                 ?
                 <a href="/cart">
                   <FontAwesomeIcon icon={faShoppingBasket} className={classes.icon} />
-                  <span className={classes.cartitems}>{userContext.user.orders.length}</span>
+                  <span className={classes.cartitems}>{userContext.user.cart.length}</span>
                 </a>
                 :
                 <a href="/cart">

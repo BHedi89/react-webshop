@@ -25,7 +25,7 @@ const Cart = () => {
                                 <th>Product name</th>
                                 <th>Price</th>
                             </tr>
-                            {userContext.user.orders.map(item => {
+                            {userContext.user.cart.map(item => {
                                 return (
                                     <tr key={item.id}>
                                         <td><img src={item.productImage}/></td>
@@ -40,7 +40,7 @@ const Cart = () => {
                         <h1>Summary</h1>
                         <table className={classes.list}>
                             <tbody>
-                                {userContext.user.orders.map(item => {
+                                {userContext.user.cart.map(item => {
                                     return (
                                         <tr key={item.id}>
                                             <td>{item.productName}</td>
@@ -54,7 +54,7 @@ const Cart = () => {
                             <tbody>
                                 <tr>
                                     <td>Total:</td>
-                                    {userContext.user.orders.map(product => {
+                                    {userContext.user.cart.map(product => {
                                         total += product.productPrice;
                                     })}
                                     <td>${total}</td>

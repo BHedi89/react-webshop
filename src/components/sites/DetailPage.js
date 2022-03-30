@@ -35,24 +35,30 @@ const DetailPage = () => {
     }, []);
 
     const addToCart = () => {
-        for(const key in product) {
-            if(product[key].id === id) {
-                fetch(`${FIREBASE_DOMAIN}/users/${userContext.user.uid}/orders.json`, {
-                    method: "POST",
-                    body: JSON.stringify({
-                        productId: product[key].id,
-                        productName: product[key].name,
-                        productPrice: product[key].price,
-                        productImage: product[key].image
+        if(userContext.user !== null) {
+            for(const key in product) {
+                if(product[key].id === id) {
+                    fetch(`${FIREBASE_DOMAIN}/users/${userContext.user.uid}/cart.json`, {
+                        method: "POST",
+                        body: JSON.stringify({
+                            productId: product[key].id,
+                            productName: product[key].name,
+                            productPrice: product[key].price,
+                            productImage: product[key].image
+                        })
                     })
-                })
-                .then(resp => resp.json())
-                .then(() => {
-                    setAlertMsg("Product added to your cart!");
-                    setOpenAlert(!openAlert);
-                });
+                    .then(resp => resp.json())
+                    .then(() => {
+                        setAlertMsg("Product added to your cart!");
+                        setOpenAlert(!openAlert);
+                    });
+                }
             }
+        } else {
+            setAlertMsg("Log in to buy this product.");
+            setOpenAlert(!openAlert);
         }
+        
     }
 
     const handleClose = () => {

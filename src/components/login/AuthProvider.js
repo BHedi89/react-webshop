@@ -23,15 +23,15 @@ const AuthProvider = ({children}) => {
                             }
                             favouriteList.push(favouriteObj);
                         }
-                        let orderList = [];
-                        for(const key in data.orders){
-                            const orderObj = {
+                        let cartList = [];
+                        for(const key in data.cart){
+                            const cartObj = {
                                 id: key,
-                                ...data.orders[key]
+                                ...data.cart[key]
                             }
-                            orderList.push(orderObj);
+                            cartList.push(cartObj);
                         }
-                        setUser({...data, favourite: favouriteList, orders: orderList,  uid: loggedinUser.uid});
+                        setUser({...data, favourite: favouriteList, cart: cartList,  uid: loggedinUser.uid});
                         setPending(false);
                     })
             } else {
