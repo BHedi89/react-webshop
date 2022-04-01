@@ -136,7 +136,6 @@ const Account = () => {
                     handleClose={handleClose}
                 />}
                 <h1>Profile Account</h1>
-                <button className={classes.backbtn}><Link to="/">Back to main</Link></button>
                 {userContext?.user?.type === "user"
                     ?
                     <div className={classes.forms}>

@@ -25,7 +25,7 @@
 
     .maincard {
         width: 700px;
-        height: 630px;
+        height: 570px;
         margin: 20px;
         border-radius: 10px;
         font-weight: 300;
@@ -131,7 +131,7 @@
         display: flex;
         width: 100%;
         height: 100%;
-        padding: 20px;
+        padding: 40px;
     }
 
     .maincard .contentleft {
@@ -154,7 +154,6 @@
 
     .maincard .miniimgs {
         display: flex;
-        bottom: 0;
         height: 105px;
     }
     
@@ -178,271 +177,42 @@
 }
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
-    *, *::before, *::after {
-        box-sizing: inherit;
-    }
-
-    main {
-        display: flex;
-        justify-content: center;
-        margin-top: 10px;
-    }
-
-    .cardtitle {
+   .cardtitle {
         margin-top: 30px;
-        font-size: 3em;
-        font-weight: 700;
-        line-height: 1;
     }
 
     .contentright p {
         margin-top: 20px;
-        font-size: 1em;
-        color: white;
-    }
-
-    .maincard {
-        width: 700px;
-        height: 470px;
-        margin: 20px;
-        border-radius: 10px;
-        font-weight: 300;
-        font-style: normal;
-        font-size: 1em;
-        line-height: 1.5;
-        color: white;
-        background-color: #2C0707;
-        box-shadow: 0px 10px 20px -10px rgba(0, 0, 0, 0.75);
     }
 
     .maincard .cardcontent {
-        display: flex;
-        width: 100%;
-        height: 100%;
         padding: 50px;
     }
 
     .maincard .contentleft {
         width: 300px;
         height: 100%;
-        border-radius: 10px;
-        overflow: hidden;
-    }
-
-    .maincard .contentleft img {
-        width: inherit;
-        height: inherit;
-        object-fit: cover;
-        object-position: center;
     }
 
     .maincard .contentright {
         width: calc(100% - 300px);
         height: 100%;
-        padding-left: 35px;
-    }
-
-    .maincard .miniimgs {
-        display: flex;
-        bottom: 0;
-        height: 105px;
-    }
-    
-    .maincard .miniimgs img {
-        width: 105px;
-        height: 105px;
-        border-radius: 10px;
-        object-fit: cover;
-        object-position: center;
-        cursor: pointer;
-        transition: 300ms;
-    }
-    
-    .maincard .miniimgs img:hover {
-        opacity: .75;
-    }
-    
-    .maincard .miniimgs img:nth-child(2) {
-        margin: 0 10px;
+        padding-left: 30px;
     }
 }
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
-    *, *::before, *::after {
-        box-sizing: inherit;
-    }
-
-    main {
-        display: flex;
-        justify-content: center;
-        margin-top: 10px;
-    }
-
     .cardtitle {
-        margin-top: 70px;
-        font-size: 3em;
-        font-weight: 700;
-        line-height: 1;
-    }
-
-    .contentright p {
         margin-top: 20px;
-        font-size: 1em;
-        color: white;
-    }
-
-    .maincard {
-        width: 770px;
-        height: 470px;
-        margin: 20px;
-        border-radius: 10px;
-        font-weight: 300;
-        font-style: normal;
-        font-size: 1em;
-        line-height: 1.5;
-        color: white;
-        background-color: #2C0707;
-        box-shadow: 0px 10px 20px -10px rgba(0, 0, 0, 0.75);
-    }
-
-    .maincard .cardcontent {
-        display: flex;
-        width: 100%;
-        height: 100%;
-        padding: 50px;
-    }
-
-    .maincard .contentleft {
-        width: 300px;
-        height: 100%;
-        border-radius: 10px;
-        overflow: hidden;
-    }
-
-    .maincard .contentleft img {
-        width: inherit;
-        height: inherit;
-        object-fit: cover;
-        object-position: center;
     }
 
     .maincard .contentright {
-        width: calc(100% - 300px);
-        height: 100%;
         padding-left: 35px;
-    }
-
-    .maincard .miniimgs {
-        display: flex;
-        bottom: 0;
-        height: 105px;
-    }
-    
-    .maincard .miniimgs img {
-        width: 105px;
-        height: 105px;
-        border-radius: 10px;
-        object-fit: cover;
-        object-position: center;
-        cursor: pointer;
-        transition: 300ms;
-    }
-    
-    .maincard .miniimgs img:hover {
-        opacity: .75;
-    }
-    
-    .maincard .miniimgs img:nth-child(2) {
-        margin: 0 10px;
     }
 }
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {  
-    *, *::before, *::after {
-        box-sizing: inherit;
-    }
-
-    main {
-        display: flex;
-        justify-content: center;
-        margin-top: 10px;
-    }
-
-    .cardtitle {
-        margin-top: 70px;
-        font-size: 3em;
-        font-weight: 700;
-        line-height: 1;
-    }
-
     .contentright p {
-        margin-top: 20px;
-        font-size: 1em;
-        color: white;
-    }
-
-    .maincard {
-        width: 770px;
-        height: 470px;
-        margin: 20px;
-        border-radius: 10px;
-        font-weight: 300;
-        font-style: normal;
-        font-size: 1em;
-        line-height: 1.5;
-        color: white;
-        background-color: #2C0707;
-        box-shadow: 0px 10px 20px -10px rgba(0, 0, 0, 0.75);
-    }
-
-    .maincard .cardcontent {
-        display: flex;
-        width: 100%;
-        height: 100%;
-        padding: 50px;
-    }
-
-    .maincard .contentleft {
-        width: 300px;
-        height: 100%;
-        border-radius: 10px;
-        overflow: hidden;
-    }
-
-    .maincard .contentleft img {
-        width: inherit;
-        height: inherit;
-        object-fit: cover;
-        object-position: center;
-    }
-
-    .maincard .contentright {
-        width: calc(100% - 300px);
-        height: 100%;
-        padding-left: 35px;
-    }
-
-    .maincard .miniimgs {
-        display: flex;
-        bottom: 0;
-        height: 105px;
-    }
-    
-    .maincard .miniimgs img {
-        width: 105px;
-        height: 105px;
-        border-radius: 10px;
-        object-fit: cover;
-        object-position: center;
-        cursor: pointer;
-        transition: 300ms;
-    }
-    
-    .maincard .miniimgs img:hover {
-        opacity: .75;
-    }
-    
-    .maincard .miniimgs img:nth-child(2) {
-        margin: 0 10px;
+        font-size: 1.1em;
     }
 }

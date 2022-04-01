@@ -8,10 +8,6 @@
         margin-top: 50px;
         margin-bottom: 70px;
     }
-
-    .footer {
-        margin-top: 50px;
-    }
 }
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
@@ -23,61 +19,14 @@
         margin-top: 50px;
         margin-bottom: 70px;
     }
-
-    .footer {
-        margin-top: 50px;
-    }
 }
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
-    .products {
-        display: flex;
-        justify-content: space-evenly;
-        flex-wrap: wrap;
-        gap: 20px;
-        margin-top: 50px;
-        margin-bottom: 70px;
-    }
-
     .products h1 {
         font-size: 20px;
     }
 
     .products a {
         font-size: 16px;
-    }
-
-    .footer {
-        margin-top: 50px;
-    }
-}
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {
-    .products {
-        display: flex;
-        justify-content: space-evenly;
-        flex-wrap: wrap;
-        gap: 20px;
-        margin-top: 50px;
-        margin-bottom: 70px;
-    }
-
-    .footer {
-        margin-top: 50px;
-    }
-}
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {
-    .products {
-        display: flex;
-        justify-content: space-evenly;
-        flex-wrap: wrap;
-        gap: 20px;
-        margin-top: 50px;
-        margin-bottom: 70px;
-    }
-
-    .footer {
-        margin-top: 50px;
     }
 }

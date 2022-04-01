@@ -28,7 +28,7 @@
     }
 
     .card h1 {
-        font-size: 20px;
+        font-size: 22px;
         color: white;
     }
 }
@@ -68,25 +68,12 @@
 }
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
-    .card {
-        box-shadow: 0 4px 8px 0 rgba(87, 12, 12, 0.75);
-        transition: 0.3s;
+     .card {
         width: 30%;
-        text-align: center;
     }
-      
-    .card:hover {
-        box-shadow: 0 8px 16px 0 rgba(87, 12, 12, 0.75);
-    }
-      
-    .container {
-        padding: 10px 16px;
-    }
-
+    
     .container a {
-        color: white;
-        text-decoration: none;
-        font-size: 20px;
+        font-size: 18px;
     }
 
     .card img {
@@ -95,42 +82,23 @@
         transition: 0.5s all ease-in-out;
     }
 
-    .card img:hover {
-        transform: scale(1.1);
-    }
-
     .card h1 {
         font-size: 22px;
-        color: white;
-    }
+    } 
 }
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
-    .card {
-        box-shadow: 0 4px 8px 0 rgba(87, 12, 12, 0.75);
-        transition: 0.3s;
-        width: 30%;
-        text-align: center;
-    }
-      
     .card:hover {
         box-shadow: 0 8px 16px 0 rgba(87, 12, 12, 0.75);
     }
-      
-    .container {
-        padding: 10px 16px;
-    }
-
+  
     .container a {
-        color: white;
-        text-decoration: none;
         font-size: 18px;
     }
 
     .card img {
         width: 200px;
         height: 200px;
-        transition: 0.5s all ease-in-out;
     }
 
     .card img:hover {
@@ -139,29 +107,15 @@
 
     .card h1 {
         font-size: 25px;
-        color: white;
     }
 }
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
     .card {
-        box-shadow: 0 4px 8px 0 rgba(87, 12, 12, 0.75);
-        transition: 0.3s;
         width: 25%;
-        text-align: center;
     }
       
-    .card:hover {
-        box-shadow: 0 8px 16px 0 rgba(87, 12, 12, 0.75);
-    }
-      
-    .container {
-        padding: 10px 16px;
-    }
-
     .container a {
-        color: white;
-        text-decoration: none;
         font-size: 20px;
     }
 
@@ -171,12 +125,7 @@
         transition: 0.5s all ease-in-out;
     }
 
-    .card img:hover {
-        transform: scale(1.1);
-    }
-
     .card h1 {
         font-size: 30px;
-        color: white;
-    }
+    } 
 }

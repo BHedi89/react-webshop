@@ -8,7 +8,7 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        position: absolute;
+        position: fixed;
     }
       
     .centered {
@@ -21,7 +21,7 @@
       
     .modal {
         width: 290px;
-        height: 750px;
+        height: 754px;
         background: white;
         color: white;
         z-index: 10;
@@ -149,7 +149,6 @@
         color: #fff;
         background: #2C0707;
         transition: all 0.25s ease;
-        font-family: 'Yanone Kaffeesatz', sans-serif;
     }
       
     .postBtn:hover {
@@ -167,7 +166,6 @@
         border: none;
         background: #E57373;
         transition: all 0.25s ease;
-        font-family: 'Yanone Kaffeesatz', sans-serif;
     }
       
     .cancelBtn:hover {
@@ -184,7 +182,7 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        position: absolute;
+        position: fixed;
     }
       
     .centered {
@@ -311,7 +309,7 @@
     .modalActions {
         position: absolute;
         bottom: 2px;
-        margin-bottom: 10px;
+        margin-bottom: 30px;
         width: 100%;
     }
       
@@ -333,7 +331,6 @@
         color: #fff;
         background: #2C0707;
         transition: all 0.25s ease;
-        font-family: 'Yanone Kaffeesatz', sans-serif;
     }
       
     .postBtn:hover {
@@ -351,7 +348,6 @@
         border: none;
         background: #E57373;
         transition: all 0.25s ease;
-        font-family: 'Yanone Kaffeesatz', sans-serif;
     }
       
     .cancelBtn:hover {
@@ -360,551 +356,20 @@
 }
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
-    .darkBG {
-        background-color: rgba(0, 0, 0, 0.555);
-        width: 100vw;
-        height: 100vh;
-        z-index: 0;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        position: absolute;
-    }
-      
-    .centered {
-        z-index: 10001;
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
-      
     .modal {
         width: 700px;
         height: 700px;
-        background: white;
-        color: white;
-        z-index: 10;
-        border-radius: 16px;
-        box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.04);
-    }
-      
-    .modalHeader {
-        height: 100px;
-        background: white;
-        overflow: hidden;
-        border-top-left-radius: 16px;
-        border-top-right-radius: 16px;
     }
       
     .heading {
-        margin: 0;
-        padding: 10px;
-        color: black;
-        font-weight: 500;
-        font-size: 80px;
-        text-align: center;
+        font-size: 62px;
     }
       
     .modalContent {
-        padding: 10px;
         font-size: 22px;
-        color: black;
-    }
-
-    .require {
-        text-align: center;
-    }
-
-    .hr {
-        width: 90%;
-    }
-
-    .container {
-        width: 80%;
-        max-width: 1200px;
-        margin: 0 auto;
-    }
-      
-    .container * {
-        box-sizing: border-box;
-    }
-      
-    .flexouter,
-    .flexinner {
-        list-style-type: none;
-        padding: 0;
-    }
-      
-    .flexouter {
-        max-width: 800px;
-        margin: 0 auto;
-    }
-      
-    .flexouter li,
-    .flexinner {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-    }
-      
-    .flexinner {
-        padding: 0 8px;
-        justify-content: space-between;  
-    }
-      
-    .flexouter > li:not(:last-child) {
-        margin-bottom: 20px;
-    }
-      
-    .flexouter li label,
-    .flexouter li p {
-        padding: 8px;
-        font-weight: 300;
-        letter-spacing: .09em;
-    }
-      
-    .flexouter > li > label,
-    .flexouter li p {
-        flex: 1 0 120px;
-        max-width: 220px;
-    }
-      
-    .flexouter > li > label + *,
-    .flexinner {
-        flex: 1 0 220px;
-    }
-      
-    .flexouter li p {
-        margin: 0;
-    }
-      
-    .flexouter li input:not([type='checkbox']),
-    .flexouter li textarea {
-        padding: 15px;
-    }
-      
-    .flexinner li {
-        width: 100px;
-    }
-      
-    .select {
-        height: 30px;
     }
 
     .modalActions {
-        position: absolute;
-        bottom: 2px;
-        margin-bottom: 10px;
-        width: 100%;
-    }
-      
-    .actionsContainer {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-    }
-      
-    .postBtn {
-        width: 200px;
-        margin-top: 10px;
-        cursor: pointer;
-        font-weight: 500;
-        padding: 11px 28px;
-        border-radius: 12px;
-        font-size: 1.2rem;
-        border: none;
-        color: #fff;
-        background: #2C0707;
-        transition: all 0.25s ease;
-        font-family: 'Yanone Kaffeesatz', sans-serif;
-    }
-      
-    .postBtn:hover {
-        background: #571515;
-    }
-      
-    .cancelBtn {
-        width: 200px;
-        margin-top: 10px;
-        cursor: pointer;
-        font-weight: 500;
-        padding: 11px 28px;
-        border-radius: 12px;
-        font-size: 1.2rem;
-        border: none;
-        background: #E57373;
-        transition: all 0.25s ease;
-        font-family: 'Yanone Kaffeesatz', sans-serif;
-    }
-      
-    .cancelBtn:hover {
-        background: #d37474;
-    }
-}
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {
-    .darkBG {
-        background-color: rgba(0, 0, 0, 0.555);
-        width: 100vw;
-        height: 100vh;
-        z-index: 0;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        position: absolute;
-    }
-      
-    .centered {
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
-      
-    .modal {
-        width: 700px;
-        height: 700px;
-        background: white;
-        color: white;
-        z-index: 10;
-        border-radius: 16px;
-        box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.04);
-    }
-      
-    .modalHeader {
-        height: 100px;
-        background: white;
-        overflow: hidden;
-        border-top-left-radius: 16px;
-        border-top-right-radius: 16px;
-    }
-      
-    .heading {
-        margin: 0;
-        padding: 10px;
-        color: black;
-        font-weight: 500;
-        font-size: 80px;
-        text-align: center;
-    }
-      
-    .modalContent {
-        padding: 10px;
-        font-size: 22px;
-        color: black;
-    }
-
-    .require {
-        text-align: center;
-    }
-
-    .hr {
-        width: 90%;
-    }
-
-    .container {
-        width: 80%;
-        max-width: 1200px;
-        margin: 0 auto;
-    }
-      
-    .container * {
-        box-sizing: border-box;
-    }
-      
-    .flexouter,
-    .flexinner {
-        list-style-type: none;
-        padding: 0;
-    }
-      
-    .flexouter {
-        max-width: 800px;
-        margin: 0 auto;
-    }
-      
-    .flexouter li,
-    .flexinner {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-    }
-      
-    .flexinner {
-        padding: 0 8px;
-        justify-content: space-between;  
-    }
-      
-    .flexouter > li:not(:last-child) {
-        margin-bottom: 20px;
-    }
-      
-    .flexouter li label,
-    .flexouter li p {
-        padding: 8px;
-        font-weight: 300;
-        letter-spacing: .09em;
-    }
-      
-    .flexouter > li > label,
-    .flexouter li p {
-        flex: 1 0 120px;
-        max-width: 220px;
-    }
-      
-    .flexouter > li > label + *,
-    .flexinner {
-        flex: 1 0 220px;
-    }
-      
-    .flexouter li p {
-        margin: 0;
-    }
-      
-    .flexouter li input:not([type='checkbox']),
-    .flexouter li textarea {
-        padding: 15px;
-    }
-      
-    .flexinner li {
-        width: 100px;
-    }
-
-    .select {
-        height: 30px;
-    }
-      
-    .modalActions {
-        position: absolute;
-        bottom: 2px;
-        margin-bottom: 10px;
-        width: 100%;
-    }
-      
-    .actionsContainer {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-    }
-      
-    .postBtn {
-        width: 200px;
-        margin-top: 10px;
-        cursor: pointer;
-        font-weight: 500;
-        padding: 11px 28px;
-        border-radius: 12px;
-        font-size: 1.2rem;
-        border: none;
-        color: #fff;
-        background: #2C0707;
-        transition: all 0.25s ease;
-        font-family: 'Yanone Kaffeesatz', sans-serif;
-    }
-      
-    .postBtn:hover {
-        background: #571515;
-    }
-      
-    .cancelBtn {
-        width: 200px;
-        margin-top: 10px;
-        cursor: pointer;
-        font-weight: 500;
-        padding: 11px 28px;
-        border-radius: 12px;
-        font-size: 1.2rem;
-        border: none;
-        background: #E57373;
-        transition: all 0.25s ease;
-        font-family: 'Yanone Kaffeesatz', sans-serif;
-    }
-      
-    .cancelBtn:hover {
-        background: #d37474;
-    }
-}
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {
-    .darkBG {
-        background-color: rgba(0, 0, 0, 0.555);
-        width: 100vw;
-        height: 100vh;
-        z-index: 0;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        position: absolute;
-    }
-      
-    .centered {
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
-      
-    .modal {
-        width: 700px;
-        height: 700px;
-        background: white;
-        color: white;
-        z-index: 10;
-        border-radius: 16px;
-        box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.04);
-    }
-      
-    .modalHeader {
-        height: 100px;
-        background: white;
-        overflow: hidden;
-        border-top-left-radius: 16px;
-        border-top-right-radius: 16px;
-    }
-      
-    .heading {
-        margin: 0;
-        padding: 10px;
-        color: black;
-        font-weight: 500;
-        font-size: 80px;
-        text-align: center;
-    }
-      
-    .modalContent {
-        padding: 10px;
-        font-size: 22px;
-        color: black;
-    }
-
-    .require {
-        text-align: center;
-    }
-
-    .hr {
-        width: 90%;
-    }
-
-    .container {
-        width: 80%;
-        max-width: 1200px;
-        margin: 0 auto;
-    }
-      
-    .container * {
-        box-sizing: border-box;
-    }
-      
-    .flexouter,
-    .flexinner {
-        list-style-type: none;
-        padding: 0;
-    }
-      
-    .flexouter {
-        max-width: 800px;
-        margin: 0 auto;
-    }
-      
-    .flexouter li,
-    .flexinner {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-    }
-      
-    .flexinner {
-        padding: 0 8px;
-        justify-content: space-between;  
-    }
-      
-    .flexouter > li:not(:last-child) {
-        margin-bottom: 20px;
-    }
-      
-    .flexouter li label,
-    .flexouter li p {
-        padding: 8px;
-        font-weight: 300;
-        letter-spacing: .09em;
-    }
-      
-    .flexouter > li > label,
-    .flexouter li p {
-        flex: 1 0 120px;
-        max-width: 220px;
-    }
-      
-    .flexouter > li > label + *,
-    .flexinner {
-        flex: 1 0 220px;
-    }
-      
-    .flexouter li p {
-        margin: 0;
-    }
-      
-    .flexouter li input:not([type='checkbox']),
-    .flexouter li textarea {
-        padding: 15px;
-    }
-      
-    .flexinner li {
-        width: 100px;
-    }
-
-    .select {
-        height: 30px;
-    }
-      
-    .modalActions {
-        position: absolute;
-        bottom: 2px;
-        margin-bottom: 10px;
-        width: 100%;
-    }
-      
-    .actionsContainer {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-    }
-      
-    .postBtn {
-        width: 200px;
-        margin-top: 10px;
-        cursor: pointer;
-        font-weight: 500;
-        padding: 11px 28px;
-        border-radius: 12px;
-        font-size: 1.2rem;
-        border: none;
-        color: #fff;
-        background: #2C0707;
-        transition: all 0.25s ease;
-        font-family: 'Yanone Kaffeesatz', sans-serif;
-    }
-      
-    .postBtn:hover {
-        background: #571515;
-    }
-      
-    .cancelBtn {
-        width: 200px;
-        margin-top: 10px;
-        cursor: pointer;
-        font-weight: 500;
-        padding: 11px 28px;
-        border-radius: 12px;
-        font-size: 1.2rem;
-        border: none;
-        background: #E57373;
-        transition: all 0.25s ease;
-        font-family: 'Yanone Kaffeesatz', sans-serif;
-    }
-      
-    .cancelBtn:hover {
-        background: #d37474;
+        margin-bottom: 40px;
     }
 }

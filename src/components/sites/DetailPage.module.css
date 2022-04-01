@@ -64,7 +64,6 @@
         color: white;
         background-color: #2C0707;
         border: 3px solid #8F4848;
-        font-family: 'Yanone Kaffeesatz', sans-serif;
     }
 
     .buybtn:hover {
@@ -190,7 +189,6 @@
         color: white;
         background-color: #2C0707;
         border: 3px solid #8F4848;
-        font-family: 'Yanone Kaffeesatz', sans-serif;
     }
 
     .buybtn:hover {
@@ -243,301 +241,56 @@
 }
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
-    .hero {
-        width: 100%;
-        height: 200px;
-        background-image: url("../images/hero/wp2382683.jpg");
-        background-size: cover;
-        background-repeat: no-repeat;
-    }
-
     .container {
-        color: white;
         display: flex;
         justify-content: space-around;
-        margin: 30px;
     }
 
     .image {
         text-align: center;
-        padding: 20px;
         width: 800px;
-    }
-
-    .image img {
-        width: 100%;
     }
 
     .data {
-        padding: 20px;
         width: 800px;
     }
 
-    .data h1 {
-        font-size: 60px;
-        margin: 0;
-    } 
-    
-    .data .ingredientstitle {
-        font-size: 22px;
-    }
-    
-    .reviewlink {
-        display: flex;
-    }
-
-    .reviewbtn {
-        font-size: 16px;
-        margin-bottom: 8px;
-        background-color: black;
-        border: none;
-        color: white;
-        cursor: pointer;
-    }
-
     .price, .ingredients {
-        font-size: 15px;
-    }
-
-    .about {
-        text-align: justify;
-        font-size: 15px;
-    }
-
-    .buybtn {
-        width: 120px;
-        height: 50px;
-        text-transform: uppercase;
-        font-size: 20px;
-        color: white;
-        background-color: #2C0707;
-        border: 3px solid #8F4848;
-        font-family: 'Yanone Kaffeesatz', sans-serif;
-    }
-
-    .buybtn:hover {
-        background-color: #8F4848;
-        border: 3px solid #2C0707;
-    }
-
-    .reviewscontainer {
-        color: white;
-        margin-bottom: 40px;
+        font-size: 18px;
     }
 
     .reviewstitle {
-        font-size: 50px;
         margin-left: 50px;
     }
 
     .reviewcontainer {
-        background-color: white;
-        color: black;
         width: 680px;
         margin-left: 50px;
         padding: 10px;
         display: flex;
         margin-bottom: 5px;
     }
-
-    .personaldata {
-        flex-basis: 30%;
-    }
-
-    .reviewdata {
-        flex-basis: 70%;
-    }
-
-    .icon {
-        margin-left: 5px;
-        margin-right: 5px;
-    }
-
-    .yes {
-        color: green;
-        font-size: 14px;
-    }
-
-    .no {
-        color: red;
-        font-size: 12px;
-    }
 }
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
-    .hero {
-        width: 100%;
-        height: 200px;
-        background-image: url("../images/hero/wp2382683.jpg");
-        background-size: cover;
-        background-repeat: no-repeat;
-    }
-
-    .container {
-        color: white;
-        display: flex;
-        justify-content: space-around;
-        margin: 30px;
-    }
-
-    .image {
-        text-align: center;
-        padding: 20px;
-        width: 800px;
-    }
-
-    .image img {
-        width: 100%;
-    }
-
-    .data {
-        padding: 20px;
-        width: 800px;
-    }
-
-    .data h1 {
-        font-size: 80px;
-        margin: 0;
-    } 
-    
-    .data .ingredientstitle {
-        font-size: 22px;
-    }
-    
-    .reviewlink {
-        display: flex;
-    }
-
-    .reviewbtn {
-        font-size: 18px;
-        margin-bottom: 10px;
-        background-color: black;
-        border: none;
-        color: white;
-        cursor: pointer;
-    }
-
-    .price, .ingredients {
-        font-size: 20px;
-    }
-
-    .about {
-        text-align: justify;
-        font-size: 20px;
-    }
-
-    .buybtn {
-        width: 120px;
-        height: 50px;
-        text-transform: uppercase;
-        font-size: 22px;
-        color: white;
-        background-color: #2C0707;
-        border: 3px solid #8F4848;
-        font-family: 'Yanone Kaffeesatz', sans-serif;
-        cursor: pointer;
-    }
-
-    .buybtn:hover {
-        background-color: #8F4848;
-        border: 3px solid #2C0707;
-    }
-
-    .reviewscontainer {
-        color: white;
-        margin-bottom: 40px;
-    }
-
     .reviewstitle {
-        font-size: 50px;
         margin-left: 100px;
     }
 
     .reviewcontainer {
-        background-color: white;
-        color: black;
         width: 800px;
         margin-left: 100px;
-        padding: 10px;
-        display: flex;
-        margin-bottom: 5px;
     }
-
-    .personaldata {
-        flex-basis: 30%;
-    }
-
-    .reviewdata {
-        flex-basis: 70%;
-    }
-
-    .icon {
-        margin-left: 5px;
-        margin-right: 5px;
-    }
-
-    .yes {
-        color: green;
-        font-size: 14px;
-    }
-
-    .no {
-        color: red;
-        font-size: 12px;
-    }
+     
 }
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
-    .hero {
-        width: 100%;
-        height: 200px;
-        background-image: url("../images/hero/wp2382683.jpg");
-        background-size: cover;
-        background-repeat: no-repeat;
-    }
-
-    .container {
-        color: white;
-        display: flex;
-        justify-content: space-around;
-        margin: 30px;
-    }
-
-    .image {
-        text-align: center;
-        padding: 20px;
-        width: 800px;
-    }
-
-    .image img {
-        width: 100%;
-    }
-
-    .data {
-        padding: 20px;
-        width: 800px;
-    }
-
     .data h1 {
         font-size: 80px;
-        margin: 0;
     } 
-    
-    .data .ingredientstitle {
-        font-size: 22px;
-    }
-    
-    .reviewlink {
-        display: flex;
-    }
-
+     
     .reviewbtn {
         font-size: 18px;
-        margin-bottom: 10px;
-        background-color: black;
-        border: none;
-        color: white;
-        cursor: pointer;
     }
 
     .price, .ingredients {
@@ -548,68 +301,13 @@
         text-align: justify;
         font-size: 20px;
     }
-
-    .buybtn {
-        width: 120px;
-        height: 50px;
-        text-transform: uppercase;
-        font-size: 22px;
-        color: white;
-        background-color: #2C0707;
-        border: 3px solid #8F4848;
-        font-family: 'Yanone Kaffeesatz', sans-serif;
-        cursor: pointer;
-    }
-
-    .buybtn:hover {
-        background-color: #8F4848;
-        border: 3px solid #2C0707;
-    }
-
-    .reviewscontainer {
-        color: white;
-        margin-bottom: 40px;
-    }
-
+ 
     .reviewstitle {
-        font-size: 50px;
-        margin-left: 100px;
+        margin-left: 80px;
     }
-
+ 
     .reviewcontainer {
-        background-color: white;
-        color: black;
         width: 90%;
         margin-left: 80px;
-        padding: 10px;
-        display: flex;
-        margin-bottom: 5px;
-    }
-
-    .personaldata {
-        flex-basis: 30%;
-    }
-
-    .reviewdata {
-        flex-basis: 70%;
-    }
-
-    .icon {
-        margin-left: 5px;
-        margin-right: 5px;
-    }
-
-    .yes {
-        color: green;
-        font-size: 14px;
-    }
-
-    .no {
-        color: red;
-        font-size: 12px;
-    }
-
-    .footer {
-        margin-top: 30px;
     }
 }

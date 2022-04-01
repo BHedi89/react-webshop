@@ -43,7 +43,6 @@
 @media only screen and (min-width: 600px) {
     .footer {
         margin-top: auto;
-        /* height: 120px; */
         background-color: black;
         display: flex;
         justify-content: space-evenly;
@@ -82,123 +81,7 @@
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
-    .footer {
-        margin-top: auto;
-        height: 120px;
-        background-color: black;
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-    }
-    
-    .contact {
-        color: white;
-    }
-    
-    .list {
-        list-style: none;
-        color: white;
-        padding: 0;
-    }
-
-    .list span {
-        font-size: 16px;
-        margin-left: 5px;
-    }
-
-    .list .face {
-        margin-left: 0;
-    }
-
     .logo {
-        text-align: center;
         font-size: 25px;
-    }
-
-    .logoName{
-        color: white;
-        text-decoration: none;
-    }
-}
-
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {
-    .footer {
-        margin-top: auto;
-        height: 120px;
-        background-color: black;
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-    }
-    
-    .contact {
-        color: white;
-    }
-    
-    .list {
-        list-style: none;
-        color: white;
-        padding: 0;
-    }
-
-    .list span {
-        font-size: 16px;
-        margin-left: 5px;
-    }
-
-    .list .face {
-        margin-left: 0;
-    }
-
-    .logo {
-        text-align: center;
-        font-size: 25px;
-    }
-
-    .logoName{
-        color: white;
-        text-decoration: none;
-    }
-}
-
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {
-    .footer {
-        margin-top: -50px;
-        height: 120px;
-        background-color: black;
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-    }
-    
-    .contact {
-        color: white;
-    }
-    
-    .list {
-        list-style: none;
-        color: white;
-        padding: 0;
-    }
-
-    .list span {
-        font-size: 16px;
-        margin-left: 5px;
-    }
-
-    .list .face {
-        margin-left: 0;
-    }
-
-    .logo {
-        text-align: center;
-        font-size: 25px;
-    }
-
-    .logoName{
-        color: white;
-        text-decoration: none;
     }
 }

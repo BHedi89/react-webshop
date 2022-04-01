@@ -44,67 +44,13 @@
 }
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
-    .starrating button {
-        background-color: transparent;
-        border: none;
-        outline: none;
-        cursor: pointer;
-        margin-bottom: 10px;
-    }
-
     .star {
         font-size: 20px;
     }
-
-    .on {
-        color: #E57373;
-    }
-
-    .off {
-        color: lightgray;
-    } 
 }
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
-    .starrating button {
-        background-color: transparent;
-        border: none;
-        outline: none;
-        cursor: pointer;
-        margin-bottom: 15px;
-    }
-
     .star {
         font-size: 25px;
     }
-
-    .on {
-        color: #E57373;
-    }
-
-    .off {
-        color: lightgray;
-    } 
-}
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {
-    .starrating button {
-        background-color: transparent;
-        border: none;
-        outline: none;
-        cursor: pointer;
-        margin-bottom: 15px;
-    }
-
-    .star {
-        font-size: 25px;
-    }
-
-    .on {
-        color: #E57373;
-    }
-
-    .off {
-        color: lightgray;
-    } 
 }

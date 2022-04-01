@@ -55,7 +55,7 @@
     }
     
     .herotitle {
-        font-size: 80px;
+        font-size: 70px;
         margin-bottom: 0;
         background-color: rgba(0, 0, 0, 0.411);
         padding: 50px;
@@ -67,108 +67,9 @@
         text-decoration: none;
     }
 }
-
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
-    .hero {
-        position: relative;
-        width: 100vw;
-        height: 80vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center center;
-        filter: brightness(80%);
-    }
-    
-    .herocontent {
-        position: relative;
-        color: white;
-        text-align: center;
-    }
-    
-    .herotitle {
-        font-size: 80px;
-        margin-bottom: 0;
-        background-color: rgba(0, 0, 0, 0.411);
-        padding: 50px;
-        letter-spacing: 5px;
-    }
-
-    .herotitle a {
-        color: white;
-        text-decoration: none;
-    }
-}
-
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
-    .hero {
-        position: relative;
-        width: 100vw;
-        height: 80vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center center;
-        filter: brightness(80%);
-    }
-    
-    .herocontent {
-        position: relative;
-        color: white;
-        text-align: center;
-    }
-    
     .herotitle {
         font-size: 80px;
-        margin-bottom: 0;
-        background-color: rgba(0, 0, 0, 0.411);
-        padding: 50px;
-        letter-spacing: 5px;
-    }
-
-    .herotitle a {
-        color: white;
-        text-decoration: none;
-    }
-}
-
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {
-    .hero {
-        position: relative;
-        width: 100vw;
-        height: 80vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center center;
-        filter: brightness(80%);
-    }
-    
-    .herocontent {
-        position: relative;
-        color: white;
-        text-align: center;
-    }
-    
-    .herotitle {
-        font-size: 80px;
-        margin-bottom: 0;
-        background-color: rgba(0, 0, 0, 0.411);
-        padding: 50px;
-        letter-spacing: 5px;
-    }
-
-    .herotitle a {
-        color: white;
-        text-decoration: none;
     }
 }
