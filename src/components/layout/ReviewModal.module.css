@@ -52,6 +52,13 @@
         color: black;
     }
 
+    .modalContent input, 
+    .modalContent select,
+    .modalContent textarea {
+        font-size: 17px;
+        border: 1px solid black;
+    }
+
     .require {
         text-align: center;
     }
@@ -224,6 +231,13 @@
         padding: 10px;
         font-size: 18px;
         color: black;
+    }
+
+    .modalContent input, 
+    .modalContent select,
+    .modalContent textarea {
+        font-size: 18px;
+        border: 1px solid black;
     }
 
     .require {

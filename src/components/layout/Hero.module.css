@@ -9,7 +9,7 @@
         align-items: center;
         background-repeat: no-repeat;
         background-size: cover;
-        background-position: center center;
+        background-position: center;
         filter: brightness(80%);
     }
     
@@ -40,14 +40,15 @@
         width: 100vw;
         height: 80vh;
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
         background-repeat: no-repeat;
         background-size: cover;
-        background-position: center center;
+        background-position: center;
         filter: brightness(80%);
     }
-    
+
     .herocontent {
         position: relative;
         color: white;

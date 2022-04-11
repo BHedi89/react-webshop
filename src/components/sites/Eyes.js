@@ -2,7 +2,7 @@ import React from "react";
 import classes from "./Eyes.module.css";
 import Navbar from "../layout/Navbar";
 import Hero from "../layout/Hero";
-import heroImage from "../images/hero/1620999293250botox-for-hyperhidrosis.jpg";
+import heroImage from "../images/hero/vfgf.jpg";
 import ShapeDivider from "../layout/ShapeDivider";
 import Footer from "../layout/Footer";
 import Productcard from "../layout/Productcard";

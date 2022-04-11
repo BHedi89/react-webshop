@@ -2,7 +2,7 @@ import React from "react";
 import classes from "./Face.module.css";
 import Navbar from "../layout/Navbar";
 import Hero from "../layout/Hero";
-import heroImage from "../images/hero/TTS-Web-Blog-Hair.jpg";
+import heroImage from "../images/hero/valenciasalon.seesite.biz_--_719127119.jpg";
 import ShapeDivider from "../layout/ShapeDivider";
 import Footer from "../layout/Footer";
 import Productcard from "../layout/Productcard";
