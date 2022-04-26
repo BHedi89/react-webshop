@@ -1,10 +1,11 @@
 import React from "react";
 import classes from "./ReviewModal.module.css";
 import { StarRating } from "./StarRating";
+import { ProductDataContext } from "../context/ProductDataContext";
 
 const FIREBASE_DOMAIN = "https://wonderful-makeups-5590a-default-rtdb.europe-west1.firebasedatabase.app"; 
 
-const  ReviewModal = (props) => {
+const ReviewModal = (props) => {
     const [checked, setChecked] = React.useState(true);
     const [rate, setRate] = React.useState(0);
     const [nickname, setNickname] = React.useState("");
@@ -12,6 +13,7 @@ const  ReviewModal = (props) => {
     const [age, setAge] = React.useState("");
     const [review, setReview] = React.useState("");
     const [recommend, setRecommend] = React.useState("yes");
+    let productContext = React.useContext(ProductDataContext);
 
     const postReview = () => {
         fetch(`${FIREBASE_DOMAIN}/products/${props.productId}/review.json`, {
@@ -25,7 +27,25 @@ const  ReviewModal = (props) => {
                 recommend: recommend
             })
         })
-        .then(resp => resp.json());
+        .then(resp => resp.json())
+        .then(({name}) => {
+            let productCopy = {...productContext.product};
+            for(const idx in productCopy){
+                productCopy[idx].review.push({
+                id: name,
+                rate: rate,
+                name: nickname,
+                title: title,
+                age: age,
+                text: review,
+                recommend: recommend
+                })
+                productContext.setProduct(productCopy);
+            }
+            
+            props.setOpen(false);
+        });
+        
     }
 
 

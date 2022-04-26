@@ -47,7 +47,6 @@ const DetailPage = () => {
                     })
                     .then(resp => resp.json())
                     .then(({name}) => {
-                        console.log(name);
                         let userCopy = {...userContext.user};
                         setAlertMsg("Product added to your cart!");
                         userCopy.cart.push({
@@ -57,9 +56,7 @@ const DetailPage = () => {
                             productPrice: product[key].price,
                             productImage: product[key].image
                         })
-                        
                         userContext.setUser(userCopy);
-                        console.log(userCopy)
                         setOpenAlert(!openAlert);
                     });
                 }
