@@ -17,7 +17,6 @@ const FIREBASE_DOMAIN = "https://wonderful-makeups-5590a-default-rtdb.europe-wes
 
 const DetailPage = () => {
     let {id} = useParams();
-    let {rate} = useParams();
     const [product, setProduct] = React.useState([]);
     const [open, setOpen] = React.useState(false);
     const [openAlert, setOpenAlert] = React.useState(false);
@@ -31,7 +30,6 @@ const DetailPage = () => {
             productList.push(productContext.product[key]);
         }
         setProduct(productList);
-        
     }, []);
 
     const addToCart = () => {
@@ -48,8 +46,20 @@ const DetailPage = () => {
                         })
                     })
                     .then(resp => resp.json())
-                    .then(() => {
+                    .then(({name}) => {
+                        console.log(name);
+                        let userCopy = {...userContext.user};
                         setAlertMsg("Product added to your cart!");
+                        userCopy.cart.push({
+                            id: name,
+                            productId: product[key].id,
+                            productName: product[key].name,
+                            productPrice: product[key].price,
+                            productImage: product[key].image
+                        })
+                        
+                        userContext.setUser(userCopy);
+                        console.log(userCopy)
                         setOpenAlert(!openAlert);
                     });
                 }
@@ -58,13 +68,12 @@ const DetailPage = () => {
             setAlertMsg("Log in to buy this product.");
             setOpenAlert(!openAlert);
         }
-        
     }
 
     const handleClose = () => {
         setOpenAlert(!openAlert);
     }
-     
+
     return (
         <>
             <Navbar />
@@ -81,7 +90,7 @@ const DetailPage = () => {
                     if(product.id === id) {
                         return (
                             <div key={product.id}>
-                                <div className={classes.container} >
+                                <div className={classes.container}>
                                     <div className={classes.image}>
                                         <img src={product.image}/>
                                     </div>
@@ -90,7 +99,11 @@ const DetailPage = () => {
                                         <div className={classes.reviewlink}>
                                             <StarRating 
                                                 key={product.id}
-                                                ratingnum={rate}
+                                                ratingnum={product.review.map(() => {
+                                                    let sum = 0;
+                                                    product.review.forEach((obj) => sum += obj.rate);
+                                                    return Math.round(sum / product.review.length);
+                                                })}
                                                 productId={product.id}
                                                 setOpen={open}
                                             />
