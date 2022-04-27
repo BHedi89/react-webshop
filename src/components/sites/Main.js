@@ -16,10 +16,12 @@ import img5 from "../images/lipstick/pexels-photo-3568544.jpeg";
 import img6 from "../images/face/pexels-photo-2787341.jpeg";
 import articleImage from "../images/longImages/photo-1613565015448-fe6c5dc9ec40.jpg";
 import { ProductDataContext } from "../context/ProductDataContext";
+import { RatingDataContext } from "../context/RatingDataContext";
  
 const Main = () => {
     const [product, setProduct] = React.useState([]);
     let productContext = React.useContext(ProductDataContext);
+    let ratingContext = React.useContext(RatingDataContext);
 
     React.useEffect(() => {
         const productList = [];
@@ -67,10 +69,9 @@ const Main = () => {
                                         productId={products.id}
                                         productName={products.name}
                                         productImage={products.image}
-                                        productRate={products.review.map(() => {
-                                            let sum = 0;
-                                            products.review.forEach((obj) => sum += obj.rate);
-                                            return Math.round(sum / products.review.length);
+                                        productRate={ratingContext.avgRate.filter((item) => {
+                                            let rate = item.id === products.id ? item.avg : 0;
+                                            return rate;
                                         })}
                                     />
                         }  

@@ -7,10 +7,12 @@ import ShapeDivider from "../layout/ShapeDivider";
 import Footer from "../layout/Footer";
 import Productcard from "../layout/Productcard";
 import { ProductDataContext } from "../context/ProductDataContext";
+import { RatingDataContext } from "../context/RatingDataContext";
 
 const Eyes = () => {
     const [eyemakeup, setEyemakeup] = React.useState([]);
     let productContext = React.useContext(ProductDataContext);
+    let ratingContext = React.useContext(RatingDataContext);
 
     React.useEffect(() => {
         const eyemakeupList = [];
@@ -37,10 +39,9 @@ const Eyes = () => {
                                 productName={product.name}
                                 productId={product.id}
                                 productImage={product.image}
-                                productRate={product.review.map(() => {
-                                    let sum = 0;
-                                    product.review.forEach((obj) => sum += obj.rate);
-                                    return Math.round(sum / product.review.length);
+                                productRate={ratingContext.avgRate.filter((item) => {
+                                    let rate = item.id === product.id ? item.avg : 0;
+                                    return rate;
                                 })}
                             />
                 })}

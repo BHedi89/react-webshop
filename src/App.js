@@ -16,30 +16,33 @@ import FavouritePage from './components/sites/FavouritePage';
 import Orders from './components/sites/Orders';
 import DeliveryData from './components/sites/DeliveryData';
 import Cart from './components/sites/Cart';
+import RatingDataProvider from './components/context/RatingDataProvider';
 
 function App() {
   return (
     <>
       <AuthProvider>
         <ProductDataProvider>
-          <BrowserRouter>
-            <Routes>
-              <Route path="/*" element={<Main />} />
-              <Route path="/login" element={<Login/>} />
-              <Route path="/registration" element={<Registration/>} />
-              <Route path="/account" element={<Account/>} />
-              <Route path="/forgotpassword" element={<ForgotPassword />} />
-              <Route path="/face" element={<Face />} />
-              <Route path="/lips" element={<Lips />} />
-              <Route path="/eyes" element={<Eyes />} />
-              <Route path="/nails" element={<Nails />} />
-              <Route path="/details/:id" element={<DetailPage/>}/>
-              <Route path="/favourite" element={<FavouritePage />} />
-              <Route path='/orders' element={<Orders />} />
-              <Route path='/delivery' element={<DeliveryData />} />
-              <Route path='/cart' element={<Cart />} />
-            </Routes>
-          </BrowserRouter>
+          <RatingDataProvider>
+            <BrowserRouter>
+              <Routes>
+                <Route path="/*" element={<Main />} />
+                <Route path="/login" element={<Login/>} />
+                <Route path="/registration" element={<Registration/>} />
+                <Route path="/account" element={<Account/>} />
+                <Route path="/forgotpassword" element={<ForgotPassword />} />
+                <Route path="/face" element={<Face />} />
+                <Route path="/lips" element={<Lips />} />
+                <Route path="/eyes" element={<Eyes />} />
+                <Route path="/nails" element={<Nails />} />
+                <Route path="/details/:id" element={<DetailPage/>}/>
+                <Route path="/favourite" element={<FavouritePage />} />
+                <Route path='/orders' element={<Orders />} />
+                <Route path='/delivery' element={<DeliveryData />} />
+                <Route path='/cart' element={<Cart />} />
+              </Routes>
+            </BrowserRouter>
+          </RatingDataProvider>
         </ProductDataProvider>
       </AuthProvider>
     </>

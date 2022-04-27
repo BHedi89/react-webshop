@@ -7,10 +7,12 @@ import ShapeDivider from "../layout/ShapeDivider";
 import Footer from "../layout/Footer";
 import Productcard from "../layout/Productcard";
 import { ProductDataContext } from "../context/ProductDataContext";
+import { RatingDataContext } from "../context/RatingDataContext";
 
 const Nails = () => {
     const [nailmakeup, setNailmakeup] = React.useState([]);
     let productContext = React.useContext(ProductDataContext);
+    let ratingContext = React.useContext(RatingDataContext);
 
     React.useEffect(() => {
         let nailmakeupList = [];
@@ -38,10 +40,9 @@ const Nails = () => {
                                 productId={product.id}
                                 productName={product.name}
                                 productImage={product.image}
-                                productRate={product.review.map(() => {
-                                    let sum = 0;
-                                    product.review.forEach((obj) => sum += obj.rate);
-                                    return Math.round(sum / product.review.length);
+                                productRate={ratingContext.avgRate.filter((item) => {
+                                    let rate = item.id === product.id ? item.avg : 0;
+                                    return rate;
                                 })}
                             />
                 })}
