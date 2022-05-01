@@ -7,13 +7,17 @@ const FIREBASE_DOMAIN = "https://wonderful-makeups-5590a-default-rtdb.europe-wes
 
 const ReviewModal = (props) => {
     const [checked, setChecked] = React.useState(true);
-    const [rate, setRate] = React.useState(0);
+    const [rate, setRate] = React.useState("");
     const [nickname, setNickname] = React.useState("");
     const [title, setTitle] = React.useState("");
     const [age, setAge] = React.useState("");
     const [review, setReview] = React.useState("");
     const [recommend, setRecommend] = React.useState("yes");
     let productContext = React.useContext(ProductDataContext);
+
+    const getRate = (rateNum) => {
+        setRate(rateNum);
+    }
 
     const postReview = () => {
         fetch(`${FIREBASE_DOMAIN}/products/${props.productId}/review.json`, {
@@ -32,22 +36,20 @@ const ReviewModal = (props) => {
             let productCopy = {...productContext.product};
             for(const idx in productCopy){
                 productCopy[idx].review.push({
-                id: name,
-                rate: rate,
-                name: nickname,
-                title: title,
-                age: age,
-                text: review,
-                recommend: recommend
+                    id: name,
+                    rate: rate,
+                    name: nickname,
+                    title: title,
+                    age: age,
+                    text: review,
+                    recommend: recommend
                 })
                 productContext.setProduct(productCopy);
             }
             
             props.setOpen(false);
         });
-        
     }
-
 
     return (
         <>
@@ -67,6 +69,8 @@ const ReviewModal = (props) => {
                                     <label>Rating*:</label>
                                     <StarRating 
                                         productId={props.productId}
+                                        // setOpen={props.setOpen}
+                                        sendRate={getRate}
                                     />
                                 </li>
                                 <li>
