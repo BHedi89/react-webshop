@@ -1,9 +1,15 @@
 import React from "react";
 import classes from "./StarRating.module.css";
+import { useNavigate } from "react-router-dom";
 
 export const StarRating = (props) => {
     const [rating, setRating] = React.useState([props.ratingnum]);
     const [hover, setHover] = React.useState(0);
+    let navigate = useNavigate();
+
+    const navigateToDeatailPage = () => {
+        navigate(`/details/${props.productId}`, {replace: true});
+    }
     
     return (
         <>
@@ -35,6 +41,7 @@ export const StarRating = (props) => {
                                     type="button"
                                     key={index}
                                     className={index <= (hover || rating) ? classes.on : classes.off}
+                                    onClick={navigateToDeatailPage}
                                 >
                                     <span className={classes.star}>&#9733;</span>
                                 </button>
