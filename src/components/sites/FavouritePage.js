@@ -6,10 +6,12 @@ import Navbar from "../layout/Navbar";
 import ShapeDivider from "../layout/ShapeDivider";
 import Footer from "../layout/Footer";
 import Productcard from "../layout/Productcard";
+import { RatingDataContext } from "../context/RatingDataContext";
 
 const FavouritePage = () => {
     let userContext = React.useContext(UserDataContext);
     let productContext = React.useContext(ProductDataContext);
+    let ratingContext = React.useContext(RatingDataContext);
      
     return (
         <>
@@ -32,10 +34,9 @@ const FavouritePage = () => {
                                             productId={prod.id}
                                             productName={prod.name}
                                             productImage={prod.image}
-                                            productRate={prod.review.map(() => {
-                                                let sum = 0;
-                                                prod.review.forEach((obj) => sum += obj.rate);
-                                                return Math.round(sum / prod.review.length);
+                                            productRate={ratingContext.avgRate.filter((item) => {
+                                                let rate = item.id === prod.id ? item.avg : 0;
+                                                return rate;
                                             })}
                                         />
                                         :
