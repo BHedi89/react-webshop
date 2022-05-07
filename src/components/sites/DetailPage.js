@@ -13,10 +13,11 @@ import { ProductDataContext } from "../context/ProductDataContext";
 import { UserDataContext } from "../login/UserDataContext";
 import Alert from "../layout/Alert";
 import { useLocation } from "react-router-dom";
+import { RatingDataContext } from "../context/RatingDataContext";
 
 const FIREBASE_DOMAIN = "https://wonderful-makeups-5590a-default-rtdb.europe-west1.firebasedatabase.app";
 
-const DetailPage = (props) => {
+const DetailPage = () => {
     let {id} = useParams();
     const [product, setProduct] = React.useState([]);
     const [open, setOpen] = React.useState(false);
@@ -25,6 +26,8 @@ const DetailPage = (props) => {
     let productContext = React.useContext(ProductDataContext);
     let userContext = React.useContext(UserDataContext);
     const location = useLocation();
+    let ratingContext = React.useContext(RatingDataContext);
+    // console.log(ratingContext);
 
     React.useEffect(() => {
         const productList = [];
@@ -73,6 +76,12 @@ const DetailPage = (props) => {
         setOpenAlert(!openAlert);
     }
 
+    function getRate() {
+        const contextArray = ratingContext.avgRate;
+        const rate = contextArray.find(item => item.id === id);
+        return rate.avg;
+    }
+
     return (
         <>
             <Navbar />
@@ -98,7 +107,7 @@ const DetailPage = (props) => {
                                         <div className={classes.reviewlink}>
                                             <StarRating 
                                                 key={product.id}
-                                                ratingnum={location.state.ratingnum}
+                                                ratingnum={getRate()}
                                                 productId={product.id}
                                                 // setOpen={open}
                                             />
