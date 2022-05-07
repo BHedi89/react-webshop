@@ -14,7 +14,7 @@ const FavouriteHeart = (props) => {
     let productContext = React.useContext(ProductDataContext);
     let userContext = React.useContext(UserDataContext);
     const [favourite, setFavourite] = React.useState(false);
-    
+
     const addFavourite = () => {        
         productContext.product.map(product => {
             if(product.id === props.productId) {
@@ -69,10 +69,15 @@ const FavouriteHeart = (props) => {
         }
     }
 
+    function addFavouriteAfterLogin(){
+        setAlertMsg("You have to log in to add favourite!");
+        setOpen(!open);
+    }
+
     const handleClose = () => {
         setOpen(!open);
     }
-     
+
     return (
         <>
             {open && <Alert
@@ -81,12 +86,22 @@ const FavouriteHeart = (props) => {
                     </>}
                     handleClose={handleClose}
             />}
-            
-            <FontAwesomeIcon 
-                icon={faHeart} 
-                className={favourite ? classes.red : classes.blank}
-                onClick={() => {setFavourite(!favourite); toggleFavourite()}}
-            />  
+            {userContext?.user?.type === "user"
+                ?
+                    <FontAwesomeIcon 
+                        icon={faHeart} 
+                        className={favourite || userContext.user.favourite.some(item => {
+                            return item.productId === props.productId;
+                        }) ? classes.red : classes.blank}
+                        onClick={() => {setFavourite(!favourite); toggleFavourite()}}
+                    /> 
+                :
+                    <FontAwesomeIcon 
+                        icon={faHeart} 
+                        className={classes.blank}
+                        onClick={() => addFavouriteAfterLogin()}
+                    /> 
+            } 
         </>
     )
 }
