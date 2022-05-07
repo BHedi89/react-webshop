@@ -12,10 +12,11 @@ import { ImCross } from "react-icons/im";
 import { ProductDataContext } from "../context/ProductDataContext";
 import { UserDataContext } from "../login/UserDataContext";
 import Alert from "../layout/Alert";
+import { useLocation } from "react-router-dom";
 
 const FIREBASE_DOMAIN = "https://wonderful-makeups-5590a-default-rtdb.europe-west1.firebasedatabase.app";
 
-const DetailPage = () => {
+const DetailPage = (props) => {
     let {id} = useParams();
     const [product, setProduct] = React.useState([]);
     const [open, setOpen] = React.useState(false);
@@ -23,6 +24,7 @@ const DetailPage = () => {
     const [alertMsg, setAlertMsg] = React.useState("");
     let productContext = React.useContext(ProductDataContext);
     let userContext = React.useContext(UserDataContext);
+    const location = useLocation();
 
     React.useEffect(() => {
         const productList = [];
@@ -96,13 +98,9 @@ const DetailPage = () => {
                                         <div className={classes.reviewlink}>
                                             <StarRating 
                                                 key={product.id}
-                                                ratingnum={product.review.map(() => {
-                                                    let sum = 0;
-                                                    product.review.forEach((obj) => sum += obj.rate);
-                                                    return Math.round(sum / product.review.length);
-                                                })}
+                                                ratingnum={location.state.ratingnum}
                                                 productId={product.id}
-                                                setOpen={open}
+                                                // setOpen={open}
                                             />
                                             <button 
                                                 className={classes.reviewbtn}
@@ -132,7 +130,7 @@ const DetailPage = () => {
                                     <h1 className={classes.reviewstitle}>Ratings and Reviews</h1>
                                     {product.review.map(review => {
                                         return (
-                                            <div className={classes.reviewcontainer}>
+                                            <div className={classes.reviewcontainer} key={review.id}>
                                                 <div className={classes.personaldata}>
                                                     <h3>{review.name}</h3>
                                                     <p>Age: {review.age}</p>
@@ -169,7 +167,6 @@ const DetailPage = () => {
                             </div>
                         )
                     }
-                
                 })}
             </>
             <ShapeDivider />

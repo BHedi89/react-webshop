@@ -43,10 +43,10 @@ const Dropdownbutton = () => {
             {open && 
                 <div className={classes.dropdown}>
                     <div className={classes.droplist}>
-                        <Link to="/account">Account</Link>
-                        <Link to="/orders">Orders</Link>
-                        <Link to="/favourite">Favourite</Link>
-                        <Link to="/" onClick={logout}>Sign out</Link>
+                        <Link to="/account" state={{ratingnum: 0}}>Account</Link>
+                        <Link to="/orders" state={{ratingnum: 0}}>Orders</Link>
+                        <Link to="/favourite" state={{ratingnum: 0}}>Favourite</Link>
+                        <Link to="/" state={{ratingnum: 0}} onClick={logout}>Sign out</Link>
                     </div>
                 </div>
             }

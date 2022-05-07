@@ -23,23 +23,23 @@ const Navbar = () => {
             <li
               className={`${isActive ? classes.visible : null} ${classes.one}`}
             >
-              <Link to="/face">Face</Link>
+              <Link to="/face"  state={{ratingnum: 0}}>Face</Link>
             </li>
             <li
               className={`${isActive ? classes.visible : null} ${classes.two}`}
             >
-              <Link to="/lips">Lips</Link>
+              <Link to="/lips" state={{ratingnum: 0}}>Lips</Link>
             </li>
             <li
               className={`${isActive ? classes.visible : null} ${classes.three}`}
             >
-              <Link to="/eyes">Eyes</Link>
+              <Link to="/eyes" state={{ratingnum: 0}}>Eyes</Link>
             </li>
             <li
               className={`${classes.logo} ${classes.four}`}
               onClick={logoTrigger}
             >
-              <Link to="#">
+              <Link to="#" state={{ratingnum: 0}}>
                 WM
                 <br />
                 <span>Wonderful Makeups</span>
@@ -52,7 +52,7 @@ const Navbar = () => {
             <li
               className={`${isActive ? classes.visible : null} ${classes.five}`}
             >
-              <Link to="/nails">Nails</Link>
+              <Link to="/nails" state={{ratingnum: 0}}>Nails</Link>
             </li>
             <li
               className={`${isActive ? classes.visible : null} ${classes.six}`}
@@ -61,7 +61,7 @@ const Navbar = () => {
                 ? 
                 <Dropdownbutton/>
                 :
-                <Link to="/login">Login</Link>
+                <Link to="/login" state={{ratingnum: 0}}>Login</Link>
               }
             </li>
             <li
@@ -69,14 +69,14 @@ const Navbar = () => {
             >
               {userContext?.user?.type === "user"
                 ?
-                <a href="/cart">
+                <Link to="/cart" state={{ratingnum: 0}}>
                   <FontAwesomeIcon icon={faShoppingBasket} className={classes.icon} />
                   <span className={classes.cartitems}>{userContext.user.cart.length}</span>
-                </a>
+                </Link>
                 :
-                <a href="/cart">
+                <Link to="/cart" state={{ratingnum: 0}}>
                   <FontAwesomeIcon icon={faShoppingBasket} className={classes.icon} />
-                </a>
+                </Link>
               }
               
             </li>
