@@ -7,6 +7,7 @@ import ShapeDivider from "../layout/ShapeDivider";
 import Footer from "../layout/Footer";
 import Productcard from "../layout/Productcard";
 import { RatingDataContext } from "../context/RatingDataContext";
+import { Fragment } from "react";
 
 const FavouritePage = () => {
     let userContext = React.useContext(UserDataContext);
@@ -23,7 +24,7 @@ const FavouritePage = () => {
                 <div className={classes.favourites}>
                     {userContext.user.favourite.map(fav => {
                         return (
-                            <>
+                            <Fragment key={fav.productId}>
                                 {productContext.product.map(prod => {
                                     return (
                                         fav.productId === prod.id
@@ -42,7 +43,7 @@ const FavouritePage = () => {
                                         null
                                     )
                                 })}
-                            </>
+                            </Fragment>
                         )
                     })}
                 </div>
