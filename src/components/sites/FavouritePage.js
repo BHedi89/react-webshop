@@ -22,7 +22,6 @@ const FavouritePage = () => {
                 <h1 className={classes.favouritetitle}>Favourites</h1>
                 <div className={classes.favourites}>
                     {userContext.user.favourite.map(fav => {
-                        console.log(fav)
                         return (
                             <>
                                 {productContext.product.map(prod => {
