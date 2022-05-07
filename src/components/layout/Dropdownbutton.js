@@ -37,7 +37,7 @@ const Dropdownbutton = () => {
                 </>}
                 handleClose={handleClose}
             />}
-            <Link to="#" state={{ratingnum: 0}} className={classes.dropdownbtn} onClick={() => setOpen(open => !open)}>
+            <Link to="#" className={classes.dropdownbtn} onClick={() => setOpen(open => !open)}>
                 Profile
             </Link>
             {open && 
