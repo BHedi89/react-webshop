@@ -12,7 +12,6 @@ import { ImCross } from "react-icons/im";
 import { ProductDataContext } from "../context/ProductDataContext";
 import { UserDataContext } from "../login/UserDataContext";
 import Alert from "../layout/Alert";
-import { useLocation } from "react-router-dom";
 import { RatingDataContext } from "../context/RatingDataContext";
 
 const FIREBASE_DOMAIN = "https://wonderful-makeups-5590a-default-rtdb.europe-west1.firebasedatabase.app";
@@ -25,9 +24,7 @@ const DetailPage = () => {
     const [alertMsg, setAlertMsg] = React.useState("");
     let productContext = React.useContext(ProductDataContext);
     let userContext = React.useContext(UserDataContext);
-    const location = useLocation();
     let ratingContext = React.useContext(RatingDataContext);
-    // console.log(ratingContext);
 
     React.useEffect(() => {
         const productList = [];
