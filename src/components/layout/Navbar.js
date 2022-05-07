@@ -6,17 +6,35 @@ import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import Dropdownbutton from "./Dropdownbutton";
 import { UserDataContext } from "../login/UserDataContext";
+import Alert from "../layout/Alert";
 
 const Navbar = () => {
   const [isActive, setActive] = React.useState(false);
+  const [openAlert, setOpenAlert] = React.useState(false);
+  const [alertMsg, setAlertMsg] = React.useState("");
   let userContext = React.useContext(UserDataContext);
 
   const logoTrigger = () => {
     setActive(!isActive);
   };
 
+  const notLoggedInAlert = () => {
+    setAlertMsg("Log in to see your cart.");
+    setOpenAlert(!openAlert);
+  }
+
+  const handleClose = () => {
+    setOpenAlert(!openAlert);
+  }
+ 
   return (
     <>
+    {openAlert && <Alert
+      content={<>
+          <p>{alertMsg}</p>
+      </>}
+      handleClose={handleClose}
+    />}
       <header>
         <nav>
           <ul>
@@ -74,8 +92,8 @@ const Navbar = () => {
                   <span className={classes.cartitems}>{userContext.user.cart.length}</span>
                 </Link>
                 :
-                <Link to="/cart" state={{ratingnum: 0}}>
-                  <FontAwesomeIcon icon={faShoppingBasket} className={classes.icon} />
+                <Link to="#" state={{ratingnum: 0}}>
+                  <FontAwesomeIcon icon={faShoppingBasket} className={classes.icon} onClick={notLoggedInAlert} />
                 </Link>
               }
               
