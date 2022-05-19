@@ -31,8 +31,7 @@ const FavouriteHeart = (props) => {
                     let userCopy = {...userContext.user};
                     userCopy.favourite.push({
                         id: name,
-                        productId: product.id,
-                        isFavourite: true
+                        productId: product.id
                     })
                     userContext.setUser(userCopy);
                 });
@@ -44,7 +43,6 @@ const FavouriteHeart = (props) => {
         productContext.product.map(product => {
             if(product.id === props.productId) {
                 for(const key in userContext.user.favourite){
-                    console.log(userContext.user.favourite[key]);
                     if(userContext.user.favourite[key].productId === product.id){
                         let id = userContext.user.favourite[key].id;
                         fetch(`${FIREBASE_DOMAIN}/users/${userContext.user.uid}/favourite/${id}.json`, {
@@ -54,6 +52,11 @@ const FavouriteHeart = (props) => {
                         .then(() => {
                             setAlertMsg("Product removed from your favourites!");
                             setOpen(!open);
+                            
+                            let userCopy = {...userContext.user};
+                            let idx = userCopy.favourite.findIndex((item) => item.productId === product.id);
+                            userCopy.favourite.splice(idx, 1);
+                            userContext.setUser(userCopy);
                         });
                     }
                 }
@@ -62,7 +65,8 @@ const FavouriteHeart = (props) => {
     }
 
     function toggleFavourite() {
-        if(!favourite) {
+        let cond = userContext.user.favourite.some(item => item.productId === props.productId);
+        if(!cond) {
             addFavourite();
         } else {
             removeFromFavourite();
@@ -90,9 +94,12 @@ const FavouriteHeart = (props) => {
                 ?
                     <FontAwesomeIcon 
                         icon={faHeart} 
-                        className={favourite || userContext.user.favourite.some(item => {
-                            return item.productId === props.productId;
-                        }) ? classes.red : classes.blank}
+                        className={
+                            favourite || userContext.user.favourite.some(item => item.productId === props.productId) 
+                            ? 
+                                classes.red 
+                            : 
+                                classes.blank}
                         onClick={() => {setFavourite(!favourite); toggleFavourite()}}
                     /> 
                 :
