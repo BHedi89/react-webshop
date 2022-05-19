@@ -57,6 +57,7 @@ const FavouriteHeart = (props) => {
                             let idx = userCopy.favourite.findIndex((item) => item.productId === product.id);
                             userCopy.favourite.splice(idx, 1);
                             userContext.setUser(userCopy);
+                            setFavourite(false);
                         });
                     }
                 }
