@@ -45,7 +45,9 @@ const AuthProvider = ({children}) => {
                                 favourite: favouriteList, 
                                 cart: cartList,  
                                 orders: orderList,
-                                uid: loggedinUser.uid});
+                                uid: loggedinUser.uid
+                            }
+                        );
                         setPending(false);
                     })
             } else {

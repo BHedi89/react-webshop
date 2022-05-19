@@ -22,7 +22,7 @@ const Login = () => {
     let userContext = React.useContext(UserDataContext);
     const [open, setOpen] = React.useState(false);
     const [alertMsg, setAlertMsg] = React.useState("");
-
+    
     function signIn(e) {
         e.preventDefault();
         let auth = getAuth();
@@ -31,14 +31,46 @@ const Login = () => {
             fetch(`${FIREBASE_DOMAIN}/users/${user.uid}.json`)
                 .then(resp => resp.json())
                 .then(data => {
-                    userContext.setUser({...data, uid: user.uid});
+                    let favouriteList = [];
+                        for(const key in data.favourite){
+                            const favouriteObj = {
+                                id: key,
+                                ...data.favourite[key]
+                            }
+                            favouriteList.push(favouriteObj);
+                        }
+                        let cartList = [];
+                        for(const key in data.cart){
+                            const cartObj = {
+                                id: key,
+                                ...data.cart[key]
+                            }
+                            cartList.push(cartObj);
+                        }
+                        let orderList = [];
+                        for(const key in data.orders) {
+                            const orderObj = {
+                                orderId: key,
+                                ...data.orders[key]
+                            }
+                            orderList.push(orderObj);
+                        }
+                    let userCopy = {...data, 
+                        favourite: favouriteList, 
+                        cart: cartList,  
+                        orders: orderList
+                    };
+
                     if(data.type === "user") {
                         setAlertMsg("Sign in successfully");
                         setOpen(!open);
+                        
                         setTimeout(() => {
                             navigate("/", {replace: true});
                         }, 2000);
-                    }
+
+                        userContext.setUser({...userCopy, uid: user.uid});
+                    }                    
                 })
         }) 
         .catch(error => {
