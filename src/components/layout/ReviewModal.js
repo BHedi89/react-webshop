@@ -2,6 +2,7 @@ import React from "react";
 import classes from "./ReviewModal.module.css";
 import { StarRating } from "./StarRating";
 import { ProductDataContext } from "../context/ProductDataContext";
+import { RatingDataContext } from "../context/RatingDataContext";
 
 const FIREBASE_DOMAIN = "https://wonderful-makeups-5590a-default-rtdb.europe-west1.firebasedatabase.app"; 
 
@@ -14,6 +15,7 @@ const ReviewModal = (props) => {
     const [review, setReview] = React.useState("");
     const [recommend, setRecommend] = React.useState("yes");
     let productContext = React.useContext(ProductDataContext);
+    let ratingContext = React.useContext(RatingDataContext);
 
     const getRate = (rateNum) => {
         setRate(rateNum);
@@ -46,9 +48,16 @@ const ReviewModal = (props) => {
                 })
                 productContext.setProduct(productCopy);
             }
-            
             props.setOpen(false);
-        });
+
+            for(const idx in ratingContext.avgRate){
+                if(props.productId === ratingContext.avgRate[idx].id) {
+                    let newAvg = (ratingContext.avgRate[idx].avg + rate) / 2;
+                    ratingContext.avgRate[idx].avg = Math.round(newAvg);
+                    ratingContext.setRate(ratingContext.avgRate)
+                }
+            };
+        })
     }
 
     return (
@@ -69,7 +78,7 @@ const ReviewModal = (props) => {
                                     <label>Rating*:</label>
                                     <StarRating 
                                         productId={props.productId}
-                                        // setOpen={props.setOpen}
+                                        open={props.open}
                                         sendRate={getRate}
                                     />
                                 </li>

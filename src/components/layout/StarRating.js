@@ -13,7 +13,7 @@ export const StarRating = (props) => {
     
     return (
         <>
-            {props.setOpen === true
+            {props.open === true
                 ?
                 <div className={classes.starrating}>
                     {[...Array(5)].map((star, index) => {
