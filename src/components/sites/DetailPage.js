@@ -17,7 +17,7 @@ import { RatingDataContext } from "../context/RatingDataContext";
 const FIREBASE_DOMAIN = "https://wonderful-makeups-5590a-default-rtdb.europe-west1.firebasedatabase.app";
 
 const DetailPage = () => {
-    let {id} = useParams();
+    let {id} = useParams();   
     const [product, setProduct] = React.useState([]);
     const [open, setOpen] = React.useState(false);
     const [openAlert, setOpenAlert] = React.useState(false);
@@ -25,6 +25,8 @@ const DetailPage = () => {
     let productContext = React.useContext(ProductDataContext);
     let userContext = React.useContext(UserDataContext);
     let ratingContext = React.useContext(RatingDataContext);
+    let idx = ratingContext.avgRate.findIndex((item) => item.id === id);
+    const [rateAvg, setRateAvg] = React.useState(ratingContext.avgRate[idx].avg);
 
     React.useEffect(() => {
         const productList = [];
@@ -72,13 +74,7 @@ const DetailPage = () => {
     const handleClose = () => {
         setOpenAlert(!openAlert);
     }
-
-    function getRate() {
-        const contextArray = ratingContext.avgRate;
-        const rate = contextArray.find(item => item.id === id);
-        return rate.avg;
-    }
-
+    
     return (
         <>
             <Navbar />
@@ -104,9 +100,9 @@ const DetailPage = () => {
                                         <div className={classes.reviewlink}>
                                             <StarRating 
                                                 key={product.id}
-                                                ratingnum={getRate()}
+                                                ratingnum={rateAvg}
                                                 productId={product.id}
-                                                // setOpen={open}
+                                                open={open}
                                             />
                                             <button 
                                                 className={classes.reviewbtn}
@@ -117,6 +113,8 @@ const DetailPage = () => {
                                                         setOpen={setOpen}
                                                         productId={product.id}
                                                         productName={product.name}
+                                                        open={open}
+                                                        setRateAvg={setRateAvg}
                                                       />}
                                         </div>
                                         <p className={classes.price}>{`$${product.price}`}</p>
@@ -144,6 +142,7 @@ const DetailPage = () => {
                                                 <div className={classes.reviewdata}>
                                                     <StarRating 
                                                         ratingnum={review.rate}
+                                                        open={open}
                                                     />
                                                     <h2>{review.title}</h2>
                                                     <p>{review.text}</p>

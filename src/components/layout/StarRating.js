@@ -7,6 +7,10 @@ export const StarRating = (props) => {
     const [hover, setHover] = React.useState(0);
     let navigate = useNavigate();
 
+    React.useEffect(() => {
+        setRating(props.ratingnum)
+    }, [props.ratingnum])
+
     const navigateToDeatailPage = () => {
         navigate(`/details/${props.productId}`, {replace: true});
     }

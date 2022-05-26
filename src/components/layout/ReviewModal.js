@@ -48,15 +48,17 @@ const ReviewModal = (props) => {
                 })
                 productContext.setProduct(productCopy);
             }
-            props.setOpen(false);
 
             for(const idx in ratingContext.avgRate){
                 if(props.productId === ratingContext.avgRate[idx].id) {
                     let newAvg = (ratingContext.avgRate[idx].avg + rate) / 2;
                     ratingContext.avgRate[idx].avg = Math.round(newAvg);
-                    ratingContext.setRate(ratingContext.avgRate)
+                    ratingContext.setRate(ratingContext.avgRate);
+                    props.setRateAvg(Math.round(newAvg));
                 }
             };
+
+            props.setOpen(false);
         })
     }
 
