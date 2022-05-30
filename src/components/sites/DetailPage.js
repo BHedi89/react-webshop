@@ -99,7 +99,6 @@ const DetailPage = () => {
                 />}
                 {product.map(product => {
                     if(product.id === id) {
-                        {console.log(product.category)}
                         return (
                             <div key={product.id}>
                                 <div className={classes.container}>
