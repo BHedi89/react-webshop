@@ -28,6 +28,7 @@
         overflow: hidden;
         text-align: center;
         font-size: 25px;
+        top: 25px;
     }
 
     .closebtn {
@@ -74,6 +75,7 @@
         overflow: hidden;
         text-align: center;
         font-size: 25px;
+        top: 25px;
     }
 
     .closebtn {
@@ -100,6 +102,7 @@
 
     .box {
         font-size: 30px;
+        top: 20px;
     }
 
     .closebtn {
@@ -117,6 +120,10 @@
     .popupbox {
         width: 50%;
         left: 380px;
+    }
+
+    .box {
+        top: 40px;
     }
 }
 

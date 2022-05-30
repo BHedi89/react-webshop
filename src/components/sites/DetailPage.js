@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import classes from "./DetailPage.module.css";
 import Navbar from "../layout/Navbar";
 import Footer from "../layout/Footer";
@@ -71,6 +71,16 @@ const DetailPage = () => {
         }
     }
 
+    const openReviewModal = () => {
+        if(userContext.user === null){
+            setAlertMsg("Log in to review this product.");
+            setOpenAlert(!openAlert);
+            setOpen(false);
+        } else {
+           setOpen(true); 
+        }
+    }
+
     const handleClose = () => {
         setOpenAlert(!openAlert);
     }
@@ -89,6 +99,7 @@ const DetailPage = () => {
                 />}
                 {product.map(product => {
                     if(product.id === id) {
+                        {console.log(product.category)}
                         return (
                             <div key={product.id}>
                                 <div className={classes.container}>
@@ -106,7 +117,7 @@ const DetailPage = () => {
                                             />
                                             <button 
                                                 className={classes.reviewbtn}
-                                                onClick={() => setOpen(true)}>
+                                                onClick={openReviewModal}>
                                                     Write a review
                                             </button>
                                             {open &&  <ReviewModal 
@@ -115,18 +126,21 @@ const DetailPage = () => {
                                                         productName={product.name}
                                                         open={open}
                                                         setRateAvg={setRateAvg}
-                                                      />}
+                                                    />}
                                         </div>
                                         <p className={classes.price}>{`$${product.price}`}</p>
                                         <p className={classes.about}>{product.about}</p>
                                         <h3 className={classes.ingredientstitle}>Ingredients:</h3>
                                         <p className={classes.ingredients}>{product.ingredients}</p>
-                                        <button 
-                                            className={classes.buybtn}
-                                            onClick={addToCart}
-                                        >
-                                            Buy now
-                                        </button>
+                                        <div className={classes.buyorback}>
+                                            <button 
+                                                className={classes.buybtn}
+                                                onClick={addToCart}
+                                            >
+                                                Buy now
+                                            </button>
+                                            <Link to={`/${product.category}`} className={classes.backlink}>Back to product page</Link>
+                                        </div>
                                     </div>
                                 </div>
                                 <ShapeDivider />

@@ -118,6 +118,13 @@
         color: red;
         font-size: 12px;
     }
+
+    .backlink {
+        color: white;
+        font-size: 20px;
+        margin-left: 25px;
+        text-decoration: underline #8F4848;
+    }
 }
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
@@ -237,6 +244,13 @@
     .no {
         color: red;
         font-size: 12px;
+    }
+
+    .backlink {
+        color: white;
+        font-size: 20px;
+        margin-left: 25px;
+        text-decoration: underline #8F4848;
     }
 }
 /* Medium devices (landscape tablets, 768px and up) */

@@ -17,7 +17,7 @@ const Eyes = () => {
     React.useEffect(() => {
         const eyemakeupList = [];
         for(const key in productContext.product) {
-            if(productContext.product[key].category === "eye") {
+            if(productContext.product[key].category === "eyes") {
                 eyemakeupList.push(productContext.product[key]);
             }
         }
