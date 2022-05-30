@@ -29,7 +29,7 @@ const Account = () => {
     const [newPasswordAgain, setNewPasswordAgain] = React.useState("");
     const [open, setOpen] = React.useState(false);
     const [alertMsg, setAlertMsg] = React.useState("");
-    console.log(userContext)
+    console.log(userContext.user.uid)
 
     function changeDeliveryData(e) {
         e.preventDefault();
@@ -48,7 +48,7 @@ const Account = () => {
         .then((data) => {
             setAlertMsg("Delivery datas changed successfully!");
             setOpen(!open);
-            userContext.setUser({...data, cart: [], favourite: [], orders: []});
+            userContext.setUser({...data, cart: [], favourite: [], orders: [], uid: userContext.user.uid});
         });
     }
 
@@ -81,7 +81,7 @@ const Account = () => {
                             setAlertMsg("Name or email chaged successfully!");
                             setOpen(!open);
                             setPassword("");
-                            userContext.setUser({...data, cart: [], favourite: [], orders: []});
+                            userContext.setUser({...data, cart: [], favourite: [], orders: [], uid: userContext.user.uid});
                         });
                     });
             }).catch((error) => {
