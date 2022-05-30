@@ -38,10 +38,14 @@ const Registration = () => {
                             type: "user",
                             address: address,
                             zipcode: zipcode,
-                            phonenumber: phonenumber
+                            phonenumber: phonenumber,
+                            favourite: [],
+                            cart: [], 
+                            orders: []
                         })
                 })
-                .then(() => {
+                .then(resp => resp.json())
+                .then((data) => {
                     userContext.setUser(
                         {
                             email, 
@@ -49,10 +53,17 @@ const Registration = () => {
                             type: "user",
                             address: address,
                             zipcode: zipcode,
-                            phonenumber: phonenumber
+                            phonenumber: phonenumber, 
+                            favourite: [],
+                            cart: [], 
+                            orders: []
                         });
-                    setAlertMsg("Successfull registration!");
-                    setOpen(!open);
+                    if(data.type === "user") {
+                        setAlertMsg("Successfull registration!");
+                        setOpen(!open);
+                        navigate("/", {replace: true});
+                    }
+                    
                 })
             })
             .catch((error) => {
@@ -73,7 +84,6 @@ const Registration = () => {
 
     const handleClose = () => {
         setOpen(!open);
-        navigate("/", {replace: true});
     }
 
     return (
