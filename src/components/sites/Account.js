@@ -29,7 +29,6 @@ const Account = () => {
     const [newPasswordAgain, setNewPasswordAgain] = React.useState("");
     const [open, setOpen] = React.useState(false);
     const [alertMsg, setAlertMsg] = React.useState("");
-    console.log(userContext.user.uid)
 
     function changeDeliveryData(e) {
         e.preventDefault();
