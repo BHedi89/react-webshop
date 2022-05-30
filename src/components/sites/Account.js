@@ -14,7 +14,6 @@ import {
     EmailAuthProvider,
     updatePassword } 
 from "firebase/auth";
-import { Link } from "react-router-dom";
 
 const FIREBASE_DOMAIN = "https://wonderful-makeups-5590a-default-rtdb.europe-west1.firebasedatabase.app";
 
@@ -30,6 +29,7 @@ const Account = () => {
     const [newPasswordAgain, setNewPasswordAgain] = React.useState("");
     const [open, setOpen] = React.useState(false);
     const [alertMsg, setAlertMsg] = React.useState("");
+    console.log(userContext)
 
     function changeDeliveryData(e) {
         e.preventDefault();
@@ -45,9 +45,10 @@ const Account = () => {
             })
         })
         .then(resp => resp.json())
-        .then(() => {
+        .then((data) => {
             setAlertMsg("Delivery datas changed successfully!");
             setOpen(!open);
+            userContext.setUser({...data, cart: [], favourite: [], orders: []});
         });
     }
 
@@ -76,10 +77,11 @@ const Account = () => {
                             })
                         })
                         .then(resp => resp.json())
-                        .then(() => {
+                        .then((data) => {
                             setAlertMsg("Name or email chaged successfully!");
                             setOpen(!open);
                             setPassword("");
+                            userContext.setUser({...data, cart: [], favourite: [], orders: []});
                         });
                     });
             }).catch((error) => {
