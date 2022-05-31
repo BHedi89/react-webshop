@@ -8,6 +8,7 @@ import { UserDataContext } from "../login/UserDataContext";
 const Orders = () => {
     let userContext = React.useContext(UserDataContext);
     let orders = userContext.user.orders;
+    console.log(userContext.user.orders)
 
     return (
         <>

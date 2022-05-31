@@ -13,7 +13,6 @@ const DeliveryData = () => {
     const [openAlert, setOpenAlert] = React.useState(false);
     const [alertMsg, setAlertMsg] = React.useState("");
     let userContext = React.useContext(UserDataContext);
-    console.log(userContext.user.orders);
     let navigate = useNavigate();
 
     const handleClose = () => {
@@ -29,7 +28,7 @@ const DeliveryData = () => {
             })
         })
         .then(resp => resp.json())
-        .then(() => {
+        .then((data) => {
             fetch(`${FIREBASE_DOMAIN}/users/${userContext.user.uid}/cart.json`, {
                 method: "DELETE"
             })
@@ -37,6 +36,7 @@ const DeliveryData = () => {
             .then(() => {
                 setAlertMsg("Order successfully, thank you!");
                 setOpenAlert(!openAlert);
+                userContext.setUser({...userContext.user, uid: userContext.user.uid, cart: []})
                 setTimeout(() => {
                     navigate("/", {replace: true});
                 }, 2000);
