@@ -21,7 +21,8 @@ const Forgotpassword = () => {
         sendPasswordResetEmail(auth, email)
             .then(() => {
                 setAlertMsg("Check your email to reset your password!");
-                setOpen(!open)
+                setOpen(!open);
+                navigate("/login", {replace: true});
             })
             .catch((error) => {
                 if(email === "") {
@@ -31,13 +32,11 @@ const Forgotpassword = () => {
                     setAlertMsg("Wrong email!");
                     setOpen(!open);
                 }
-               
             })
     }
 
     const handleClose = () => {
         setOpen(!open);
-        navigate("/login", {replace: true});
     }
 
     return (
