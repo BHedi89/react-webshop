@@ -57,7 +57,7 @@ const Cart = () => {
                                     {userContext.user.cart.map(product => {
                                         total += product.productPrice;
                                     })}
-                                    <td>${total}</td>
+                                    <td>${Math.round(total * 100) / 100}</td>
                                 </tr>
                             </tbody>
                         </table>
