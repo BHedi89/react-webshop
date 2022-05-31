@@ -29,7 +29,7 @@ const Footer = () => {
                     </ul>
                 </div>
                 <div className={`${classes.logo}`}>
-                    <a href="#" className={classes.logoName}>WM<br/><span>Wonderful Makeups</span></a>
+                    <a href="/" className={classes.logoName}>WM<br/><span>Wonderful Makeups</span></a>
                 </div>
                 <div>
                     <ul className={classes.list}>
