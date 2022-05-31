@@ -4,11 +4,11 @@ import Navbar from "../layout/Navbar";
 import ShapeDivider from "../layout/ShapeDivider";
 import Footer from "../layout/Footer";
 import { UserDataContext } from "../login/UserDataContext";
+import { Link } from "react-router-dom";
 
 const Orders = () => {
     let userContext = React.useContext(UserDataContext);
     let orders = userContext.user.orders;
-    console.log(userContext.user.orders)
 
     return (
         <>
@@ -17,6 +17,7 @@ const Orders = () => {
             <ShapeDivider />
             <div className={classes.container}>
                 <h1>My orders</h1>
+                <Link to="/" className={classes.backlink}>Back to main</Link>
                 <div>
                     <h2 className={classes.ordertitle}>Active orders</h2>  
                     <table className={classes.table}>

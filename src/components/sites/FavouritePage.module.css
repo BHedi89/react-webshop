@@ -15,6 +15,16 @@
         margin-bottom: 80px;
     }
 
+    .linkcontainer {
+        text-align: center;
+    }
+
+    .backlink {
+        color: white;
+        font-size: 18px;
+        padding: 10px;
+    }
+
     .favourites {
         display: flex;
         justify-content: space-evenly;
@@ -40,6 +50,16 @@
         font-size: 70px;
         text-align: center;
         margin-bottom: 80px;
+    }
+
+    .linkcontainer {
+        text-align: center;
+    }
+
+    .backlink {
+        color: white;
+        font-size: 18px;
+        padding: 10px;
     }
 
     .favourites {

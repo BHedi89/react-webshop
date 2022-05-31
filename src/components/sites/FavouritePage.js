@@ -8,6 +8,7 @@ import Footer from "../layout/Footer";
 import Productcard from "../layout/Productcard";
 import { RatingDataContext } from "../context/RatingDataContext";
 import { Fragment } from "react";
+import { Link } from "react-router-dom";
 
 const FavouritePage = () => {
     let userContext = React.useContext(UserDataContext);
@@ -21,6 +22,9 @@ const FavouritePage = () => {
             <ShapeDivider />
             <div className={classes.favcontainer}>
                 <h1 className={classes.favouritetitle}>Favourites</h1>
+                <div className={classes.linkcontainer}>
+                    <Link to="/" className={classes.backlink}>Back to main</Link>
+                </div>
                 <div className={classes.favourites}>
                     {userContext.user.favourite.map(fav => {
                         return (
