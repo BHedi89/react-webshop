@@ -3,7 +3,7 @@ import classes from "./DeliveryData.module.css";
 import Navbar from "../layout/Navbar";
 import ShapeDivider from "../layout/ShapeDivider";
 import Footer from "../layout/Footer";
-import { UserDataContext } from "../login/UserDataContext";
+import { UserDataContext } from "../context/UserDataContext";
 import Alert from "../layout/Alert";
 import { useNavigate } from "react-router-dom";
 

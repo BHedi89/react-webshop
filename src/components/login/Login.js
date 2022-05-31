@@ -4,7 +4,7 @@ import { initializeApp } from "firebase/app";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { firebaseConfig } from "../firebase/firebaseConfig";
 import { useNavigate, Link } from "react-router-dom";
-import { UserDataContext } from "./UserDataContext";
+import { UserDataContext } from "../context/UserDataContext";
 import Hero from "../layout/Hero";
 import heroImage from "../images/hero/RedGroup-Mobile-1600x500-1.jpg";
 import ShapeDivider from "../layout/ShapeDivider";

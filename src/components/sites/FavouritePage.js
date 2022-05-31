@@ -1,6 +1,6 @@
 import React from "react";
 import classes from "./FavouritePage.module.css";
-import { UserDataContext } from "../login/UserDataContext";
+import { UserDataContext } from "../context/UserDataContext";
 import { ProductDataContext } from "../context/ProductDataContext";
 import Navbar from "../layout/Navbar";
 import ShapeDivider from "../layout/ShapeDivider";

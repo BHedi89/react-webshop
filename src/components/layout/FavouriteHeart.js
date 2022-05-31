@@ -3,7 +3,7 @@ import classes from "./FavouriteHeart.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { ProductDataContext } from "../context/ProductDataContext";
-import { UserDataContext } from "../login/UserDataContext";
+import { UserDataContext } from "../context/UserDataContext";
 import Alert from "./Alert";
 
 const FIREBASE_DOMAIN = "https://wonderful-makeups-5590a-default-rtdb.europe-west1.firebasedatabase.app"; 

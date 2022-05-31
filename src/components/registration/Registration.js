@@ -1,6 +1,6 @@
 import React from "react";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
-import { UserDataContext } from "../login/UserDataContext";
+import { UserDataContext } from "../context/UserDataContext";
 import { useNavigate, Link } from "react-router-dom";
 import classes from "./Registration.module.css";
 import ShapeDivider from "../layout/ShapeDivider";

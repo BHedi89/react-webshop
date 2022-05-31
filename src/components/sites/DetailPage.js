@@ -10,7 +10,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
 import { ImCross } from "react-icons/im";
 import { ProductDataContext } from "../context/ProductDataContext";
-import { UserDataContext } from "../login/UserDataContext";
+import { UserDataContext } from "../context/UserDataContext";
 import Alert from "../layout/Alert";
 import { RatingDataContext } from "../context/RatingDataContext";
 
