@@ -28,7 +28,15 @@ const DeliveryData = () => {
             })
         })
         .then(resp => resp.json())
-        .then((data) => {
+        .then(({name}) => {
+            let userCopy = {...userContext.user};
+            userCopy.orders.push({
+                id: name,
+                status: "active",
+                items: userContext.user.cart
+            })
+            userContext.setUser(userCopy);
+            
             fetch(`${FIREBASE_DOMAIN}/users/${userContext.user.uid}/cart.json`, {
                 method: "DELETE"
             })
@@ -36,11 +44,12 @@ const DeliveryData = () => {
             .then(() => {
                 setAlertMsg("Order successfully, thank you!");
                 setOpenAlert(!openAlert);
-                userContext.setUser({...userContext.user, uid: userContext.user.uid, cart: []})
+                userContext.setUser({...userContext.user, uid: userContext.user.uid, cart: []});
                 setTimeout(() => {
                     navigate("/", {replace: true});
                 }, 2000);
             })
+            
         })
     }
 

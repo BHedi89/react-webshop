@@ -8,7 +8,6 @@ import { Link } from "react-router-dom";
 
 const Orders = () => {
     let userContext = React.useContext(UserDataContext);
-    let orders = userContext.user.orders;
 
     return (
         <>
@@ -27,7 +26,7 @@ const Orders = () => {
                                 <th>Product name</th>
                                 <th>Price</th>
                             </tr>
-                            {orders.map(item => {
+                            {userContext.user.orders.map(item => {
                                 return (
                                     <>
                                         {item.items.map(detail => {
@@ -58,7 +57,7 @@ const Orders = () => {
                                 <th>Product name</th>
                                 <th>Price</th>
                             </tr>
-                            {orders.map(item => {
+                            {userContext.user.orders.map(item => {
                                 return (
                                     <>
                                         {item.items.map(detail => {
