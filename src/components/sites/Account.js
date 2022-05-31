@@ -40,14 +40,18 @@ const Account = () => {
                 phonenumber: phonenumber,
                 name: userContext.user.name,
                 email: userContext.user.email,
-                type: "user"
+                type: "user",
+                cart: userContext.user.cart,
+                favourite: userContext.user.favourite,
+                orders: userContext.user.orders
             })
         })
         .then(resp => resp.json())
         .then((data) => {
+            console.log(data)
             setAlertMsg("Delivery datas changed successfully!");
             setOpen(!open);
-            userContext.setUser({...data, cart: [], favourite: [], orders: [], uid: userContext.user.uid});
+            userContext.setUser({...data, uid: userContext.user.uid});
         });
     }
 
@@ -72,7 +76,10 @@ const Account = () => {
                                 phonenumber: userContext.user.phonenumber,
                                 name: name,
                                 email: email,
-                                type: "user"
+                                type: "user",
+                                cart: userContext.user.cart,
+                                favourite: userContext.user.favourite,
+                                orders: userContext.user.orders
                             })
                         })
                         .then(resp => resp.json())
@@ -80,7 +87,7 @@ const Account = () => {
                             setAlertMsg("Name or email chaged successfully!");
                             setOpen(!open);
                             setPassword("");
-                            userContext.setUser({...data, cart: [], favourite: [], orders: [], uid: userContext.user.uid});
+                            userContext.setUser({...data, uid: userContext.user.uid});
                         });
                     });
             }).catch((error) => {
