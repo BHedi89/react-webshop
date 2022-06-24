@@ -15,8 +15,7 @@ import {
     updatePassword } 
 from "firebase/auth";
 import { Link } from "react-router-dom";
-
-const FIREBASE_DOMAIN = "https://wonderful-makeups-5590a-default-rtdb.europe-west1.firebasedatabase.app";
+import { FIREBASE_DOMAIN } from "../firebase/firebaseConfig";
 
 const Account = () => {
     let userContext = React.useContext(UserDataContext);

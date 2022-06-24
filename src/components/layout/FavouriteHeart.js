@@ -5,8 +5,7 @@ import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { ProductDataContext } from "../context/ProductDataContext";
 import { UserDataContext } from "../context/UserDataContext";
 import Alert from "./Alert";
-
-const FIREBASE_DOMAIN = "https://wonderful-makeups-5590a-default-rtdb.europe-west1.firebasedatabase.app"; 
+import { FIREBASE_DOMAIN } from "../firebase/firebaseConfig";
 
 const FavouriteHeart = (props) => {
     const [open, setOpen] = React.useState(false);

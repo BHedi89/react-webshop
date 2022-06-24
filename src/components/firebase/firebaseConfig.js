@@ -13,3 +13,6 @@ export const firebaseConfig = {
 
 initializeApp(firebaseConfig);
 export const storage = getStorage();
+
+export const FIREBASE_DOMAIN = "https://wonderful-makeups-5590a-default-rtdb.europe-west1.firebasedatabase.app";
+

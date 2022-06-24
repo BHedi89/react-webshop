@@ -1,10 +1,8 @@
 import React from "react";
 import classes from "./Login.module.css";
-import { initializeApp } from "firebase/app";
+import { FIREBASE_DOMAIN } from "../firebase/firebaseConfig";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-import { firebaseConfig } from "../firebase/firebaseConfig";
 import { useNavigate, Link } from "react-router-dom";
-import { UserDataContext } from "../context/UserDataContext";
 import Hero from "../layout/Hero";
 import heroImage from "../images/hero/RedGroup-Mobile-1600x500-1.jpg";
 import ShapeDivider from "../layout/ShapeDivider";
@@ -12,14 +10,10 @@ import Footer from "../layout/Footer";
 import Alert from "../layout/Alert";
 import Navbar from "../layout/Navbar";
 
-initializeApp(firebaseConfig);
-const FIREBASE_DOMAIN = "https://wonderful-makeups-5590a-default-rtdb.europe-west1.firebasedatabase.app";
-
 const Login = () => {
     let [email, setEmail] = React.useState("");
     let [password, setPassword] = React.useState("");
     let navigate = useNavigate();
-    let userContext = React.useContext(UserDataContext);
     const [open, setOpen] = React.useState(false);
     const [alertMsg, setAlertMsg] = React.useState("");
     

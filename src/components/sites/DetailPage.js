@@ -13,8 +13,7 @@ import { ProductDataContext } from "../context/ProductDataContext";
 import { UserDataContext } from "../context/UserDataContext";
 import Alert from "../layout/Alert";
 import { RatingDataContext } from "../context/RatingDataContext";
-
-const FIREBASE_DOMAIN = "https://wonderful-makeups-5590a-default-rtdb.europe-west1.firebasedatabase.app";
+import { FIREBASE_DOMAIN } from "../firebase/firebaseConfig";
 
 const DetailPage = () => {
     let {id} = useParams();   

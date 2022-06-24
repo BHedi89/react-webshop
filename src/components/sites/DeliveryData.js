@@ -6,8 +6,7 @@ import Footer from "../layout/Footer";
 import { UserDataContext } from "../context/UserDataContext";
 import Alert from "../layout/Alert";
 import { useNavigate } from "react-router-dom";
-
-const FIREBASE_DOMAIN = "https://wonderful-makeups-5590a-default-rtdb.europe-west1.firebasedatabase.app";
+import { FIREBASE_DOMAIN } from "../firebase/firebaseConfig";
 
 const DeliveryData = () => {
     const [openAlert, setOpenAlert] = React.useState(false);

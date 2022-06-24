@@ -3,8 +3,7 @@ import classes from "./ReviewModal.module.css";
 import { StarRating } from "./StarRating";
 import { ProductDataContext } from "../context/ProductDataContext";
 import { RatingDataContext } from "../context/RatingDataContext";
-
-const FIREBASE_DOMAIN = "https://wonderful-makeups-5590a-default-rtdb.europe-west1.firebasedatabase.app"; 
+import { FIREBASE_DOMAIN } from "../firebase/firebaseConfig";
 
 const ReviewModal = (props) => {
     const [checked, setChecked] = React.useState(true);

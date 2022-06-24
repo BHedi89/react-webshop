@@ -1,8 +1,7 @@
 import React from "react";
 import { UserDataContext } from "./UserDataContext";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
-
-const FIREBASE_DOMAIN = "https://wonderful-makeups-5590a-default-rtdb.europe-west1.firebasedatabase.app";
+import { FIREBASE_DOMAIN } from "../firebase/firebaseConfig";
 
 const AuthProvider = ({children}) => {
     const [user, setUser] = React.useState(null);
