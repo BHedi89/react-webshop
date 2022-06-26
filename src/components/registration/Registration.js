@@ -20,7 +20,7 @@ const Registration = () => {
     const [phonenumber, setPhonenumber] = React.useState("");
     const userContext = React.useContext(UserDataContext);
     const navigate = useNavigate();
-    const [open, setOpen] = React.useState(false);
+    const [alert, setAlert] = React.useState(false);
     const [alertMsg, setAlertMsg] = React.useState("");
 
     function handleSubmit(e) {
@@ -59,7 +59,7 @@ const Registration = () => {
                         });
                     if(data.type === "user") {
                         setAlertMsg("Successfull registration!");
-                        setOpen(!open);
+                        setAlert(!alert);
                         navigate("/", {replace: true});
                     }
                     
@@ -68,21 +68,21 @@ const Registration = () => {
             .catch((error) => {
                 if (error.code === "auth/email-already-in-use") {
                     setAlertMsg("Email elready in use!");
-                    setOpen(!open);
+                    setAlert(!alert);
                 };
                 if (error.code === "auth/weak-password") {
                     setAlertMsg("Weak password! 6 character at least!");
-                    setOpen(!open);
+                    setAlert(!alert);
                 };
                 if (error.code === "auth/invalid-email") {
                     setAlertMsg("Invalid email!");
-                    setOpen(!open);
+                    setAlert(!alert);
                 };
             })
     }
 
     const handleClose = () => {
-        setOpen(!open);
+        setAlert(!alert);
     }
 
     return (
@@ -94,7 +94,7 @@ const Registration = () => {
             />
             <ShapeDivider />
             <div className={classes.container}>
-                {open && <Alert
+                {alert && <Alert
                     content={<>
                         <p>{alertMsg}</p>
                     </>}

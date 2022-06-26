@@ -16,9 +16,9 @@ const Lips = () => {
 
     React.useEffect(() => {
         const lipsmakeupList = [];
-        for(const key in productContext.product) {
-            if(productContext.product[key].category === "lips") {
-                lipsmakeupList.push(productContext.product[key]);
+        for(const key in productContext.products) {
+            if(productContext.products[key].category === "lips") {
+                lipsmakeupList.push(productContext.products[key]);
             }
         }
         setLipsmakeup(lipsmakeupList);

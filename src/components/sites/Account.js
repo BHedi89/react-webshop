@@ -27,7 +27,7 @@ const Account = () => {
     const [password, setPassword] = React.useState("");
     const [newPassword, setNewPassword] = React.useState("");
     const [newPasswordAgain, setNewPasswordAgain] = React.useState("");
-    const [open, setOpen] = React.useState(false);
+    const [alert, setAlert] = React.useState(false);
     const [alertMsg, setAlertMsg] = React.useState("");
 
     function changeDeliveryData(e) {
@@ -50,7 +50,7 @@ const Account = () => {
         .then((data) => {
             console.log(data)
             setAlertMsg("Delivery datas changed successfully!");
-            setOpen(!open);
+            setAlert(!alert);
             userContext.setUser({...data, uid: userContext.user.uid});
         });
     }
@@ -85,14 +85,14 @@ const Account = () => {
                         .then(resp => resp.json())
                         .then((data) => {
                             setAlertMsg("Name or email chaged successfully!");
-                            setOpen(!open);
+                            setAlert(!alert);
                             setPassword("");
                             userContext.setUser({...data, uid: userContext.user.uid});
                         });
                     });
             }).catch((error) => {
                 setAlertMsg("Missing password!");
-                setOpen(!open);
+                setAlert(!alert);
         });
     }
 
@@ -105,27 +105,27 @@ const Account = () => {
             updatePassword(user, newPassword)
                 .then(() => {
                     setAlertMsg("Password changes successfully!");
-                    setOpen(!open);
+                    setAlert(!alert);
                     setNewPassword("");
                     setNewPasswordAgain("");
                 }).catch((error) => {
                     if(newPassword.length < 6){
                         setAlertMsg("Password should be at least 6 characters!");
-                        setOpen(!open);
+                        setAlert(!alert);
                         setNewPassword("");
                         setNewPasswordAgain("");
                     }
                 });
         } else {
             setAlertMsg("Not match! Try again!");
-            setOpen(!open);
+            setAlert(!alert);
             setNewPassword("");
             setNewPasswordAgain("");
         };
     }
 
     const handleClose = () => {
-        setOpen(!open);
+        setAlert(!alert);
     }
 
     return (
@@ -137,7 +137,7 @@ const Account = () => {
             />
             <ShapeDivider />
             <div className={classes.container}>
-                {open && <Alert
+                {alert && <Alert
                     content={<>
                         <p>{alertMsg}</p>
                     </>}

@@ -19,16 +19,16 @@ import { ProductDataContext } from "../context/ProductDataContext";
 import { RatingDataContext } from "../context/RatingDataContext";
  
 const Main = () => {
-    const [product, setProduct] = React.useState([]);
+    const [products, setProducts] = React.useState([]);
     let productContext = React.useContext(ProductDataContext);
     let ratingContext = React.useContext(RatingDataContext);
 
     React.useEffect(() => {
         const productList = [];
-        for(const key in productContext.product) {
-            productList.push(productContext.product[key]);
+        for(const key in productContext.products) {
+            productList.push(productContext.products[key]);
         }
-        setProduct(productList);
+        setProducts(productList);
     }, [])
 
     return (
@@ -62,15 +62,15 @@ const Main = () => {
                 </div>
                 <ShapeDivider></ShapeDivider>
                 <div className={classes.products}>
-                    {product.map((products) => {
-                        if(products.bestseller) {
+                    {products.map((product) => {
+                        if(product.bestseller) {
                             return <Productcard
-                                        key={products.id}
-                                        productId={products.id}
-                                        productName={products.name}
-                                        productImage={products.image}
+                                        key={product.id}
+                                        productId={product.id}
+                                        productName={product.name}
+                                        productImage={product.image}
                                         productRate={ratingContext.avgRate.filter((item) => {
-                                            let rate = item.id === products.id ? item.avg : 0;
+                                            let rate = item.id === product.id ? item.avg : 0;
                                             return rate;
                                         })}
                                     />

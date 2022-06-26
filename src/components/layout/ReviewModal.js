@@ -34,7 +34,7 @@ const ReviewModal = (props) => {
         })
         .then(resp => resp.json())
         .then(({name}) => {
-            let productCopy = {...productContext.product};
+            let productCopy = {...productContext.products};
             for(const idx in productCopy){
                 productCopy[idx].review.push({
                     id: name,
@@ -45,7 +45,7 @@ const ReviewModal = (props) => {
                     text: review,
                     recommend: recommend
                 })
-                productContext.setProduct(productCopy);
+                productContext.setProducts(productCopy);
             }
 
             for(const idx in ratingContext.avgRate){
@@ -57,7 +57,7 @@ const ReviewModal = (props) => {
                 }
             };
 
-            props.setOpen(false);
+            props.setOpenReview(false);
         })
     }
 
@@ -79,7 +79,7 @@ const ReviewModal = (props) => {
                                     <label>Rating*:</label>
                                     <StarRating 
                                         productId={props.productId}
-                                        open={props.open}
+                                        isOpenReview={props.isOpenReview}
                                         sendRate={getRate}
                                     />
                                 </li>
@@ -170,7 +170,7 @@ const ReviewModal = (props) => {
                         </button>
                         <button
                             className={classes.cancelBtn}
-                            onClick={() => props.setOpen(false)}
+                            onClick={() => props.setOpenReview(false)}
                         >
                             Cancel
                         </button>

@@ -17,9 +17,9 @@ import { FIREBASE_DOMAIN } from "../firebase/firebaseConfig";
 
 const DetailPage = () => {
     let {id} = useParams();   
-    const [product, setProduct] = React.useState([]);
-    const [open, setOpen] = React.useState(false);
-    const [openAlert, setOpenAlert] = React.useState(false);
+    const [products, setProducts] = React.useState([]);
+    const [isOpenReview, setIsOpenReview] = React.useState(false);
+    const [alert, setAlert] = React.useState(false);
     const [alertMsg, setAlertMsg] = React.useState("");
     let productContext = React.useContext(ProductDataContext);
     let userContext = React.useContext(UserDataContext);
@@ -29,23 +29,23 @@ const DetailPage = () => {
 
     React.useEffect(() => {
         const productList = [];
-        for(const key in productContext.product) {
-            productList.push(productContext.product[key]);
+        for(const key in productContext.products) {
+            productList.push(productContext.products[key]);
         }
-        setProduct(productList);
+        setProducts(productList);
     }, []);
 
     const addToCart = () => {
         if(userContext.user !== null) {
-            for(const key in product) {
-                if(product[key].id === id) {
+            for(const key in products) {
+                if(products[key].id === id) {
                     fetch(`${FIREBASE_DOMAIN}/users/${userContext.user.uid}/cart.json`, {
                         method: "POST",
                         body: JSON.stringify({
-                            productId: product[key].id,
-                            productName: product[key].name,
-                            productPrice: product[key].price,
-                            productImage: product[key].image
+                            productId: products[key].id,
+                            productName: products[key].name,
+                            productPrice: products[key].price,
+                            productImage: products[key].image
                         })
                     })
                     .then(resp => resp.json())
@@ -54,34 +54,34 @@ const DetailPage = () => {
                         setAlertMsg("Product added to your cart!");
                         userCopy.cart.push({
                             id: name,
-                            productId: product[key].id,
-                            productName: product[key].name,
-                            productPrice: product[key].price,
-                            productImage: product[key].image
+                            productId: products[key].id,
+                            productName: products[key].name,
+                            productPrice: products[key].price,
+                            productImage: products[key].image
                         })
                         userContext.setUser(userCopy);
-                        setOpenAlert(!openAlert);
+                        setAlert(!alert);
                     });
                 }
             }
         } else {
             setAlertMsg("Log in to buy this product.");
-            setOpenAlert(!openAlert);
+            setAlert(!alert);
         }
     }
 
     const openReviewModal = () => {
         if(userContext.user === null){
             setAlertMsg("Log in to review this product.");
-            setOpenAlert(!openAlert);
-            setOpen(false);
+            setAlert(!alert);
+            setIsOpenReview(false);
         } else {
-           setOpen(true); 
+            setIsOpenReview(true); 
         }
     }
 
     const handleClose = () => {
-        setOpenAlert(!openAlert);
+        setAlert(!alert);
     }
     
     return (
@@ -90,13 +90,13 @@ const DetailPage = () => {
             <div className={classes.hero}></div>
             <ShapeDivider />
             <>
-                {openAlert && <Alert
+                {alert && <Alert
                         content={<>
                             <p>{alertMsg}</p>
                         </>}
                         handleClose={handleClose}
                 />}
-                {product.map(product => {
+                {products.map(product => {
                     if(product.id === id) {
                         return (
                             <div key={product.id}>
@@ -111,18 +111,18 @@ const DetailPage = () => {
                                                 key={product.id}
                                                 ratingnum={rateAvg}
                                                 productId={product.id}
-                                                open={open}
+                                                isOpenReview={isOpenReview}
                                             />
                                             <button 
                                                 className={classes.reviewbtn}
                                                 onClick={openReviewModal}>
                                                     Write a review
                                             </button>
-                                            {open &&  <ReviewModal 
-                                                        setOpen={setOpen}
+                                            {isOpenReview &&  <ReviewModal 
+                                                        setOpenReview={setIsOpenReview}
                                                         productId={product.id}
                                                         productName={product.name}
-                                                        open={open}
+                                                        isOpenReview={isOpenReview}
                                                         setRateAvg={setRateAvg}
                                                     />}
                                         </div>
@@ -154,7 +154,7 @@ const DetailPage = () => {
                                                 <div className={classes.reviewdata}>
                                                     <StarRating 
                                                         ratingnum={review.rate}
-                                                        open={open}
+                                                        isOpenReview={isOpenReview}
                                                     />
                                                     <h2>{review.title}</h2>
                                                     <p>{review.text}</p>

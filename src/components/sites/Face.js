@@ -16,9 +16,9 @@ const Face = () => {
 
     React.useEffect(() => {
         const facemakeupList = [];
-        for(const key in productContext.product) {
-            if(productContext.product[key].category === "face") {
-                facemakeupList.push(productContext.product[key]);
+        for(const key in productContext.products) {
+            if(productContext.products[key].category === "face") {
+                facemakeupList.push(productContext.products[key]);
             }
         }
         setFacemakeup(facemakeupList);

@@ -2,11 +2,11 @@ import classes from "./Card.module.css";
 import { useState } from "react";
 
 const Card = (props) =>  {
-    const [changeImage, setChangeImage] = useState(props.cardImage);
+    const [changedImage, setChangedImage] = useState(props.cardImage);
 
     const changeImageHandler = (e) => {
         let source = e.target.getAttribute("src")
-        setChangeImage(source);
+        setChangedImage(source);
     }
 
     return (
@@ -15,7 +15,7 @@ const Card = (props) =>  {
                 <div className={classes.cardcontent}>
                     <div className={classes.contentleft}>
                         <img className={classes.fullimg} 
-                            src={changeImage} />
+                            src={changedImage} />
                     </div>
                     <div className={classes.contentright}>
                         <h2 className={classes.cardtitle}>Outdoor Experience</h2>

@@ -6,7 +6,7 @@ export const StarRating = (props) => {
     const [rating, setRating] = React.useState([props.ratingnum]);
     const [hover, setHover] = React.useState(0);
     let navigate = useNavigate();
-
+    
     React.useEffect(() => {
         setRating(props.ratingnum)
     }, [props.ratingnum])
@@ -17,7 +17,7 @@ export const StarRating = (props) => {
     
     return (
         <>
-            {props.open === true
+            {props.isOpenReview === true
                 ?
                 <div className={classes.starrating}>
                     {[...Array(5)].map((star, index) => {

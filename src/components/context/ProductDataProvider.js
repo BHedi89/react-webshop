@@ -3,7 +3,7 @@ import { ProductDataContext } from "./ProductDataContext";
 import { FIREBASE_DOMAIN } from "../firebase/firebaseConfig";
 
 const ProductDataProvider = ({children}) => {
-    const [product, setProduct] = React.useState(null);
+    const [products, setProducts] = React.useState(null);
     const [pending, setPending] = React.useState(true);
 
     React.useEffect(() => {
@@ -29,14 +29,14 @@ const ProductDataProvider = ({children}) => {
                     }
                     productList[i].review = reviewList;
                 }
-                setProduct(productList);
+                setProducts(productList);
                 setPending(false);
             });
     }, [])
 
     if(!pending){
         return (
-            <ProductDataContext.Provider value={{product: product, setProduct: setProduct}}>
+            <ProductDataContext.Provider value={{products: products, setProducts: setProducts}}>
                 {children}
             </ProductDataContext.Provider>
         )

@@ -16,9 +16,9 @@ const Nails = () => {
 
     React.useEffect(() => {
         let nailmakeupList = [];
-        for(const key in productContext.product) {
-            if(productContext.product[key].category === "nails") {
-                nailmakeupList.push(productContext.product[key]);
+        for(const key in productContext.products) {
+            if(productContext.products[key].category === "nails") {
+                nailmakeupList.push(productContext.products[key]);
             }
         }
         setNailmakeup(nailmakeupList);

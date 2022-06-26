@@ -29,17 +29,17 @@ const FavouritePage = () => {
                     {userContext.user.favourite.map(fav => {
                         return (
                             <Fragment key={fav.productId}>
-                                {productContext.product.map(prod => {
+                                {productContext.products.map(product => {
                                     return (
-                                        fav.productId === prod.id
+                                        fav.productId === product.id
                                         ?
                                         <Productcard
-                                            key={prod.id}
-                                            productId={prod.id}
-                                            productName={prod.name}
-                                            productImage={prod.image}
+                                            key={product.id}
+                                            productId={product.id}
+                                            productName={product.name}
+                                            productImage={product.image}
                                             productRate={ratingContext.avgRate.filter((item) => {
-                                                let rate = item.id === prod.id ? item.avg : 0;
+                                                let rate = item.id === product.id ? item.avg : 0;
                                                 return rate;
                                             })}
                                         />

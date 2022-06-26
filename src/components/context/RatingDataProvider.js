@@ -30,7 +30,7 @@ const RatingDataProvider = ({children}) => {
                     productList[i].review = reviewList;
                 }
 
-                let allAvg = [];
+                let allRateAvg = [];
                 let sum;
                 let avg;
                 for(let i = 0; i < productList.length; i++){
@@ -40,9 +40,9 @@ const RatingDataProvider = ({children}) => {
                         avg = Math.round(sum / productList[i].review.length);
                     }
                     
-                    allAvg.push({id: productList[i].id, avg: avg});
+                    allRateAvg.push({id: productList[i].id, avg: avg});
                 }
-                setRate(allAvg);
+                setRate(allRateAvg);
                 setPending(false);
             });
     }, [])

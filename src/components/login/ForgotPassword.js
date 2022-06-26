@@ -11,7 +11,7 @@ import Navbar from "../layout/Navbar";
 
 const Forgotpassword = () => {
     const [email, setEmail] = React.useState("");
-    const [open, setOpen] = React.useState(false);
+    const [alert, setAlert] = React.useState(false);
     const [alertMsg, setAlertMsg] = React.useState("");
     let navigate = useNavigate();
 
@@ -21,22 +21,22 @@ const Forgotpassword = () => {
         sendPasswordResetEmail(auth, email)
             .then(() => {
                 setAlertMsg("Check your email to reset your password!");
-                setOpen(!open);
+                setAlert(!alert);
                 navigate("/login", {replace: true});
             })
             .catch((error) => {
                 if(email === "") {
                     setAlertMsg("Missing email!");
-                    setOpen(!open);
+                    setAlert(!alert);
                 } else {
                     setAlertMsg("Wrong email!");
-                    setOpen(!open);
+                    setAlert(!alert);
                 }
             })
     }
 
     const handleClose = () => {
-        setOpen(!open);
+        setAlert(!alert);
     }
 
     return (
@@ -48,7 +48,7 @@ const Forgotpassword = () => {
             />
             <ShapeDivider />
             <div className={classes.container}>
-                {open && <Alert
+                {alert && <Alert
                         content={<>
                             <p>{alertMsg}</p>
                         </>}

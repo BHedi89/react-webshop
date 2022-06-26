@@ -8,14 +8,14 @@ import Alert from "./Alert";
 import { FIREBASE_DOMAIN } from "../firebase/firebaseConfig";
 
 const FavouriteHeart = (props) => {
-    const [open, setOpen] = React.useState(false);
+    const [alert, setAlert] = React.useState(false);
     const [alertMsg, setAlertMsg] = React.useState("");
     let productContext = React.useContext(ProductDataContext);
     let userContext = React.useContext(UserDataContext);
     const [favourite, setFavourite] = React.useState(false);
 
     const addFavourite = () => {        
-        productContext.product.map(product => {
+        productContext.products.map(product => {
             if(product.id === props.productId) {
                 fetch(`${FIREBASE_DOMAIN}/users/${userContext.user.uid}/favourite.json`, {
                     method: "POST",
@@ -26,7 +26,7 @@ const FavouriteHeart = (props) => {
                 .then(resp => resp.json())
                 .then(({name}) => {
                     setAlertMsg("Product added to your favourites!");
-                    setOpen(!open);
+                    setAlert(!alert);
                     let userCopy = {...userContext.user};
                     userCopy.favourite.push({
                         id: name,
@@ -39,7 +39,7 @@ const FavouriteHeart = (props) => {
     }
 
     const removeFromFavourite = () =>  {
-        productContext.product.map(product => {
+        productContext.products.map(product => {
             if(product.id === props.productId) {
                 for(const key in userContext.user.favourite){
                     if(userContext.user.favourite[key].productId === product.id){
@@ -50,7 +50,7 @@ const FavouriteHeart = (props) => {
                         .then(resp => resp.json())
                         .then(() => {
                             setAlertMsg("Product removed from your favourites!");
-                            setOpen(!open);
+                            setAlert(!alert);
                             
                             let userCopy = {...userContext.user};
                             let idx = userCopy.favourite.findIndex((item) => item.productId === product.id);
@@ -65,8 +65,8 @@ const FavouriteHeart = (props) => {
     }
 
     function toggleFavourite() {
-        let cond = userContext.user.favourite.some(item => item.productId === props.productId);
-        if(!cond) {
+        let isfavourite = userContext.user.favourite.some(item => item.productId === props.productId);
+        if(!isfavourite) {
             addFavourite();
         } else {
             removeFromFavourite();
@@ -75,16 +75,16 @@ const FavouriteHeart = (props) => {
 
     function addFavouriteAfterLogin(){
         setAlertMsg("You have to log in to add favourite!");
-        setOpen(!open);
+        setAlert(!alert);
     }
 
     const handleClose = () => {
-        setOpen(!open);
+        setAlert(!alert);
     }
 
     return (
         <>
-            {open && <Alert
+            {alert && <Alert
                     content={<>
                         <p>{alertMsg}</p>
                     </>}

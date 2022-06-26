@@ -14,7 +14,7 @@ const Login = () => {
     let [email, setEmail] = React.useState("");
     let [password, setPassword] = React.useState("");
     let navigate = useNavigate();
-    const [open, setOpen] = React.useState(false);
+    const [alert, setAlert] = React.useState(false);
     const [alertMsg, setAlertMsg] = React.useState("");
     
     function signIn(e) {
@@ -27,7 +27,7 @@ const Login = () => {
                 .then(data => {
                     if(data.type === "user") {
                         setAlertMsg("Sign in successfully");
-                        setOpen(!open);
+                        setAlert(!alert);
                         
                         setTimeout(() => {
                             navigate("/", {replace: true});
@@ -38,17 +38,17 @@ const Login = () => {
         .catch(error => {
             if(error.code === "auth/user-not-found") {
                 setAlertMsg("User not found!");
-                setOpen(!open);
+                setAlert(!alert);
             };
             if(error.code === "auth/wrong-password") {
                 setAlertMsg("Wrong password!");
-                setOpen(!open);
+                setAlert(!alert);
             };
         })
     }
 
     const handleClose = () => {
-        setOpen(!open);
+        setAlert(!alert);
     }
 
     return (
@@ -60,7 +60,7 @@ const Login = () => {
             />
             <ShapeDivider/>
             <div className={classes.container}>
-                {open && <Alert
+                {alert && <Alert
                     content={<>
                         <p>{alertMsg}</p>
                     </>}

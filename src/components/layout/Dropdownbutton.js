@@ -6,41 +6,41 @@ import { UserDataContext } from "../context/UserDataContext";
 import Alert from "./Alert";
 
 const Dropdownbutton = () => {
-    const [open, setOpen] = React.useState(false);
+    const [dropdown, setDropdown] = React.useState(false);
     let userContext = React.useContext(UserDataContext);
-    const [openAlert, setOpenAlert] = React.useState(false);
+    const [alert, setAlert] = React.useState(false);
     const [alertMsg, setAlertMsg] = React.useState("");
 
     const logout = () => {
         let auth = getAuth();
         signOut(auth).then(() => {
             setAlertMsg("Sign out successfully!");
-            setOpenAlert(!openAlert);
+            setAlert(!alert);
             setTimeout(() => {
                 userContext.setUser(null);
             }, 2000);
         }).catch((error) => {
           setAlertMsg("Sign out failed!");
-          setOpenAlert(!openAlert);
+          setAlert(!alert);
         });
     }
 
      const handleClose = () => {
-        setOpen(!open);
+        setDropdown(!dropdown);
     }
 
     return (
         <div>
-            {openAlert && <Alert
+            {alert && <Alert
                 content={<>
                     <p>{alertMsg}</p>
                 </>}
                 handleClose={handleClose}
             />}
-            <Link to="#" className={classes.dropdownbtn} onClick={() => setOpen(open => !open)}>
+            <Link to="#" className={classes.dropdownbtn} onClick={() => setDropdown(dropdown => !dropdown)}>
                 Profile
             </Link>
-            {open && 
+            {dropdown && 
                 <div className={classes.dropdown}>
                     <div className={classes.droplist}>
                         <Link to="/account">Account</Link>

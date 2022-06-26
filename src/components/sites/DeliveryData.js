@@ -9,13 +9,13 @@ import { useNavigate } from "react-router-dom";
 import { FIREBASE_DOMAIN } from "../firebase/firebaseConfig";
 
 const DeliveryData = () => {
-    const [openAlert, setOpenAlert] = React.useState(false);
+    const [alert, setAlert] = React.useState(false);
     const [alertMsg, setAlertMsg] = React.useState("");
     let userContext = React.useContext(UserDataContext);
     let navigate = useNavigate();
 
     const handleClose = () => {
-        setOpenAlert(!openAlert);
+        setAlert(!alert);
     }
 
     const saveOrder = () => {
@@ -42,7 +42,7 @@ const DeliveryData = () => {
             .then(resp => resp.json())
             .then(() => {
                 setAlertMsg("Order successfully, thank you!");
-                setOpenAlert(!openAlert);
+                setAlert(!alert);
                 userContext.setUser({...userContext.user, uid: userContext.user.uid, cart: []});
                 setTimeout(() => {
                     navigate("/", {replace: true});
@@ -57,7 +57,7 @@ const DeliveryData = () => {
         <Navbar />
         <div className={classes.hero}></div>
         <ShapeDivider />
-        {openAlert && <Alert
+        {alert && <Alert
                         content={<>
                             <p>{alertMsg}</p>
                         </>}

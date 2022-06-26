@@ -10,7 +10,7 @@ import Alert from "../layout/Alert";
 
 const Navbar = () => {
   const [isActive, setActive] = React.useState(false);
-  const [openAlert, setOpenAlert] = React.useState(false);
+  const [alert, setAlert] = React.useState(false);
   const [alertMsg, setAlertMsg] = React.useState("");
   let userContext = React.useContext(UserDataContext);
 
@@ -20,16 +20,16 @@ const Navbar = () => {
 
   const notLoggedInAlert = () => {
     setAlertMsg("Log in to see your cart.");
-    setOpenAlert(!openAlert);
+    setAlert(!alert);
   }
 
   const handleClose = () => {
-    setOpenAlert(!openAlert);
+    setAlert(!alert);
   }
  
   return (
     <>
-    {openAlert && <Alert
+    {alert && <Alert
       content={<>
           <p>{alertMsg}</p>
       </>}
@@ -96,7 +96,6 @@ const Navbar = () => {
                   <FontAwesomeIcon icon={faShoppingBasket} className={classes.icon} onClick={notLoggedInAlert} />
                 </Link>
               }
-              
             </li>
           </ul>
         </nav>
