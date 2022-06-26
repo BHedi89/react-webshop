@@ -48,6 +48,7 @@
         border-radius: 20px;
         padding: 10px;
         border: white;
+        font-size: 18px;
     }
 
     .form input:focus {
@@ -118,6 +119,7 @@
         border-radius: 20px;
         padding: 10px;
         border: white;
+        font-size: 20px;
     }
 
     .form input:focus {

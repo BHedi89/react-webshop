@@ -5,16 +5,40 @@ import ShapeDivider from "../layout/ShapeDivider";
 import Footer from "../layout/Footer";
 import { UserDataContext } from "../context/UserDataContext";
 import { Link } from "react-router-dom";
+import Alert from "../layout/Alert";
+import { useNavigate } from "react-router-dom";
 
 const Cart = () => {
+    const [alert, setAlert] = React.useState(false);
+    const [alertMsg, setAlertMsg] = React.useState("");
+    let navigate = useNavigate();
     let userContext = React.useContext(UserDataContext);
     let total = 0;
+
+    const noOrderedItem = () => {
+        if(userContext.user.cart.length === 0) {
+            setAlert(!alert);
+            setAlertMsg("Your cart is empty!");
+        } else {
+            navigate("/delivery", {replace: true});
+        }
+    }
+
+    const handleClose = () => {
+        setAlert(!alert);
+    } 
 
     return (
         <>
             <Navbar />
             <div className={classes.hero}></div>
             <ShapeDivider />
+            {alert && <Alert
+                    content={<>
+                        <p>{alertMsg}</p>
+                    </>}
+                    handleClose={handleClose}
+            />}
             <div className={classes.ordercontainer}>
                 <h1 className={classes.ordertitle}>Orders</h1>
                 <div className={classes.sumtable}>
@@ -61,7 +85,7 @@ const Cart = () => {
                                 </tr>
                             </tbody>
                         </table>
-                        <button className={classes.deliverybtn}><Link to="/delivery">Go to delivery datas</Link></button>
+                        <button className={classes.deliverybtn} onClick={() => noOrderedItem()}>Go to delivery datas</button>
                     </div>
                 </div>
             </div>
