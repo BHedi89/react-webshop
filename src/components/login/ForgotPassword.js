@@ -5,7 +5,7 @@ import Alert from "../layout/Alert";
 import Hero from "../layout/Hero";
 import ShapeDivider from "../layout/ShapeDivider";
 import Footer from "../layout/Footer";
-import heroImage from "../images/hero/about-banner.jpg"; 
+import heroImage from "../../assets/images/hero/about-banner.jpg"; 
 import { useNavigate, Link } from "react-router-dom";
 import Navbar from "../layout/Navbar";
 

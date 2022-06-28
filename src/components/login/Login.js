@@ -4,7 +4,7 @@ import { FIREBASE_DOMAIN } from "../firebase/firebaseConfig";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { useNavigate, Link } from "react-router-dom";
 import Hero from "../layout/Hero";
-import heroImage from "../images/hero/RedGroup-Mobile-1600x500-1.jpg";
+import heroImage from "../../assets/images/hero/RedGroup-Mobile-1600x500-1.jpg";
 import ShapeDivider from "../layout/ShapeDivider";
 import Footer from "../layout/Footer";
 import Alert from "../layout/Alert";

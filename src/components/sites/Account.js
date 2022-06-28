@@ -3,7 +3,7 @@ import classes from "./Account.module.css";
 import Navbar from "../layout/Navbar";
 import Hero from "../layout/Hero";
 import Footer from "../layout/Footer";
-import heroImage from "../images/hero/set-cosmetic.jpg";
+import heroImage from "../../assets/images/hero/set-cosmetic.jpg";
 import ShapeDivider from "../layout/ShapeDivider";
 import { UserDataContext } from "../context/UserDataContext";
 import Alert from "../layout/Alert";

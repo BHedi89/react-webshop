@@ -6,7 +6,7 @@ import classes from "./Registration.module.css";
 import ShapeDivider from "../layout/ShapeDivider";
 import Hero from "../layout/Hero";
 import Footer from "../layout/Footer";
-import heroImage from "../images/hero/photo-1597143720029-61ddd2e4733c.jpg";
+import heroImage from "../../assets/images/hero/photo-1597143720029-61ddd2e4733c.jpg";
 import Alert from "../layout/Alert";
 import Navbar from "../layout/Navbar";
 import { FIREBASE_DOMAIN } from "../firebase/firebaseConfig";
