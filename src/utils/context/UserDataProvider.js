@@ -1,7 +1,7 @@
 import React from "react";
 import { UserDataContext } from "./UserDataContext";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
-import { FIREBASE_DOMAIN } from "../firebase/firebaseConfig";
+import { FIREBASE_DOMAIN } from "../../utils/firebase/firebaseConfig";
 
 const UserDataProvider = ({children}) => {
     const [user, setUser] = React.useState(null);

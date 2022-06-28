@@ -1,27 +1,27 @@
 import React from "react";
-import classes from "./Nails.module.css";
-import Navbar from "../layout/Navbar";
-import Hero from "../layout/Hero";
-import heroImage from "../../assets/images/hero/hero-img-1.jpg";
-import ShapeDivider from "../layout/ShapeDivider";
-import Footer from "../layout/Footer";
-import Productcard from "../layout/Productcard";
-import { ProductDataContext } from "../context/ProductDataContext";
-import { RatingDataContext } from "../context/RatingDataContext";
+import classes from "./Lips.module.css";
+import Navbar from "../../components/navbar/Navbar";
+import Hero from "../../components/hero-footer/Hero";
+import heroImage from "../../assets/images/hero/requestappointmentbg.jpg";
+import ShapeDivider from "../../components/other-components/ShapeDivider";
+import Footer from "../../components/hero-footer/Footer";
+import Productcard from "../../components/cards/Productcard";
+import { ProductDataContext } from "../../utils/context/ProductDataContext";
+import { RatingDataContext } from "../../utils/context/RatingDataContext";
 
-const Nails = () => {
-    const [nailmakeup, setNailmakeup] = React.useState([]);
+const Lips = () => {
+    const [lipsmakeup, setLipsmakeup] = React.useState([]);
     let productContext = React.useContext(ProductDataContext);
     let ratingContext = React.useContext(RatingDataContext);
 
     React.useEffect(() => {
-        let nailmakeupList = [];
+        const lipsmakeupList = [];
         for(const key in productContext.products) {
-            if(productContext.products[key].category === "nails") {
-                nailmakeupList.push(productContext.products[key]);
+            if(productContext.products[key].category === "lips") {
+                lipsmakeupList.push(productContext.products[key]);
             }
         }
-        setNailmakeup(nailmakeupList);
+        setLipsmakeup(lipsmakeupList);
     }, [])
 
 
@@ -29,12 +29,12 @@ const Nails = () => {
         <>
             <Navbar />
             <Hero 
-                title="Nail Polish"
+                title="Lip Makeup"
                 heroImage={heroImage}
             />
             <ShapeDivider />
             <div className={classes.products}>
-                {nailmakeup.map(product => {
+                {lipsmakeup.map(product => {
                     return <Productcard 
                                 key={product.id}
                                 productId={product.id}
@@ -56,4 +56,4 @@ const Nails = () => {
     )
 }
 
-export default Nails;
+export default Lips;

@@ -1,15 +1,15 @@
 import React from "react";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
-import { UserDataContext } from "../context/UserDataContext";
+import { UserDataContext } from "../../utils/context/UserDataContext";
 import { useNavigate, Link } from "react-router-dom";
 import classes from "./Registration.module.css";
-import ShapeDivider from "../layout/ShapeDivider";
-import Hero from "../layout/Hero";
-import Footer from "../layout/Footer";
+import ShapeDivider from "../../components/other-components/ShapeDivider";
+import Hero from "../../components/hero-footer/Hero";
+import Footer from "../../components/hero-footer/Footer";
 import heroImage from "../../assets/images/hero/photo-1597143720029-61ddd2e4733c.jpg";
-import Alert from "../layout/Alert";
-import Navbar from "../layout/Navbar";
-import { FIREBASE_DOMAIN } from "../firebase/firebaseConfig";
+import Alert from "../../components/other-components/Alert";
+import Navbar from "../../components/navbar/Navbar";
+import { FIREBASE_DOMAIN } from "../../utils/firebase/firebaseConfig";
 
 const Registration = () => {
     const [name, setName] = React.useState("");

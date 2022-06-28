@@ -1,13 +1,13 @@
 import React from "react";
 import classes from "./Eyes.module.css";
-import Navbar from "../layout/Navbar";
-import Hero from "../layout/Hero";
+import Navbar from "../../components/navbar/Navbar";
+import Hero from "../../components/hero-footer/Hero";
 import heroImage from "../../assets/images/hero/vfgf.jpg";
-import ShapeDivider from "../layout/ShapeDivider";
-import Footer from "../layout/Footer";
-import Productcard from "../layout/Productcard";
-import { ProductDataContext } from "../context/ProductDataContext";
-import { RatingDataContext } from "../context/RatingDataContext";
+import ShapeDivider from "../../components/other-components/ShapeDivider";
+import Footer from "../../components/hero-footer/Footer";
+import Productcard from "../../components/cards/Productcard";
+import { ProductDataContext } from "../../utils/context/ProductDataContext";
+import { RatingDataContext } from "../../utils/context/RatingDataContext";
 
 const Eyes = () => {
     const [eyemakeup, setEyemakeup] = React.useState([]);

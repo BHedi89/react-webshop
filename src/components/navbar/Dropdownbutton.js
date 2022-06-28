@@ -2,8 +2,8 @@ import React from "react";
 import classes from "./Dropdownbutton.module.css";
 import { Link } from "react-router-dom";
 import { getAuth, signOut } from "firebase/auth";
-import { UserDataContext } from "../context/UserDataContext";
-import Alert from "./Alert";
+import { UserDataContext } from "../../utils/context/UserDataContext";
+import Alert from "../other-components/Alert";
 
 const Dropdownbutton = () => {
     const [dropdown, setDropdown] = React.useState(false);

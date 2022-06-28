@@ -1,22 +1,22 @@
 import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Main from "./components/sites/Main";
-import Login from "./components/login/Login";
-import Registration from "./components/registration/Registration";
-import UserDataProvider from './components/context/UserDataProvider';
-import Account from "./components/sites/Account";
-import ForgotPassword from "./components/login/ForgotPassword";
-import Face from "./components/sites/Face";
-import Lips from "./components/sites/Lips";
-import Eyes from "./components/sites/Eyes";
-import Nails from "./components/sites/Nails";
-import DetailPage from './components/sites/DetailPage';
-import ProductDataProvider from './components/context/ProductDataProvider';
-import FavouritePage from './components/sites/FavouritePage';
-import Orders from './components/sites/Orders';
-import DeliveryData from './components/sites/DeliveryData';
-import Cart from './components/sites/Cart';
-import RatingDataProvider from './components/context/RatingDataProvider';
+import Main from "./pages/main-detail-page/Main";
+import Login from "./pages/login/Login";
+import Registration from "./pages/registration/Registration";
+import UserDataProvider from './utils/context/UserDataProvider';
+import Account from "./pages/user-pages/Account";
+import ForgotPassword from "./pages/login/ForgotPassword";
+import Face from "./pages/product-pages/Face";
+import Lips from "./pages/product-pages/Lips";
+import Eyes from "./pages/product-pages/Eyes";
+import Nails from "./pages/product-pages/Nails";
+import DetailPage from './pages/main-detail-page/DetailPage';
+import ProductDataProvider from './utils/context/ProductDataProvider';
+import FavouritePage from './pages/user-pages/FavouritePage';
+import Orders from './pages/user-pages/Orders';
+import DeliveryData from './pages/user-pages/DeliveryData';
+import Cart from './pages/user-pages/Cart';
+import RatingDataProvider from './utils/context/RatingDataProvider';
 
 function App() {
   return (

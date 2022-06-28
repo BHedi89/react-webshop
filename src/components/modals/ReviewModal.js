@@ -1,9 +1,9 @@
 import React from "react";
 import classes from "./ReviewModal.module.css";
-import { StarRating } from "./StarRating";
-import { ProductDataContext } from "../context/ProductDataContext";
-import { RatingDataContext } from "../context/RatingDataContext";
-import { FIREBASE_DOMAIN } from "../firebase/firebaseConfig";
+import { StarRating } from "../other-components/StarRating";
+import { ProductDataContext } from "../../utils/context/ProductDataContext";
+import { RatingDataContext } from "../../utils/context/RatingDataContext";
+import { FIREBASE_DOMAIN } from "../../utils/firebase/firebaseConfig";
 
 const ReviewModal = (props) => {
     const [checked, setChecked] = React.useState(true);

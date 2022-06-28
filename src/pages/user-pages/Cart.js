@@ -1,10 +1,10 @@
 import React from "react";
 import classes from "./Cart.module.css";
-import Navbar from "../layout/Navbar";
-import ShapeDivider from "../layout/ShapeDivider";
-import Footer from "../layout/Footer";
-import { UserDataContext } from "../context/UserDataContext";
-import Alert from "../layout/Alert";
+import Navbar from "../../components/navbar/Navbar";
+import ShapeDivider from "../../components/other-components/ShapeDivider";
+import Footer from "../../components/hero-footer/Footer";
+import { UserDataContext } from "../../utils/context/UserDataContext";
+import Alert from "../../components/other-components/Alert";
 import { useNavigate } from "react-router-dom";
 
 const Cart = () => {

@@ -1,6 +1,6 @@
 import React from "react";
 import { ProductDataContext } from "./ProductDataContext";
-import { FIREBASE_DOMAIN } from "../firebase/firebaseConfig";
+import { FIREBASE_DOMAIN } from "../../utils/firebase/firebaseConfig";
 
 const ProductDataProvider = ({children}) => {
     const [products, setProducts] = React.useState(null);

@@ -1,6 +1,6 @@
 import React from "react";
 import { RatingDataContext } from "./RatingDataContext";
-import { FIREBASE_DOMAIN } from "../firebase/firebaseConfig";
+import { FIREBASE_DOMAIN } from "../../utils/firebase/firebaseConfig";
 
 const RatingDataProvider = ({children}) => {
     const [rate, setRate] = React.useState(null);

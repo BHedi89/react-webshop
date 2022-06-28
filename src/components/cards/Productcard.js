@@ -1,8 +1,8 @@
 import React from "react";
 import classes from "./Productcard.module.css";
 import { Link } from "react-router-dom";
-import StarRating from "./StarRating";
-import FavouriteHeart from "./FavouriteHeart";
+import StarRating from "../other-components/StarRating";
+import FavouriteHeart from "../other-components/FavouriteHeart";
 
 const Productcard = (props) => {
     return (

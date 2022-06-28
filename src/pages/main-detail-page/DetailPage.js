@@ -1,19 +1,19 @@
 import React from "react";
 import { Link, useParams } from "react-router-dom";
 import classes from "./DetailPage.module.css";
-import Navbar from "../layout/Navbar";
-import Footer from "../layout/Footer";
-import ShapeDivider from "../layout/ShapeDivider";
-import StarRating from "../layout/StarRating";
-import ReviewModal from "../layout/ReviewModal";
+import Navbar from "../../components/navbar/Navbar";
+import Footer from "../../components/hero-footer/Footer";
+import ShapeDivider from "../../components/other-components/ShapeDivider";
+import StarRating from "../../components/other-components/StarRating";
+import ReviewModal from "../../components/modals/ReviewModal";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
 import { ImCross } from "react-icons/im";
-import { ProductDataContext } from "../context/ProductDataContext";
-import { UserDataContext } from "../context/UserDataContext";
-import Alert from "../layout/Alert";
-import { RatingDataContext } from "../context/RatingDataContext";
-import { FIREBASE_DOMAIN } from "../firebase/firebaseConfig";
+import { ProductDataContext } from "../../utils/context/ProductDataContext";
+import { UserDataContext } from "../../utils/context/UserDataContext";
+import Alert from "../../components/other-components/Alert";
+import { RatingDataContext } from "../../utils/context/RatingDataContext";
+import { FIREBASE_DOMAIN } from "../../utils/firebase/firebaseConfig";
 
 const DetailPage = () => {
     let {id} = useParams();   

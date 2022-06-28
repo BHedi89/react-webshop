@@ -5,8 +5,8 @@ import { faShoppingBasket } from "@fortawesome/free-solid-svg-icons";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import Dropdownbutton from "./Dropdownbutton";
-import { UserDataContext } from "../context/UserDataContext";
-import Alert from "../layout/Alert";
+import { UserDataContext } from "../../utils/context/UserDataContext";
+import Alert from "../other-components/Alert";
 
 const Navbar = () => {
   const [isActive, setActive] = React.useState(false);

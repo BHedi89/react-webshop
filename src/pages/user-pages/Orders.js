@@ -1,9 +1,9 @@
 import React from "react";
 import classes from "./Orders.module.css";
-import Navbar from "../layout/Navbar";
-import ShapeDivider from "../layout/ShapeDivider";
-import Footer from "../layout/Footer";
-import { UserDataContext } from "../context/UserDataContext";
+import Navbar from "../../components/navbar/Navbar";
+import ShapeDivider from "../../components/other-components/ShapeDivider";
+import Footer from "../../components/hero-footer/Footer";
+import { UserDataContext } from "../../utils/context/UserDataContext";
 import { Link } from "react-router-dom";
 
 const Orders = () => {

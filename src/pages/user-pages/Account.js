@@ -1,12 +1,12 @@
 import React from "react";
 import classes from "./Account.module.css";
-import Navbar from "../layout/Navbar";
-import Hero from "../layout/Hero";
-import Footer from "../layout/Footer";
+import Navbar from "../../components/navbar/Navbar";
+import Hero from "../../components/hero-footer/Hero";
+import Footer from "../../components/hero-footer/Footer";
 import heroImage from "../../assets/images/hero/set-cosmetic.jpg";
-import ShapeDivider from "../layout/ShapeDivider";
-import { UserDataContext } from "../context/UserDataContext";
-import Alert from "../layout/Alert";
+import ShapeDivider from "../../components/other-components/ShapeDivider";
+import { UserDataContext } from "../../utils/context/UserDataContext";
+import Alert from "../../components/other-components/Alert";
 import { 
     getAuth, 
     updateEmail, 
@@ -15,7 +15,7 @@ import {
     updatePassword } 
 from "firebase/auth";
 import { Link } from "react-router-dom";
-import { FIREBASE_DOMAIN } from "../firebase/firebaseConfig";
+import { FIREBASE_DOMAIN } from "../../utils/firebase/firebaseConfig";
 
 const Account = () => {
     let userContext = React.useContext(UserDataContext);

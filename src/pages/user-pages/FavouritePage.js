@@ -1,12 +1,12 @@
 import React from "react";
 import classes from "./FavouritePage.module.css";
-import { UserDataContext } from "../context/UserDataContext";
-import { ProductDataContext } from "../context/ProductDataContext";
-import Navbar from "../layout/Navbar";
-import ShapeDivider from "../layout/ShapeDivider";
-import Footer from "../layout/Footer";
-import Productcard from "../layout/Productcard";
-import { RatingDataContext } from "../context/RatingDataContext";
+import { UserDataContext } from "../../utils/context/UserDataContext";
+import { ProductDataContext } from "../../utils/context/ProductDataContext";
+import Navbar from "../../components/navbar/Navbar";
+import ShapeDivider from "../../components/other-components/ShapeDivider";
+import Footer from "../../components/hero-footer/Footer";
+import Productcard from "../../components/cards/Productcard";
+import { RatingDataContext } from "../../utils/context/RatingDataContext";
 import { Fragment } from "react";
 import { Link } from "react-router-dom";
 

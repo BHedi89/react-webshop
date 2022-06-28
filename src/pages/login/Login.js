@@ -1,14 +1,14 @@
 import React from "react";
 import classes from "./Login.module.css";
-import { FIREBASE_DOMAIN } from "../firebase/firebaseConfig";
+import { FIREBASE_DOMAIN } from "../../utils/firebase/firebaseConfig";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { useNavigate, Link } from "react-router-dom";
-import Hero from "../layout/Hero";
+import Hero from "../../components/hero-footer/Hero";
 import heroImage from "../../assets/images/hero/RedGroup-Mobile-1600x500-1.jpg";
-import ShapeDivider from "../layout/ShapeDivider";
-import Footer from "../layout/Footer";
-import Alert from "../layout/Alert";
-import Navbar from "../layout/Navbar";
+import ShapeDivider from "../../components/other-components/ShapeDivider";
+import Footer from "../../components/hero-footer/Footer";
+import Alert from "../../components/other-components/Alert";
+import Navbar from "../../components/navbar/Navbar";
 
 const Login = () => {
     let [email, setEmail] = React.useState("");

@@ -1,13 +1,13 @@
 import React from "react";
 import classes from "./ForgotPassword.module.css";
 import { getAuth, sendPasswordResetEmail } from "firebase/auth";
-import Alert from "../layout/Alert";
-import Hero from "../layout/Hero";
-import ShapeDivider from "../layout/ShapeDivider";
-import Footer from "../layout/Footer";
+import Alert from "../../components/other-components/Alert";
+import Hero from "../../components/hero-footer/Hero";
+import ShapeDivider from "../../components/other-components/ShapeDivider";
+import Footer from "../../components/hero-footer/Footer";
 import heroImage from "../../assets/images/hero/about-banner.jpg"; 
 import { useNavigate, Link } from "react-router-dom";
-import Navbar from "../layout/Navbar";
+import Navbar from "../../components/navbar/Navbar";
 
 const Forgotpassword = () => {
     const [email, setEmail] = React.useState("");

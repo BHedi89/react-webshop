@@ -1,12 +1,12 @@
 import React from "react";
 import classes from "./DeliveryData.module.css";
-import Navbar from "../layout/Navbar";
-import ShapeDivider from "../layout/ShapeDivider";
-import Footer from "../layout/Footer";
-import { UserDataContext } from "../context/UserDataContext";
-import Alert from "../layout/Alert";
+import Navbar from "../../components/navbar/Navbar";
+import ShapeDivider from "../../components/other-components/ShapeDivider";
+import Footer from "../../components/hero-footer/Footer";
+import { UserDataContext } from "../../utils/context/UserDataContext";
+import Alert from "../../components/other-components/Alert";
 import { useNavigate } from "react-router-dom";
-import { FIREBASE_DOMAIN } from "../firebase/firebaseConfig";
+import { FIREBASE_DOMAIN } from "../../utils/firebase/firebaseConfig";
 
 const DeliveryData = () => {
     const [alert, setAlert] = React.useState(false);

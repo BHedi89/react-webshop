@@ -2,10 +2,10 @@ import React from "react";
 import classes from "./FavouriteHeart.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
-import { ProductDataContext } from "../context/ProductDataContext";
-import { UserDataContext } from "../context/UserDataContext";
+import { ProductDataContext } from "../../utils/context/ProductDataContext";
+import { UserDataContext } from "../../utils/context/UserDataContext";
 import Alert from "./Alert";
-import { FIREBASE_DOMAIN } from "../firebase/firebaseConfig";
+import { FIREBASE_DOMAIN } from "../../utils/firebase/firebaseConfig";
 
 const FavouriteHeart = (props) => {
     const [alert, setAlert] = React.useState(false);
