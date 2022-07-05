@@ -1,6 +1,6 @@
 import React from "react";
 import { ProductDataContext } from "./ProductDataContext";
-import { FIREBASE_DOMAIN } from "../../utils/firebase/firebaseConfig";
+import { getAllProduct } from "../../modules/product-service";
 
 const ProductDataProvider = ({children}) => {
     const [products, setProducts] = React.useState(null);
@@ -8,8 +8,7 @@ const ProductDataProvider = ({children}) => {
 
     React.useEffect(() => {
         const productList = [];
-        fetch(`${FIREBASE_DOMAIN}/products.json`)
-            .then(resp => resp.json())
+        getAllProduct()
             .then(products => {
                 for(const key in products){
                     const productObj = {

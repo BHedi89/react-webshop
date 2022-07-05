@@ -3,7 +3,7 @@ import classes from "./ReviewModal.module.css";
 import { StarRating } from "../other-components/StarRating";
 import { ProductDataContext } from "../../utils/context/ProductDataContext";
 import { RatingDataContext } from "../../utils/context/RatingDataContext";
-import { FIREBASE_DOMAIN } from "../../utils/firebase/firebaseConfig";
+import { postReview } from "../../modules/product-service";
 
 const ReviewModal = (props) => {
     const [checked, setChecked] = React.useState(true);
@@ -20,45 +20,43 @@ const ReviewModal = (props) => {
         setRate(rateNum);
     }
 
-    const postReview = () => {
-        fetch(`${FIREBASE_DOMAIN}/products/${props.productId}/review.json`, {
-            method: "POST",
-            body: JSON.stringify({
-                rate: rate,
-                name: nickname,
-                title: title,
-                age: age,
-                text: review,
-                recommend: recommend
-            })
-        })
-        .then(resp => resp.json())
-        .then(({name}) => {
-            let productCopy = {...productContext.products};
-            for(const idx in productCopy){
-                productCopy[idx].review.push({
-                    id: name,
-                    rate: rate,
-                    name: nickname,
-                    title: title,
-                    age: age,
-                    text: review,
-                    recommend: recommend
-                })
-                productContext.setProducts(productCopy);
-            }
+    const submitReview = () => {
+        let reviewObj = {
+            rate: rate,
+            name: nickname,
+            title: title,
+            age: age,
+            text: review,
+            recommend: recommend
+        }
 
-            for(const idx in ratingContext.avgRate){
-                if(props.productId === ratingContext.avgRate[idx].id) {
-                    let newAvg = (ratingContext.avgRate[idx].avg + rate) / 2;
-                    ratingContext.avgRate[idx].avg = Math.round(newAvg);
-                    ratingContext.setRate(ratingContext.avgRate);
-                    props.setRateAvg(Math.round(newAvg));
+        postReview(props.productId, reviewObj)
+            .then(({name}) => {
+                let productCopy = {...productContext.products};
+                for(const idx in productCopy){
+                    productCopy[idx].review.push({
+                        id: name,
+                        rate: rate,
+                        name: nickname,
+                        title: title,
+                        age: age,
+                        text: review,
+                        recommend: recommend
+                    })
+                    productContext.setProducts(productCopy);
                 }
-            };
 
-            props.setOpenReview(false);
-        })
+                for(const idx in ratingContext.avgRate){
+                    if(props.productId === ratingContext.avgRate[idx].id) {
+                        let newAvg = (ratingContext.avgRate[idx].avg + rate) / 2;
+                        ratingContext.avgRate[idx].avg = Math.round(newAvg);
+                        ratingContext.setRate(ratingContext.avgRate);
+                        props.setRateAvg(Math.round(newAvg));
+                    }
+                };
+
+                props.setOpenReview(false);
+            })
     }
 
     return (
@@ -164,7 +162,7 @@ const ReviewModal = (props) => {
                     <div className={classes.actionsContainer}>
                         <button 
                             className={classes.postBtn} 
-                            onClick={postReview}
+                            onClick={submitReview}
                         >
                             Post Review
                         </button>

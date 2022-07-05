@@ -1,6 +1,6 @@
 import React from "react";
 import { RatingDataContext } from "./RatingDataContext";
-import { FIREBASE_DOMAIN } from "../../utils/firebase/firebaseConfig";
+import { getAllProduct } from "../../modules/product-service";
 
 const RatingDataProvider = ({children}) => {
     const [rate, setRate] = React.useState(null);
@@ -8,8 +8,7 @@ const RatingDataProvider = ({children}) => {
 
     React.useEffect(() => {
         const productList = [];
-        fetch(`${FIREBASE_DOMAIN}/products.json`)
-            .then(resp => resp.json())
+        getAllProduct()
             .then(products => {
                 for(const key in products){
                     const productObj = {
