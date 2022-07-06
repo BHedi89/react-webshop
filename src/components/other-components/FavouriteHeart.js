@@ -5,7 +5,7 @@ import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { ProductDataContext } from "../../utils/context/ProductDataContext";
 import { UserDataContext } from "../../utils/context/UserDataContext";
 import Alert from "./Alert";
-import { FIREBASE_DOMAIN } from "../../utils/firebase/firebaseConfig";
+import { postFavouriteProduct, deleteFavouriteProduct } from "../../modules/user-service";
 
 const FavouriteHeart = (props) => {
     const [alert, setAlert] = React.useState(false);
@@ -17,23 +17,18 @@ const FavouriteHeart = (props) => {
     const addFavourite = () => {        
         productContext.products.map(product => {
             if(product.id === props.productId) {
-                fetch(`${FIREBASE_DOMAIN}/users/${userContext.user.uid}/favourite.json`, {
-                    method: "POST",
-                    body: JSON.stringify({
-                        productId: product.id
-                    })
-                })
-                .then(resp => resp.json())
-                .then(({name}) => {
-                    setAlertMsg("Product added to your favourites!");
-                    setAlert(!alert);
-                    let userCopy = {...userContext.user};
-                    userCopy.favourite.push({
-                        id: name,
-                        productId: product.id
-                    })
-                    userContext.setUser(userCopy);
-                });
+                let productObj = {productId: product.id};
+                postFavouriteProduct(userContext.user.uid, productObj)
+                    .then(({name}) => {
+                        setAlertMsg("Product added to your favourites!");
+                        setAlert(!alert);
+                        let userCopy = {...userContext.user};
+                        userCopy.favourite.push({
+                            id: name,
+                            productId: product.id
+                        })
+                        userContext.setUser(userCopy);
+                    });
             }
         })
     }
@@ -44,20 +39,17 @@ const FavouriteHeart = (props) => {
                 for(const key in userContext.user.favourite){
                     if(userContext.user.favourite[key].productId === product.id){
                         let id = userContext.user.favourite[key].id;
-                        fetch(`${FIREBASE_DOMAIN}/users/${userContext.user.uid}/favourite/${id}.json`, {
-                            method: "DELETE"
-                        })
-                        .then(resp => resp.json())
-                        .then(() => {
-                            setAlertMsg("Product removed from your favourites!");
-                            setAlert(!alert);
-                            
-                            let userCopy = {...userContext.user};
-                            let idx = userCopy.favourite.findIndex((item) => item.productId === product.id);
-                            userCopy.favourite.splice(idx, 1);
-                            userContext.setUser(userCopy);
-                            setFavourite(false);
-                        });
+                        deleteFavouriteProduct(userContext.user.uid, id)
+                            .then(() => {
+                                setAlertMsg("Product removed from your favourites!");
+                                setAlert(!alert);
+                                
+                                let userCopy = {...userContext.user};
+                                let idx = userCopy.favourite.findIndex((item) => item.productId === product.id);
+                                userCopy.favourite.splice(idx, 1);
+                                userContext.setUser(userCopy);
+                                setFavourite(false);
+                            });
                     }
                 }
             }

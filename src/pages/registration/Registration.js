@@ -9,7 +9,7 @@ import Footer from "../../components/hero-footer/Footer";
 import heroImage from "../../assets/images/hero/photo-1597143720029-61ddd2e4733c.jpg";
 import Alert from "../../components/other-components/Alert";
 import Navbar from "../../components/navbar/Navbar";
-import { FIREBASE_DOMAIN } from "../../utils/firebase/firebaseConfig";
+import { registerUser } from "../../modules/user-service";
 
 const Registration = () => {
     const [name, setName] = React.useState("");
@@ -28,57 +28,54 @@ const Registration = () => {
         const auth = getAuth();
         createUserWithEmailAndPassword(auth, email, password)
             .then(({user}) => {
-                fetch(`${FIREBASE_DOMAIN}/users/${user.uid}.json`, {
-                    method: "PUT",
-                    body: JSON.stringify(
-                        {
-                            email, 
-                            name: name, 
-                            type: "user",
-                            address: address,
-                            zipcode: zipcode,
-                            phonenumber: phonenumber,
-                            favourite: [],
-                            cart: [], 
-                            orders: []
-                        })
+                let userObj = {
+                    email, 
+                    name: name, 
+                    type: "user",
+                    address: address,
+                    zipcode: zipcode,
+                    phonenumber: phonenumber,
+                    favourite: [],
+                    cart: [], 
+                    orders: []
+                }
+
+                registerUser(user.uid, userObj)
+                    .then((data) => {
+                        userContext.setUser(
+                            {
+                                email, 
+                                name: name, 
+                                type: "user",
+                                address: address,
+                                zipcode: zipcode,
+                                phonenumber: phonenumber, 
+                                favourite: [],
+                                cart: [], 
+                                orders: []
+                            });
+                        if(data.type === "user") {
+                            setAlertMsg("Successfull registration!");
+                            setAlert(!alert);
+                            navigate("/", {replace: true});
+                        }
+                        
+                    })
                 })
-                .then(resp => resp.json())
-                .then((data) => {
-                    userContext.setUser(
-                        {
-                            email, 
-                            name: name, 
-                            type: "user",
-                            address: address,
-                            zipcode: zipcode,
-                            phonenumber: phonenumber, 
-                            favourite: [],
-                            cart: [], 
-                            orders: []
-                        });
-                    if(data.type === "user") {
-                        setAlertMsg("Successfull registration!");
+                .catch((error) => {
+                    if (error.code === "auth/email-already-in-use") {
+                        setAlertMsg("Email elready in use!");
                         setAlert(!alert);
-                        navigate("/", {replace: true});
-                    }
-                    
+                    };
+                    if (error.code === "auth/weak-password") {
+                        setAlertMsg("Weak password! 6 character at least!");
+                        setAlert(!alert);
+                    };
+                    if (error.code === "auth/invalid-email") {
+                        setAlertMsg("Invalid email!");
+                        setAlert(!alert);
+                    };
                 })
-            })
-            .catch((error) => {
-                if (error.code === "auth/email-already-in-use") {
-                    setAlertMsg("Email elready in use!");
-                    setAlert(!alert);
-                };
-                if (error.code === "auth/weak-password") {
-                    setAlertMsg("Weak password! 6 character at least!");
-                    setAlert(!alert);
-                };
-                if (error.code === "auth/invalid-email") {
-                    setAlertMsg("Invalid email!");
-                    setAlert(!alert);
-                };
-            })
     }
 
     const handleClose = () => {

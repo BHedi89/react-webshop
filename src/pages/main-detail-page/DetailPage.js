@@ -13,7 +13,7 @@ import { ProductDataContext } from "../../utils/context/ProductDataContext";
 import { UserDataContext } from "../../utils/context/UserDataContext";
 import Alert from "../../components/other-components/Alert";
 import { RatingDataContext } from "../../utils/context/RatingDataContext";
-import { FIREBASE_DOMAIN } from "../../utils/firebase/firebaseConfig";
+import { postCartContent } from "../../modules/user-service";
 
 const DetailPage = () => {
     let {id} = useParams();   
@@ -39,16 +39,14 @@ const DetailPage = () => {
         if(userContext.user !== null) {
             for(const key in products) {
                 if(products[key].id === id) {
-                    fetch(`${FIREBASE_DOMAIN}/users/${userContext.user.uid}/cart.json`, {
-                        method: "POST",
-                        body: JSON.stringify({
-                            productId: products[key].id,
-                            productName: products[key].name,
-                            productPrice: products[key].price,
-                            productImage: products[key].image
-                        })
-                    })
-                    .then(resp => resp.json())
+                    let cartObj = {
+                        productId: products[key].id,
+                        productName: products[key].name,
+                        productPrice: products[key].price,
+                        productImage: products[key].image
+                    }
+
+                    postCartContent(userContext.user.uid, cartObj)
                     .then(({name}) => {
                         let userCopy = {...userContext.user};
                         setAlertMsg("Product added to your cart!");

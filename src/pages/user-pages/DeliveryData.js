@@ -6,7 +6,7 @@ import Footer from "../../components/hero-footer/Footer";
 import { UserDataContext } from "../../utils/context/UserDataContext";
 import Alert from "../../components/other-components/Alert";
 import { useNavigate } from "react-router-dom";
-import { FIREBASE_DOMAIN } from "../../utils/firebase/firebaseConfig";
+import { postOrders, deleteCartContent } from "../../modules/user-service";
 
 const DeliveryData = () => {
     const [alert, setAlert] = React.useState(false);
@@ -19,37 +19,32 @@ const DeliveryData = () => {
     }
 
     const saveOrder = () => {
-        fetch(`${FIREBASE_DOMAIN}/users/${userContext.user.uid}/orders.json`, {
-            method: "POST",
-            body: JSON.stringify({
-                status: "active",
-                items: userContext.user.cart
+        let orderObj = {
+            status: "active",
+            items: userContext.user.cart
+        }
+
+        postOrders(userContext.user.uid, orderObj)
+            .then(({name}) => {
+                let userCopy = {...userContext.user};
+                userCopy.orders.push({
+                    id: name,
+                    status: "active",
+                    items: userContext.user.cart
+                })
+                userContext.setUser(userCopy);
+                
+                deleteCartContent(userContext.user.uid)
+                    .then(() => {
+                        setAlertMsg("Order successfully, thank you!");
+                        setAlert(!alert);
+                        userContext.setUser({...userContext.user, uid: userContext.user.uid, cart: []});
+                        setTimeout(() => {
+                            navigate("/", {replace: true});
+                        }, 2000);
+                    })
+                
             })
-        })
-        .then(resp => resp.json())
-        .then(({name}) => {
-            let userCopy = {...userContext.user};
-            userCopy.orders.push({
-                id: name,
-                status: "active",
-                items: userContext.user.cart
-            })
-            userContext.setUser(userCopy);
-            
-            fetch(`${FIREBASE_DOMAIN}/users/${userContext.user.uid}/cart.json`, {
-                method: "DELETE"
-            })
-            .then(resp => resp.json())
-            .then(() => {
-                setAlertMsg("Order successfully, thank you!");
-                setAlert(!alert);
-                userContext.setUser({...userContext.user, uid: userContext.user.uid, cart: []});
-                setTimeout(() => {
-                    navigate("/", {replace: true});
-                }, 2000);
-            })
-            
-        })
     }
 
     return (

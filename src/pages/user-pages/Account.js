@@ -15,7 +15,7 @@ import {
     updatePassword } 
 from "firebase/auth";
 import { Link } from "react-router-dom";
-import { FIREBASE_DOMAIN } from "../../utils/firebase/firebaseConfig";
+import { modifyUser } from "../../modules/user-service";
 
 const Account = () => {
     let userContext = React.useContext(UserDataContext);
@@ -32,27 +32,24 @@ const Account = () => {
 
     function changeDeliveryData(e) {
         e.preventDefault();
-        fetch(`${FIREBASE_DOMAIN}/users/${userContext.user.uid}.json`, {
-            method: "PUT",
-            body: JSON.stringify({
-                address: address,
-                zipcode: zipcode,
-                phonenumber: phonenumber,
-                name: userContext.user.name,
-                email: userContext.user.email,
-                type: "user",
-                cart: userContext.user.cart,
-                favourite: userContext.user.favourite,
-                orders: userContext.user.orders
-            })
-        })
-        .then(resp => resp.json())
-        .then((data) => {
-            console.log(data)
-            setAlertMsg("Delivery datas changed successfully!");
-            setAlert(!alert);
-            userContext.setUser({...data, uid: userContext.user.uid});
-        });
+
+        let modifiedDeliveryDataObj = {
+            address: address,
+            zipcode: zipcode,
+            phonenumber: phonenumber,
+            name: userContext.user.name,
+            email: userContext.user.email,
+            type: "user",
+            cart: userContext.user.cart,
+            favourite: userContext.user.favourite,
+            orders: userContext.user.orders
+        }
+        modifyUser(userContext.user.uid, modifiedDeliveryDataObj)
+            .then((data) => {
+                setAlertMsg("Delivery datas changed successfully!");
+                setAlert(!alert);
+                userContext.setUser({...data, uid: userContext.user.uid});
+            });
     }
 
     function changePersonalData(e) {
@@ -68,27 +65,24 @@ const Account = () => {
             .then(() => {
                 updateEmail(auth.currentUser, email)
                     .then(() => {
-                        fetch(`${FIREBASE_DOMAIN}/users/${userContext.user.uid}.json`, {
-                            method: "PUT",
-                            body: JSON.stringify({
-                                address: userContext.user.address,
-                                zipcode: userContext.user.zipcode,
-                                phonenumber: userContext.user.phonenumber,
-                                name: name,
-                                email: email,
-                                type: "user",
-                                cart: userContext.user.cart,
-                                favourite: userContext.user.favourite,
-                                orders: userContext.user.orders
-                            })
-                        })
-                        .then(resp => resp.json())
-                        .then((data) => {
-                            setAlertMsg("Name or email chaged successfully!");
-                            setAlert(!alert);
-                            setPassword("");
-                            userContext.setUser({...data, uid: userContext.user.uid});
-                        });
+                        let modifiedPersonalDataObj = {
+                            address: userContext.user.address,
+                            zipcode: userContext.user.zipcode,
+                            phonenumber: userContext.user.phonenumber,
+                            name: name,
+                            email: email,
+                            type: "user",
+                            cart: userContext.user.cart,
+                            favourite: userContext.user.favourite,
+                            orders: userContext.user.orders
+                        }
+                        modifyUser(userContext.user.uid, modifiedPersonalDataObj)
+                            .then((data) => {
+                                setAlertMsg("Name or email chaged successfully!");
+                                setAlert(!alert);
+                                setPassword("");
+                                userContext.setUser({...data, uid: userContext.user.uid});
+                            });
                     });
             }).catch((error) => {
                 setAlertMsg("Missing password!");

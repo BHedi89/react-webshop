@@ -9,6 +9,7 @@ import ShapeDivider from "../../components/other-components/ShapeDivider";
 import Footer from "../../components/hero-footer/Footer";
 import Alert from "../../components/other-components/Alert";
 import Navbar from "../../components/navbar/Navbar";
+import { getUserByUid } from "../../modules/user-service";
 
 const Login = () => {
     let [email, setEmail] = React.useState("");
@@ -22,8 +23,7 @@ const Login = () => {
         let auth = getAuth();
         signInWithEmailAndPassword(auth, email, password)
         .then(({user}) => {
-            fetch(`${FIREBASE_DOMAIN}/users/${user.uid}.json`)
-                .then(resp => resp.json())
+            getUserByUid(user.uid)
                 .then(data => {
                     if(data.type === "user") {
                         setAlertMsg("Sign in successfully");

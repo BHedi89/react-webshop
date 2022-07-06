@@ -1,7 +1,7 @@
 import React from "react";
 import { UserDataContext } from "./UserDataContext";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
-import { FIREBASE_DOMAIN } from "../../utils/firebase/firebaseConfig";
+import { getUserByUid } from "../../modules/user-service";
 
 const UserDataProvider = ({children}) => {
     const [user, setUser] = React.useState(null);
@@ -11,8 +11,7 @@ const UserDataProvider = ({children}) => {
         const auth = getAuth();
         onAuthStateChanged(auth, (loggedinUser) => {
             if(loggedinUser !== null) {
-                fetch(`${FIREBASE_DOMAIN}/users/${loggedinUser.uid}.json`)
-                    .then(resp => resp.json())
+                getUserByUid(loggedinUser.uid)
                     .then(data => {
                         let favouriteList = [];
                         for(const key in data.favourite){
