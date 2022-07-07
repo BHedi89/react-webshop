@@ -55,9 +55,9 @@ const Forgotpassword = () => {
                         handleClose={handleClose}
                 />}
                 <h1>Forgot password</h1>
+                <h2>Add your email:</h2>
                 <form className={classes.form}>
                     <div>
-                        <label>Add your email:</label>
                         <input 
                             type="email"
                             value={email}

@@ -49,27 +49,51 @@
     .input {
         width: 320px;
         height: 50px;
-        border-radius: 25px;
         padding: 10px;
         font-size: 18px;
         margin: 0 0 20px 5px;
     }
 
     .formbtn {
-        width: 320px;
-        height: 50px;
-        border-radius: 25px;
+        width: 100%;
+        border: none;
+        padding: 12px 40px;
         background-color: #E57373;
-        border-color: #E57373;
-        margin-left: 5px;
-        margin-top: 30px;
-        font-family: 'Yanone Kaffeesatz', sans-serif;
-        font-size: 20px;
+        font-size: 15px;
+        text-transform: uppercase;
+        cursor: pointer;
+        position: relative;
+        margin-top: 15px;
     }
 
-    .formbtn:hover {
-        background-color: #8F4848;
-        border-color: #8F4848;
+    .formbtn:before {
+        content: "";
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        top: -5px;
+        left: -5px;
+        border-top: 2px solid #E57373;
+        border-left: 2px solid #E57373;
+        transition: all 0.25s;
+    }
+      
+    .formbtn:hover:before,
+    .formbtn:hover:after {
+        height: 100%;
+        width: 100%;
+    }
+      
+    .formbtn:after {
+        content: "";
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        bottom: -5px;
+        right: -5px;
+        border-bottom: 2px solid #E57373;
+        border-right: 2px solid #E57373;
+        transition: all 0.25s;
     }
 
     .bigdatabox {
@@ -127,27 +151,51 @@
     .input {
         width: 470px;
         height: 50px;
-        border-radius: 25px;
         padding: 10px;
         font-size: 18px;
         margin: 0 0 20px 5px;
     }
 
     .formbtn {
-        width: 470px;
-        height: 50px;
-        border-radius: 25px;
+        width: 100%;
+        border: none;
+        padding: 12px 40px;
         background-color: #E57373;
-        border-color: #E57373;
-        margin-left: 5px;
-        margin-top: 30px;
-        font-family: 'Yanone Kaffeesatz', sans-serif;
-        font-size: 20px;
+        font-size: 18px;
+        text-transform: uppercase;
+        cursor: pointer;
+        position: relative;
+        margin-top: 15px;
     }
 
-    .formbtn:hover {
-        background-color: #8F4848;
-        border-color: #8F4848;
+    .formbtn:before {
+        content: "";
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        top: -5px;
+        left: -5px;
+        border-top: 2px solid #E57373;
+        border-left: 2px solid #E57373;
+        transition: all 0.25s;
+    }
+      
+    .formbtn:hover:before,
+    .formbtn:hover:after {
+        height: 100%;
+        width: 100%;
+    }
+      
+    .formbtn:after {
+        content: "";
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        bottom: -5px;
+        right: -5px;
+        border-bottom: 2px solid #E57373;
+        border-right: 2px solid #E57373;
+        transition: all 0.25s;
     }
 
     .bigdatabox {

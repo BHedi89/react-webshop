@@ -38,14 +38,12 @@
 
     .form input {
         height: 40px;
-        border-radius: 25px;
         padding: 10px;
         border: white;
         font-size: 18px;
     }
 
     .form textarea {
-        border-radius: 20px;
         padding: 10px;
         border: white;
         font-size: 18px;
@@ -56,17 +54,46 @@
     }
 
     .finishbtn {
-        margin-top: 20px;
-        font-size: 20px;
-        padding: 10px;
-        border-radius: 20px;
+        width: 100%;
+        border: none;
+        padding: 12px 40px;
         background-color: #2C0707;
         color: white;
-        width: 100%;
+        font-size: 15px;
+        text-transform: uppercase;
+        cursor: pointer;
+        position: relative;
+        margin-top: 15px;
     }
 
-    .finishbtn:hover {
-        background-color: #733A3A;
+    .finishbtn:before {
+        content: "";
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        top: -5px;
+        left: -5px;
+        border-top: 2px solid #2C0707;
+        border-left: 2px solid #2C0707;
+        transition: all 0.25s;
+    }
+      
+    .finishbtn:hover:before,
+    .finishbtn:hover:after {
+        height: 100%;
+        width: 100%;
+    }
+      
+    .finishbtn:after {
+        content: "";
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        bottom: -5px;
+        right: -5px;
+        border-bottom: 2px solid #2C0707;
+        border-right: 2px solid #2C0707;
+        transition: all 0.25s;
     }
 }
 /* Small devices (portrait tablets and large phones, 600px and up) */
@@ -109,14 +136,12 @@
 
     .form input {
         height: 40px;
-        border-radius: 25px;
         padding: 10px;
         border: white;
         font-size: 20px;
     }
 
     .form textarea {
-        border-radius: 20px;
         padding: 10px;
         border: white;
         font-size: 20px;
@@ -127,17 +152,46 @@
     }
 
     .finishbtn {
-        margin-top: 20px;
-        font-size: 20px;
-        padding: 10px;
-        border-radius: 20px;
+        width: 100%;
+        border: none;
+        padding: 12px 40px;
         background-color: #2C0707;
         color: white;
-        width: 100%;
+        font-size: 20px;
+        text-transform: uppercase;
+        cursor: pointer;
+        position: relative;
+        margin-top: 15px;
     }
 
-    .finishbtn:hover {
-        background-color: #733A3A;
+    .finishbtn:before {
+        content: "";
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        top: -5px;
+        left: -5px;
+        border-top: 2px solid #2C0707;
+        border-left: 2px solid #2C0707;
+        transition: all 0.25s;
+    }
+      
+    .finishbtn:hover:before,
+    .finishbtn:hover:after {
+        height: 100%;
+        width: 100%;
+    }
+      
+    .finishbtn:after {
+        content: "";
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        bottom: -5px;
+        right: -5px;
+        border-bottom: 2px solid #2C0707;
+        border-right: 2px solid #2C0707;
+        transition: all 0.25s;
     }
 }
 /* Medium devices (landscape tablets, 768px and up) */

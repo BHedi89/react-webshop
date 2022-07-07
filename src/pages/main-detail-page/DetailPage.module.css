@@ -57,18 +57,44 @@
     }
 
     .buybtn {
-        width: 120px;
-        height: 50px;
-        text-transform: uppercase;
-        font-size: 20px;
-        color: white;
+        border: none;
+        padding: 12px 40px;
         background-color: #2C0707;
-        border: 3px solid #8F4848;
+        color: white;
+        font-size: 20px;
+        text-transform: uppercase;
+        cursor: pointer;
+        position: relative;
     }
 
-    .buybtn:hover {
-        background-color: #8F4848;
-        border: 3px solid #2C0707;
+    .buybtn:before {
+        content: "";
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        top: -5px;
+        left: -5px;
+        border-top: 2px solid #8F4848;
+        border-left: 2px solid #8F4848;
+        transition: all 0.25s;
+    }
+      
+    .buybtn:hover:before,
+    .buybtn:hover:after {
+        height: 100%;
+        width: 100%;
+    }
+      
+    .buybtn:after {
+        content: "";
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        bottom: -5px;
+        right: -5px;
+        border-bottom: 2px solid #8F4848;
+        border-right: 2px solid #8F4848;
+        transition: all 0.25s;
     }
 
     .reviewscontainer {
@@ -189,18 +215,44 @@
     }
 
     .buybtn {
-        width: 120px;
-        height: 50px;
-        text-transform: uppercase;
-        font-size: 20px;
-        color: white;
+        border: none;
+        padding: 12px 40px;
         background-color: #2C0707;
-        border: 3px solid #8F4848;
+        color: white;
+        font-size: 20px;
+        text-transform: uppercase;
+        cursor: pointer;
+        position: relative;
     }
 
-    .buybtn:hover {
-        background-color: #8F4848;
-        border: 3px solid #2C0707;
+    .buybtn:before {
+        content: "";
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        top: -5px;
+        left: -5px;
+        border-top: 2px solid #8F4848;
+        border-left: 2px solid #8F4848;
+        transition: all 0.25s;
+    }
+      
+    .buybtn:hover:before,
+    .buybtn:hover:after {
+        height: 100%;
+        width: 100%;
+    }
+      
+    .buybtn:after {
+        content: "";
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        bottom: -5px;
+        right: -5px;
+        border-bottom: 2px solid #8F4848;
+        border-right: 2px solid #8F4848;
+        transition: all 0.25s;
     }
 
     .reviewscontainer {

@@ -24,7 +24,6 @@
         margin-bottom: 20px;
         width: 300px;
         height: 50px;
-        border-radius: 25px;
         padding: 10px;
         font-family: Helvetica, 'FontAwesome', sans-serif;
     }
@@ -32,37 +31,95 @@
     .form button {
         width: 300px;
         height: 50px;
-        border-radius: 25px;
-        border-color: #2C0707;
+        border: none;
+        padding: 12px 40px;
         background-color: #2C0707;
         color: white;
-        font-size: 20px;
+        font-size: 18px;
+        text-transform: uppercase;
+        cursor: pointer;
+        position: relative;
+        margin-bottom: 20px;
     }
 
-    .form button:hover {
-        background-color: #E57373;
+    .form button:before {
+        content: "";
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        top: -5px;
+        left: -5px;
+        border-top: 2px solid #8F4848;
+        border-left: 2px solid #8F4848;
+        transition: all 0.25s;
+    }
+      
+    .form button:hover:before,
+    .form button:hover:after {
+        height: 100%;
+        width: 100%;
+    }
+      
+    .form button:after {
+        content: "";
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        bottom: -5px;
+        right: -5px;
+        border-bottom: 2px solid #8F4848;
+        border-right: 2px solid #8F4848;
+        transition: all 0.25s;
     }
 
     .backBtn {
         width: 300px;
         height: 50px;
-        border-radius: 25px;
-        border-color: #E57373;
+        border: none;
+        padding: 12px 40px;
         background-color: #E57373;
         color: white;
-        margin: 20px 0 30px 0;
-        font-size: 20px;
+        font-size: 18px;
+        text-transform: uppercase;
+        cursor: pointer;
+        position: relative;
+        margin-bottom: 20px;
     }
 
-    .backBtn:hover {
-        background-color: #8F4848;
-        border-color: #8F4848;
+    .backBtn:before {
+        content: "";
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        top: -5px;
+        left: -5px;
+        border-top: 2px solid #8F4848;
+        border-left: 2px solid #8F4848;
+        transition: all 0.25s;
+    }
+      
+    .backBtn:hover:before,
+    .backBtn:hover:after {
+        height: 100%;
+        width: 100%;
+    }
+      
+    .backBtn:after {
+        content: "";
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        bottom: -5px;
+        right: -5px;
+        border-bottom: 2px solid #8F4848;
+        border-right: 2px solid #8F4848;
+        transition: all 0.25s;
     }
 
     .backBtn a {
         text-decoration: none;
         color: black;
-    }
+    } 
 }
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
@@ -91,7 +148,6 @@
         margin-bottom: 20px;
         width: 320px;
         height: 50px;
-        border-radius: 25px;
         padding: 10px;
         font-family: Helvetica, 'FontAwesome', sans-serif;
     }
@@ -99,35 +155,92 @@
     .form button {
         width: 320px;
         height: 50px;
-        border-radius: 25px;
-        border-color: #2C0707;
+        border: none;
+        padding: 12px 40px;
         background-color: #2C0707;
         color: white;
         font-size: 20px;
+        text-transform: uppercase;
+        cursor: pointer;
+        position: relative;
+        margin-bottom: 20px;
     }
 
-    .form button:hover {
-        background-color: #E57373;
+    .form button:before {
+        content: "";
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        top: -5px;
+        left: -5px;
+        border-top: 2px solid #8F4848;
+        border-left: 2px solid #8F4848;
+        transition: all 0.25s;
+    }
+      
+    .form button:hover:before,
+    .form button:hover:after {
+        height: 100%;
+        width: 100%;
+    }
+      
+    .form button:after {
+        content: "";
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        bottom: -5px;
+        right: -5px;
+        border-bottom: 2px solid #8F4848;
+        border-right: 2px solid #8F4848;
+        transition: all 0.25s;
     }
 
     .backBtn {
         width: 320px;
         height: 50px;
-        border-radius: 25px;
-        border-color: #E57373;
+        border: none;
+        padding: 12px 40px;
         background-color: #E57373;
         color: white;
-        margin: 20px 0 30px 0;
         font-size: 20px;
+        text-transform: uppercase;
+        cursor: pointer;
+        position: relative;
     }
 
-    .backBtn:hover {
-        background-color: #8F4848;
-        border-color: #8F4848;
+    .backBtn:before {
+        content: "";
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        top: -5px;
+        left: -5px;
+        border-top: 2px solid #8F4848;
+        border-left: 2px solid #8F4848;
+        transition: all 0.25s;
+    }
+      
+    .backBtn:hover:before,
+    .backBtn:hover:after {
+        height: 100%;
+        width: 100%;
+    }
+      
+    .backBtn:after {
+        content: "";
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        bottom: -5px;
+        right: -5px;
+        border-bottom: 2px solid #8F4848;
+        border-right: 2px solid #8F4848;
+        transition: all 0.25s;
     }
 
     .backBtn a {
         text-decoration: none;
         color: black;
-    }
+    } 
 }
