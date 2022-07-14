@@ -41,17 +41,17 @@ const Navbar = () => {
             <li
               className={`${isActive ? classes.visible : null} ${classes.one}`}
             >
-              <Link to="/face">Face</Link>
+              <Link to="/face" className={classes.page}>Face</Link>
             </li>
             <li
               className={`${isActive ? classes.visible : null} ${classes.two}`}
             >
-              <Link to="/lips">Lips</Link>
+              <Link to="/lips" className={classes.page}>Lips</Link>
             </li>
             <li
               className={`${isActive ? classes.visible : null} ${classes.three}`}
             >
-              <Link to="/eyes">Eyes</Link>
+              <Link to="/eyes" className={classes.page}>Eyes</Link>
             </li>
             <li
               className={`${classes.logo} ${classes.four}`}
@@ -70,7 +70,7 @@ const Navbar = () => {
             <li
               className={`${isActive ? classes.visible : null} ${classes.five}`}
             >
-              <Link to="/nails">Nails</Link>
+              <Link to="/nails" className={classes.page}>Nails</Link>
             </li>
             <li
               className={`${isActive ? classes.visible : null} ${classes.six}`}
@@ -79,7 +79,7 @@ const Navbar = () => {
                 ? 
                 <Dropdownbutton/>
                 :
-                <Link to="/login">Login</Link>
+                <Link to="/login" className={classes.page}>Login</Link>
               }
             </li>
             <li
@@ -87,12 +87,12 @@ const Navbar = () => {
             >
               {userContext?.user?.type === "user"
                 ?
-                <Link to="/cart">
+                <Link to="/cart" className={classes.page}>
                   <FontAwesomeIcon icon={faShoppingBasket} className={classes.icon} />
                   <span className={classes.cartitems}>{userContext.user.cart.length}</span>
                 </Link>
                 :
-                <Link to="#">
+                <Link to="#" className={classes.page}>
                   <FontAwesomeIcon icon={faShoppingBasket} className={classes.icon} onClick={notLoggedInAlert} />
                 </Link>
               }

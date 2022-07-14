@@ -37,16 +37,16 @@ const Dropdownbutton = () => {
                 </>}
                 handleClose={handleClose}
             />}
-            <Link to="#" className={classes.dropdownbtn} onClick={() => setDropdown(dropdown => !dropdown)}>
+            <Link to="#" className={`${classes.dropdownbtn} ${classes.page}`} onClick={() => setDropdown(dropdown => !dropdown)}>
                 Profile
             </Link>
             {dropdown && 
                 <div className={classes.dropdown}>
                     <div className={classes.droplist}>
-                        <Link to="/account">Account</Link>
-                        <Link to="/orders">Orders</Link>
-                        <Link to="/favourite">Favourite</Link>
-                        <Link to="/" onClick={logout}>Sign out</Link>
+                        <Link to="/account" className={classes.page}>Account</Link>
+                        <Link to="/orders" className={classes.page}>Orders</Link>
+                        <Link to="/favourite" className={classes.page}>Favourite</Link>
+                        <Link to="/" onClick={logout} className={classes.page}>Sign out</Link>
                     </div>
                 </div>
             }
