@@ -56,6 +56,13 @@
         font-size: 15px;
     }
 
+    .buyorback {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
     .buybtn {
         border: none;
         padding: 12px 40px;
@@ -65,6 +72,7 @@
         text-transform: uppercase;
         cursor: pointer;
         position: relative;
+        width: 100%;
     }
 
     .buybtn:before {
@@ -148,8 +156,8 @@
     .backlink {
         color: white;
         font-size: 20px;
-        margin-left: 25px;
         text-decoration: underline #8F4848;
+        padding: 25px;
     }
 }
 /* Small devices (portrait tablets and large phones, 600px and up) */
