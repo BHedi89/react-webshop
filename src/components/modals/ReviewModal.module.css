@@ -20,8 +20,8 @@
     }
       
     .modal {
-        width: 290px;
-        height: 754px;
+        width: 320px;
+        /* height: 754px; */
         background: white;
         color: white;
         z-index: 10;
@@ -30,26 +30,24 @@
     }
       
     .modalHeader {
-        height: 48px;
         background: white;
-        overflow: hidden;
         border-top-left-radius: 16px;
         border-top-right-radius: 16px;
+        color: black;
     }
       
     .heading {
-        margin: 0;
-        padding: 10px;
-        color: black;
         font-weight: 500;
         font-size: 40px;
         text-align: center;
+        margin-bottom: 0;
     }
       
     .modalContent {
         padding: 10px;
         font-size: 18px;
         color: black;
+        margin-bottom: 10px;
     }
 
     .modalContent input, 
@@ -130,19 +128,12 @@
     .select {
         height: 30px;
     }
-      
-    .modalActions {
-        position: absolute;
-        bottom: 2px;
-        margin-bottom: 10px;
-        width: 100%;
-    }
-      
+   
     .actionsContainer {
         display: flex;
         align-items: center;
         flex-direction: column;
-    }
+    } 
       
     .postBtn {
         width: 200px;
@@ -150,16 +141,37 @@
         cursor: pointer;
         font-weight: 500;
         padding: 11px 28px;
-        border-radius: 12px;
         font-size: 1.2rem;
         border: none;
         color: #fff;
         background: #2C0707;
-        transition: all 0.25s ease;
+        position: relative;
     }
       
     .postBtn:hover {
         background: #571515;
+    }
+
+    .postBtn:before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: -5px;
+        left: -5px;
+        border-top: 2px solid #2C0707;
+        border-left: 2px solid #2C0707;
+    }
+
+    .postBtn:after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        bottom: -5px;
+        right: -5px;
+        border-bottom: 2px solid #2C0707;
+        border-right: 2px solid #2C0707;
     }
       
     .cancelBtn {
@@ -168,15 +180,36 @@
         cursor: pointer;
         font-weight: 500;
         padding: 11px 28px;
-        border-radius: 12px;
         font-size: 1.2rem;
         border: none;
         background: #E57373;
-        transition: all 0.25s ease;
+        position: relative;
     }
       
     .cancelBtn:hover {
         background: #d37474;
+    }
+
+    .cancelBtn:before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: -5px;
+        left: -5px;
+        border-top: 2px solid #E57373;
+        border-left: 2px solid #E57373;
+    }
+
+    .cancelBtn:after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        bottom: -5px;
+        right: -5px;
+        border-bottom: 2px solid #E57373;
+        border-right: 2px solid #E57373;
     }
 }
 /* Small devices (portrait tablets and large phones, 600px and up) */
@@ -339,16 +372,37 @@
         cursor: pointer;
         font-weight: 500;
         padding: 11px 28px;
-        border-radius: 12px;
         font-size: 1.2rem;
         border: none;
         color: #fff;
         background: #2C0707;
-        transition: all 0.25s ease;
+        position: relative;
     }
       
     .postBtn:hover {
         background: #571515;
+    }
+
+    .postBtn:before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: -5px;
+        left: -5px;
+        border-top: 2px solid #2C0707;
+        border-left: 2px solid #2C0707;
+    }
+
+    .postBtn:after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        bottom: -5px;
+        right: -5px;
+        border-bottom: 2px solid #2C0707;
+        border-right: 2px solid #2C0707;
     }
       
     .cancelBtn {
@@ -357,22 +411,42 @@
         cursor: pointer;
         font-weight: 500;
         padding: 11px 28px;
-        border-radius: 12px;
         font-size: 1.2rem;
         border: none;
         background: #E57373;
-        transition: all 0.25s ease;
+        position: relative;
     }
       
     .cancelBtn:hover {
         background: #d37474;
+    }
+
+    .cancelBtn:before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: -5px;
+        left: -5px;
+        border-top: 2px solid #E57373;
+        border-left: 2px solid #E57373;
+    }
+
+    .cancelBtn:after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        bottom: -5px;
+        right: -5px;
+        border-bottom: 2px solid #E57373;
+        border-right: 2px solid #E57373;
     }
 }
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
     .modal {
         width: 700px;
-        height: 700px;
     }
       
     .heading {
